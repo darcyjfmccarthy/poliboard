@@ -32,10 +32,7 @@ def main():
         
         # Initialize clusterer
         clusterer = PokemonTeamClustering(df)
-        clusterer.select_features(method='frequency', threshold=0.01)
-
-        # Or remove highly correlated features
-        clusterer.select_features(method='correlation', threshold=0.2)
+        clusterer.select_features(method='frequency', threshold=0.03)
 
         # Weight Pokemon more heavily than moves
         clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.5)

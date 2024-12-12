@@ -197,7 +197,7 @@ class PokemonTeamClustering:
         
         for cluster_id, data in cluster_analysis.items():
             # Skip small clusters
-            if data['size'] < len(self.df) * 0.01:  # Less than 5% of total teams
+            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 2):  # Less than 1% of total teams, or cluster is only 0-1 pokemon
                 continue
                 
             # Identify key characteristics
