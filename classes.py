@@ -166,7 +166,7 @@ class PokemonTeamClustering:
         if method == 'tsne':
             reducer = TSNE(n_components=2, random_state=42)
         elif method == 'umap':
-            reducer = UMAP(random_state=42)
+            reducer = UMAP.UMAP(random_state=42)
         else:
             raise ValueError("Method must be 'tsne' or 'umap'")
             
@@ -242,3 +242,46 @@ class PokemonTeamClustering:
         top_features = feature_variance.nlargest(top_n_features).index
         
         return sns.heatmap(cluster_means[top_features], cmap='viridis')
+    
+    def plot_cluster_scatter(self, reduction_method='tsne'):
+        """
+        Create a scatter plot of teams colored by cluster.
+        Uses dimension reduction to plot in 2D space.
+        
+        Parameters:
+        reduction_method: str
+            'tsne' or 'umap' for dimension reduction
+        
+        Returns:
+        matplotlib figure
+        """
+        import matplotlib.pyplot as plt
+        
+        # Get 2D coordinates using dimension reduction
+        coords = self.dimension_reduction(method=reduction_method)
+        
+        # Create scatter plot
+        plt.figure(figsize=(12, 8))
+        
+        # Plot points, coloring by cluster
+        scatter = plt.scatter(coords[:, 0], coords[:, 1], 
+                            c=self.labels_,
+                            cmap='tab20',  # Color map with distinct colors
+                            alpha=0.6)     # Some transparency
+        
+        # Add legend
+        n_clusters = len(set(self.labels_)) - (1 if -1 in self.labels_ else 0)
+        plt.legend(handles=scatter.legend_elements()[0], 
+                labels=[f'Cluster {i}' for i in range(n_clusters)],
+                title="Clusters",
+                bbox_to_anchor=(1.05, 1), 
+                loc='upper left')
+        
+        plt.title(f'Team Clusters ({reduction_method.upper()} projection)')
+        plt.xlabel(f'{reduction_method.upper()} dimension 1')
+        plt.ylabel(f'{reduction_method.upper()} dimension 2')
+        
+        # Make layout work with legend
+        plt.tight_layout()
+        
+        return plt.gcf()
