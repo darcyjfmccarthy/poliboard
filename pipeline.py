@@ -32,13 +32,21 @@ def main():
         
         # Initialize clusterer
         clusterer = PokemonTeamClustering(df)
+
+
         clusterer.select_features(method='frequency', threshold=0.03)
 
-        # Weight Pokemon more heavily than moves
-        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.5)
+        clusterer.select_features(method='variance', threshold=0.01)
 
-        # Then proceed with clustering
-        clusterer.cluster_teams()
+        # Weight Pokemon more heavily than moves
+        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
+
+        optimal_clusters = clusterer.find_optimal_clusters(max_clusters=20)
+
+        best_n = optimal_clusters.loc[optimal_clusters['silhouette_score'].idxmax(), 'n_clusters']
+
+        clusterer.cluster_teams(n_clusters=best_n)
+
 
         print(clusterer.identify_archetypes())
         

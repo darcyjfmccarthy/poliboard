@@ -194,17 +194,15 @@ class PokemonTeamClustering:
         """
         cluster_analysis = self.analyze_clusters()
         archetypes = {}
-        
+        cluster_num = 0
         for cluster_id, data in cluster_analysis.items():
             # Skip small clusters
-            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 2):  # Less than 1% of total teams, or cluster is only 0-1 pokemon
+            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 3):  # Less than 1% of total teams, or cluster is only 0-2 pokemon
                 continue
-                
-            # Identify key characteristics
-            core_combo = set(data['core_pokemon'])
+            cluster_num += 1   
             
             # Look for known archetypes based on core Pokemon combinations
-            archetype_name = f"Cluster_{cluster_id}"  # Default name
+            archetype_name = f"Cluster_{cluster_num}"  # Default name
             key_moves = [move.replace('move_', '') for move in data['common_moves'][:5]]
             
             archetypes[archetype_name] = {
