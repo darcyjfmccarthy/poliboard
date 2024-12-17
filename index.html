@@ -4,33 +4,76 @@
     <title>Pokemon Team Clusters</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.1/plotly.min.js"></script>
     <style>
-        #plot {
-            width: 800px;
-            height: 600px;
-            margin: 20px auto;
-        }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .plot-container {
+            flex: 2;
+        }
+        .info-container {
+            flex: 1;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 800px;
+            overflow-y: auto;
+        }
+        #plot {
+            width: 100%;
+            height: 600px;
+        }
+        .archetype-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .archetype-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .pokemon-list {
+            margin: 5px 0;
+            color: #34495e;
+        }
+        .frequency {
+            color: #7f8c8d;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Pokemon Team Clusters</h1>
-        <div id="plot"></div>
+        <div class="plot-container">
+            <h1>Pokemon Team Clusters</h1>
+            <div id="plot"></div>
+        </div>
+        <div class="info-container">
+            <h2>Archetypes</h2>
+            <div id="archetypes"></div>
+        </div>
     </div>
 
     <script>
         async function fetchAndPlotData() {
             try {
-                const response = await fetch('http://127.0.0.1:8000/visualize');
-                const data = await response.json();
+                // Fetch visualization data
+                const vizResponse = await fetch('http://127.0.0.1:8000/visualize');
+                const vizData = await vizResponse.json();
                 
-                // Separate x and y coordinates
-                const x = data.coordinates.map(coord => coord[0]);
-                const y = data.coordinates.map(coord => coord[1]);
+                // Fetch archetype data
+                const archetypeResponse = await fetch('http://127.0.0.1:8000/archetypes');
+                const archetypeData = await archetypeResponse.json();
+                
+                // Plot scatter plot
+                const x = vizData.coordinates.map(coord => coord[0]);
+                const y = vizData.coordinates.map(coord => coord[1]);
                 
                 const trace = {
                     x: x,
@@ -39,7 +82,7 @@
                     type: 'scatter',
                     marker: {
                         size: 8,
-                        color: data.labels,
+                        color: vizData.labels,
                         colorscale: 'Viridis'
                     }
                 };
@@ -51,12 +94,44 @@
                 };
 
                 Plotly.newPlot('plot', [trace], layout);
+
+                // Display archetypes
+                displayArchetypes(archetypeData.archetypes);
             } catch (error) {
                 console.error('Error:', error);
+                document.getElementById('archetypes').innerHTML = 
+                    '<div class="archetype-card">Error loading data. Please ensure the backend server is running.</div>';
             }
         }
 
-        // Load the plot when the page loads
+        function displayArchetypes(archetypes) {
+            const container = document.getElementById('archetypes');
+            container.innerHTML = '';  // Clear existing content
+
+            Object.entries(archetypes).forEach(([name, info]) => {
+                const card = document.createElement('div');
+                card.className = 'archetype-card';
+                
+                const frequency = (info.frequency * 100).toFixed(1);
+                
+                card.innerHTML = `
+                    <div class="archetype-title">${name}</div>
+                    <div class="pokemon-list">
+                        <strong>Core Pokemon:</strong> ${info.core_pokemon.join(", ")}
+                    </div>
+                    <div class="pokemon-list">
+                        <strong>Key Moves:</strong> ${info.key_moves.join(", ")}
+                    </div>
+                    <div class="frequency">
+                        ${info.team_count} teams (${frequency}% of total)
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load when page opens
         fetchAndPlotData();
     </script>
 </body>

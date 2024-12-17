@@ -83,3 +83,12 @@ async def get_visualization():
         "coordinates": numpy_to_python(coords),
         "labels": numpy_to_python(labels)
     }
+
+@app.get("/archetypes")
+async def get_archetypes():
+    if clusterer_instance is None:
+        raise HTTPException(status_code=400, detail="No clustering results available. Run /analyze first.")
+    
+    return {
+        "archetypes": numpy_to_python(clusterer_instance.identify_archetypes())
+    }
