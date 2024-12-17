@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Team Clusters</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.1/plotly.min.js"></script>
+    <style>
+        #plot {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pokemon Team Clusters</h1>
+        <div id="plot"></div>
+    </div>
+
+    <script>
+        async function fetchAndPlotData() {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/visualize');
+                const data = await response.json();
+                
+                // Separate x and y coordinates
+                const x = data.coordinates.map(coord => coord[0]);
+                const y = data.coordinates.map(coord => coord[1]);
+                
+                const trace = {
+                    x: x,
+                    y: y,
+                    mode: 'markers',
+                    type: 'scatter',
+                    marker: {
+                        size: 8,
+                        color: data.labels,
+                        colorscale: 'Viridis'
+                    }
+                };
+
+                const layout = {
+                    title: 'Pokemon Team Clusters',
+                    xaxis: { title: 'Dimension 1' },
+                    yaxis: { title: 'Dimension 2' }
+                };
+
+                Plotly.newPlot('plot', [trace], layout);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Load the plot when the page loads
+        fetchAndPlotData();
+    </script>
+</body>
+</html>
