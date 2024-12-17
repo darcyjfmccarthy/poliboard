@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+import json
 
 def process_tournament_data(data_dict, mon_set, competition_name):
     """
@@ -58,3 +59,18 @@ def process_multiple_entries(entries_list, mon_set, competition_name):
         process_tournament_data(entry, mon_set, competition_name) 
         for entry in entries_list
     ], ignore_index=True)
+
+def preprocess_all_data(input_file_name, tournament_name):
+    with open(input_file_name, encoding='utf-8') as f:
+        worlds_data = json.load(f)
+        
+    pokemon_list = []
+    
+    for player in worlds_data:
+        # Loop through each Pokemon in the player's decklist
+        for pokemon in player['decklist']:
+            pokemon_list.append(pokemon['name'])
+
+    pokemon_set = list(set(pokemon_list))
+
+    df = process_multiple_entries(worlds_data, pokemon_set, tournament_name)
