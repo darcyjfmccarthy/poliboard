@@ -5,6 +5,9 @@ import numpy as np
 import json
 from classes import PokemonTeamClustering
 from functions import process_multiple_entries
+from fastapi.responses import StreamingResponse
+import httpx
+import asyncio
 
 app = FastAPI(title="Pokemon Team Analysis API")
 
@@ -92,3 +95,27 @@ async def get_archetypes():
     return {
         "archetypes": numpy_to_python(clusterer_instance.identify_archetypes())
     }
+
+@app.get("/pokemon/sprite/{pokemon_name}")
+async def get_pokemon_sprite(pokemon_name: str):
+    async with httpx.AsyncClient() as client:
+        try:
+            # Try to fetch from Pokemon Showdown
+            response = await client.get(
+                f"https://play.pokemonshowdown.com/sprites/dex/{pokemon_name.lower()}.png",
+                timeout=10.0
+            )
+            
+            if response.status_code == 200:
+                return StreamingResponse(
+                    response.iter_bytes(),
+                    media_type="image/png",
+                    headers={
+                        "Cache-Control": "public, max-age=86400",  # Cache for 24 hours
+                    }
+                )
+            else:
+                raise HTTPException(status_code=404, detail=f"Sprite not found for {pokemon_name}")
+                
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error fetching sprite: {str(e)}")

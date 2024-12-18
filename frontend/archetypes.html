@@ -59,11 +59,12 @@
         }
 
         .pokemon-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            font-size: 0.6em;
         }
 
         .pokemon-icon img {
@@ -189,31 +190,43 @@
                 const row = document.createElement('div');
                 row.className = 'archetype-row';
                 
-                const pokemonIcons = info.core_pokemon.map(pokemon => `
-                    <div class="pokemon-icon">${pokemon.substring(0, 2)}</div>
-                `).join('');
-
-                row.innerHTML = `
-                    <div class="archetype-content">
-                        <div class="grade grade-${getGrade(info.frequency)}">
-                            ${getGrade(info.frequency)}
-                        </div>
-                        <div class="pokemon-list">
-                            ${pokemonIcons}
-                        </div>
-                        <div class="metrics">
-                            <div class="metric">
-                                <div class="metric-value">${info.team_count}</div>
-                                <div class="metric-label">Teams</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">${frequency}%</div>
-                                <div class="metric-label">Usage Rate</div>
-                            </div>
-                        </div>
+                // Create the content div
+                const content = document.createElement('div');
+                content.className = 'archetype-content';
+                
+                // Add grade
+                const grade = document.createElement('div');
+                grade.className = `grade grade-${getGrade(info.frequency)}`;
+                grade.textContent = getGrade(info.frequency);
+                content.appendChild(grade);
+                
+                // Create Pokemon list div
+                const pokemonList = document.createElement('div');
+                pokemonList.className = 'pokemon-list';
+                
+                // Add each Pokemon icon
+                info.core_pokemon.forEach(pokemon => {
+                    const icon = createPokemonIcon(pokemon);
+                    pokemonList.appendChild(icon);
+                });
+                content.appendChild(pokemonList);
+                
+                // Add metrics
+                const metrics = document.createElement('div');
+                metrics.className = 'metrics';
+                metrics.innerHTML = `
+                    <div class="metric">
+                        <div class="metric-value">${info.team_count}</div>
+                        <div class="metric-label">Teams</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${frequency}%</div>
+                        <div class="metric-label">Usage Rate</div>
                     </div>
                 `;
-
+                content.appendChild(metrics);
+                
+                row.appendChild(content);
                 container.appendChild(row);
             });
 
@@ -221,21 +234,16 @@
         }
 
         function formatPokemonName(name) {
-            const original = name;
-            const formatted = name.toLowerCase()
-                .replace(/[\s\[\]()-]+/g, '')
-                .replace(/[.']/g, '')
-                .replace(/é/g, 'e');
-            
-            console.log(`Formatting pokemon name: ${original} -> ${formatted}`);
-            return formatted;
+            // Remove special characters, spaces, and make lowercase
+            return name.toLowerCase()
+                .replace(/[\s\[\]()-]+/g, '')  // Remove spaces, brackets, parentheses
+                .replace(/[.']/g, '')          // Remove periods and apostrophes
+                .replace(/é/g, 'e');           // Replace é with e
         }
 
         function getPokemonIconUrl(pokemonName) {
             const formattedName = formatPokemonName(pokemonName);
-            const url = `https://play.pokemonshowdown.com/sprites/dex/${formattedName}.png`;
-            console.log(`Generated URL for ${pokemonName}: ${url}`);
-            return url;
+            return `http://localhost:8000/pokemon/sprite/${formattedName}`;
         }
 
         function createPokemonIcon(pokemonName) {
@@ -256,11 +264,6 @@
                 debug.className = 'debug-info';
                 debug.textContent = `Failed to load: ${url}`;
                 container.appendChild(debug);
-                
-                // Try alternate URL format
-                const altUrl = `https://play.pokemonshowdown.com/sprites/gen5/${formatPokemonName(pokemonName)}.png`;
-                console.log(`Trying alternate URL: ${altUrl}`);
-                img.src = altUrl;
             };
             
             icon.appendChild(img);
