@@ -4,7 +4,7 @@ import json
 def test_api():
     try:
         # Load your data
-        with open('worlds.json', 'r', encoding='utf-8') as f:
+        with open('data/worlds.json', 'r', encoding='utf-8') as f:
             tournament_data = json.load(f)
             print(f"Successfully loaded tournament data with {len(tournament_data)} entries")
 
