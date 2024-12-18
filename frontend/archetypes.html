@@ -19,9 +19,17 @@
         }
 
         .stats {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             display: flex;
             gap: 20px;
-            align-items: center;
+            color: #ccc;
+        }
+
+        .stat-item {
+            display: flex;
+            gap: 8px;
         }
 
         .archetype-row {
@@ -53,11 +61,15 @@
         .pokemon-icon {
             width: 40px;
             height: 40px;
-            background-color: #3a3a3a;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .pokemon-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .metrics {
@@ -88,6 +100,7 @@
             justify-content: center;
             border-radius: 5px;
             font-weight: bold;
+            color: white;
         }
 
         .grade-s {
@@ -96,6 +109,16 @@
 
         .grade-a {
             background-color: #ffa726;
+        }
+
+        .grade-b {
+            background-color: #66bb6a;
+        }
+
+        .debug-info {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 2px;
         }
     </style>
 </head>
@@ -146,7 +169,18 @@
             }
         }
 
+        function updateStats(archetypes) {
+            // Get total number of teams
+            const totalTeams = Object.values(archetypes)
+                .reduce((sum, archetype) => sum + archetype.team_count, 0);
+
+            // Update the stats in the header
+            document.getElementById('teamsAnalyzed').textContent = totalTeams;
+            document.getElementById('lastUpdated').textContent = 'just now';
+        }
+
         function displayArchetypes(archetypes) {
+            console.log("Received archetypes:", archetypes);
             const container = document.getElementById('archetypes-container');
             container.innerHTML = ''; // Clear existing content
 
@@ -182,22 +216,100 @@
 
                 container.appendChild(row);
             });
+
+            updateStats(archetypes);
+        }
+
+        function formatPokemonName(name) {
+            const original = name;
+            const formatted = name.toLowerCase()
+                .replace(/[\s\[\]()-]+/g, '')
+                .replace(/[.']/g, '')
+                .replace(/é/g, 'e');
+            
+            console.log(`Formatting pokemon name: ${original} -> ${formatted}`);
+            return formatted;
+        }
+
+        function getPokemonIconUrl(pokemonName) {
+            const formattedName = formatPokemonName(pokemonName);
+            const url = `https://play.pokemonshowdown.com/sprites/dex/${formattedName}.png`;
+            console.log(`Generated URL for ${pokemonName}: ${url}`);
+            return url;
+        }
+
+        function createPokemonIcon(pokemonName) {
+            const container = document.createElement('div');
+            container.className = 'pokemon-icon-container';
+            
+            const icon = document.createElement('div');
+            icon.className = 'pokemon-icon';
+            
+            const img = document.createElement('img');
+            const url = getPokemonIconUrl(pokemonName);
+            img.src = url;
+            
+            // Add detailed error handling
+            img.onerror = () => {
+                console.error(`Failed to load image for ${pokemonName} from ${url}`);
+                const debug = document.createElement('div');
+                debug.className = 'debug-info';
+                debug.textContent = `Failed to load: ${url}`;
+                container.appendChild(debug);
+                
+                // Try alternate URL format
+                const altUrl = `https://play.pokemonshowdown.com/sprites/gen5/${formatPokemonName(pokemonName)}.png`;
+                console.log(`Trying alternate URL: ${altUrl}`);
+                img.src = altUrl;
+            };
+            
+            icon.appendChild(img);
+            
+            const name = document.createElement('div');
+            name.className = 'pokemon-name';
+            name.textContent = pokemonName;
+            
+            container.appendChild(icon);
+            container.appendChild(name);
+            return container;
         }
 
         function getGrade(frequency) {
-            if (frequency > 0.15) return 'S';
-            if (frequency > 0.10) return 'A';
+            // Convert frequency to percentage
+            const percentage = frequency * 100;
+            
+            if (percentage >= 10) return 'S';
+            if (percentage >= 5) return 'A';
             return 'B';
         }
 
-        function updateStats(data) {
-            document.getElementById('teamsAnalyzed').textContent = 
-                Object.values(data.archetypes)
-                    .reduce((sum, archetype) => sum + archetype.team_count, 0);
+        function testPokemonUrl(pokemonName) {
+            const url = getPokemonIconUrl(pokemonName);
+            fetch(url)
+                .then(response => {
+                    console.log(`Test URL for ${pokemonName}: ${response.status} ${response.ok}`);
+                })
+                .catch(error => {
+                    console.error(`Error testing URL for ${pokemonName}:`, error);
+                });
+        }
+
+        window.testPokemon = function(pokemonName) {
+            testPokemonUrl(pokemonName);
         }
 
         // Initial load
         fetchArchetypes();
     </script>
+    <div class="stats">
+        <div class="stat-item">
+            <span>Last Updated:</span>
+            <span id="lastUpdated">just now</span>
+        </div>
+        <div class="stat-item">
+            <span>Teams Analyzed:</span>
+            <span id="teamsAnalyzed">0</span>
+        </div>
+    </div>
 </body>
 </html>
