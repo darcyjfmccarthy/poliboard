@@ -236,7 +236,17 @@
         function formatPokemonName(name) {
             // Remove special characters, spaces, and make lowercase
             return name.toLowerCase()
-                .replace(/[\s\[\]()-]+/g, '')  // Remove spaces, brackets, parentheses
+                .replace(" mask]", '')
+                .replace(" rider]", '')
+                .replace("rapid strike style]", 'rapidstrike')
+                .replace(" [single strike style]", '')
+                .replace("ian form]", '')
+                .replace(" [curly form]", '')
+                .replace(" form]", '')
+                .replace(" [incarnate forme]", '')
+                .replace("female", 'f')
+                .replace(/[\[\]()-]+/g, '')  // Remove spaces, brackets, parentheses
+                .replace(/[\s]+/g, '-')
                 .replace(/[.']/g, '')          // Remove periods and apostrophes
                 .replace(/é/g, 'e');           // Replace é with e
         }

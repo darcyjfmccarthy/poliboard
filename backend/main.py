@@ -102,7 +102,7 @@ async def get_pokemon_sprite(pokemon_name: str):
         try:
             # Try to fetch from Pokemon Showdown
             response = await client.get(
-                f"https://play.pokemonshowdown.com/sprites/dex/{pokemon_name.lower()}.png",
+                f"https://play.pokemonshowdown.com/sprites/gen5/{pokemon_name.lower()}.png",
                 timeout=10.0
             )
             
