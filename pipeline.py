@@ -50,6 +50,18 @@ def main():
 
         print(clusterer.identify_archetypes())
         
+        print(clusterer.labels_)
+
+        enhanced_archetypes = analyze_cluster_performance(worlds_data, clusterer)
+
+        # This will now include win rates in your archetype data
+        for cluster_id, info in enhanced_archetypes.items():
+            print(f"\n{cluster_id}:")
+            print(f"Core Pokemon: {', '.join(info['core_pokemon'])}")
+            print(f"Win Rate: {info['win_rate']:.1%}")
+            print(f"Record: {info['total_wins']}-{info['total_losses']} ({info['total_games']} games)")
+            print(f"Usage Rate: {info['frequency']:.1%}")
+
     except FileNotFoundError:
         print(f"Error: Could not find file {args.input_file}")
         return
