@@ -1,7 +1,7 @@
 import argparse
 import pandas as pd
-from classes import PokemonTeamClustering
-from functions import *
+from backend.classes import PokemonTeamClustering
+from backend.functions import *
 import json
 
 

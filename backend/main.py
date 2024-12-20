@@ -54,11 +54,17 @@ async def analyze_teams(tournament_data: List[Dict[str, Any]], tournament_name: 
         clusterer = PokemonTeamClustering(df)
         
         # Apply preprocessing
-        clusterer.select_features(method='frequency', threshold=0.01)
-        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.5)
+        clusterer.select_features(method='frequency', threshold=0.03)
+
+        clusterer.select_features(method='variance', threshold=0.01)
+
+        # Weight Pokemon more heavily than moves
+        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
+
+        optimal_clusters = clusterer.find_optimal_clusters(max_clusters=20)
         
         # Perform clustering
-        labels = clusterer.cluster_teams()
+        labels = clusterer.cluster_teams(n_clusters=optimal_clusters)
         
         # Store instance
         clusterer_instance = clusterer
