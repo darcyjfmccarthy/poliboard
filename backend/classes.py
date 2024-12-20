@@ -128,35 +128,39 @@ class PokemonTeamClustering:
     
     def analyze_clusters(self):
         """
-        Analyze characteristics of each cluster
+        Analyze characteristics of each cluster with exact matching
         """
         analysis = defaultdict(dict)
-
         
         for cluster_id in set(self.labels_):
-            if cluster_id == -1:  # Noise points in DBSCAN
+            if cluster_id == -1:  # Skip noise points in DBSCAN
                 continue
                 
             # Get teams in this cluster
             cluster_mask = self.labels_ == cluster_id
             cluster_teams = self.df[cluster_mask]
             
-            # Analyze Pokemon composition
+            # Analyze Pokemon composition with stricter criteria
             pokemon_freq = cluster_teams[self.pokemon_cols].mean()
-            core_pokemon = pokemon_freq[pokemon_freq > 0.5].index.tolist()
             
-            # Analyze common moves
-            move_freq = cluster_teams[self.move_cols].mean()
-            common_moves = move_freq[move_freq > 0.3].index.tolist()
+            # Get Pokemon that appear in >50% of teams
+            frequent_pokemon = pokemon_freq[pokemon_freq > 0.5].index.tolist()
             
-            analysis[cluster_id] = {
-                'size': sum(cluster_mask),
-                'core_pokemon': core_pokemon,
-                'common_moves': common_moves,
-                'pokemon_frequencies': pokemon_freq[pokemon_freq > 0.2].to_dict(),
-                'move_frequencies': move_freq[move_freq > 0.2].to_dict()
-            }
-            
+            if frequent_pokemon:
+                # Count teams that have ALL of these Pokemon
+                exact_match_mask = cluster_teams[frequent_pokemon].all(axis=1)
+                exact_match_count = exact_match_mask.sum()
+                
+                # Only include Pokemon if they contribute to actual team compositions
+                if exact_match_count > len(self.df) * 0.01:  # 1% threshold
+                    analysis[cluster_id] = {
+                        'size': int(exact_match_count),  # Exact number of teams with this combination
+                        'core_pokemon': frequent_pokemon,
+                        'common_moves': [],  # We could do similar exact matching for moves
+                        'pokemon_frequencies': pokemon_freq[pokemon_freq > 0.2].to_dict(),
+                        'move_frequencies': cluster_teams[self.move_cols].mean()[cluster_teams[self.move_cols].mean() > 0.3].to_dict()
+                    }
+        
         return analysis
     
     def dimension_reduction(self, method='tsne'):

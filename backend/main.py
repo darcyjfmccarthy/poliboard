@@ -111,21 +111,35 @@ async def get_archetypes():
     if tournament_data_cache is None:
         raise HTTPException(status_code=400, detail="No tournament data available")
     
-    archetypes = clusterer_instance.identify_archetypes()
-    cluster_stats = calculate_cluster_winrates(tournament_data_cache, clusterer_instance.labels_)
-    
-    # Add win rates to archetypes
-    for cluster_id, archetype in archetypes.items():
-        if cluster_id in cluster_stats:
-            stats = cluster_stats[cluster_id]
-            total_games = stats['wins'] + stats['losses']
-            archetype['win_rate'] = stats['wins'] / total_games if total_games > 0 else 0
-            archetype['total_wins'] = stats['wins']
-            archetype['total_losses'] = stats['losses']
-    
-    return {
-        "archetypes": numpy_to_python(archetypes)
-    }
+    try:
+        # Get archetypes
+        archetypes = clusterer_instance.identify_archetypes()
+        print("Raw archetypes:", archetypes)  # Debug print
+        
+        # Get cluster stats
+        cluster_stats = calculate_cluster_winrates(tournament_data_cache, clusterer_instance.labels_)
+        print("Cluster stats:", cluster_stats)  # Debug print
+        
+        # Make sure archetypes is not None
+        if archetypes is None:
+            archetypes = {}
+            
+        # Add win rates to archetypes
+        for cluster_id, archetype in archetypes.items():
+            if cluster_id in cluster_stats:
+                stats = cluster_stats[cluster_id]
+                total_games = stats['wins'] + stats['losses']
+                archetype['win_rate'] = stats['wins'] / total_games if total_games > 0 else 0
+                archetype['total_wins'] = stats['wins']
+                archetype['total_losses'] = stats['losses']
+        
+        response_data = {"archetypes": numpy_to_python(archetypes)}
+        print("Final response:", response_data)  # Debug print
+        return response_data
+        
+    except Exception as e:
+        print(f"Error in get_archetypes: {str(e)}")  # Debug print
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/pokemon/sprite/{pokemon_name}")

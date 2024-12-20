@@ -160,31 +160,89 @@
     </div>
 
     <script>
+
+        
         async function fetchArchetypes() {
             try {
+                console.log("Fetching archetypes...");
                 const response = await fetch('http://127.0.0.1:8000/archetypes');
+                console.log("Response status:", response.status);
+                
                 const data = await response.json();
+                console.log("Raw API response:", data);
+                
+                if (!data) {
+                    console.error("No data received from API");
+                    return;
+                }
+                
+                if (!data.archetypes) {
+                    console.error("No archetypes field in response:", data);
+                    return;
+                }
+                
                 displayArchetypes(data.archetypes);
-                updateStats(data);
+                updateStats(data.archetypes);
+            } catch (error) {
+                console.error('Error fetching archetypes:', error);
+            }
+        }
+
+        async function runAnalysis() {
+            try {
+                // Update the path to match your directory structure
+                const response = await fetch('../data/worlds.json');  // or use absolute path from root
+                const tournamentData = await response.json();
+                
+                console.log("Loaded tournament data:", tournamentData.length, "entries");  // Debug print
+                
+                const analysisResponse = await fetch('http://127.0.0.1:8000/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(tournamentData)
+                });
+                
+                if (!analysisResponse.ok) {
+                    throw new Error(`Analysis failed: ${analysisResponse.statusText}`);
+                }
+
+                document.getElementById('teamsAnalyzed').textContent = tournamentData.length;
+                document.getElementById('lastUpdated').textContent = 'just now';
+                
+                await fetchArchetypes();
             } catch (error) {
                 console.error('Error:', error);
             }
         }
 
+        // Modify your initial load to run analysis first
+        document.addEventListener('DOMContentLoaded', function() {
+            runAnalysis();
+        });
+
         function updateStats(archetypes) {
             // Get total number of teams
             const totalTeams = Object.values(archetypes)
                 .reduce((sum, archetype) => sum + archetype.team_count, 0);
-
-            // Update the stats in the header
-            document.getElementById('teamsAnalyzed').textContent = totalTeams;
-            document.getElementById('lastUpdated').textContent = 'just now';
+            
         }
 
         function displayArchetypes(archetypes) {
-            console.log("Received archetypes:", archetypes);
+            console.log("Displaying archetypes:", archetypes);
+            if (!archetypes) {
+                console.error("No archetype data received");
+                return;
+            }
+            
             const container = document.getElementById('archetypes-container');
-            container.innerHTML = ''; // Clear existing content
+            container.innerHTML = '';
+            
+            if (Object.keys(archetypes).length === 0) {
+                container.innerHTML = '<div class="archetype-row">No archetypes found</div>';
+                return;
+            }
 
             Object.entries(archetypes).forEach(([name, info]) => {
                 const frequency = (info.frequency * 100).toFixed(1);
@@ -330,17 +388,7 @@
         }
 
         // Initial load
-        fetchArchetypes();
+        runAnalysis();
     </script>
-    <div class="stats">
-        <div class="stat-item">
-            <span>Last Updated:</span>
-            <span id="lastUpdated">just now</span>
-        </div>
-        <div class="stat-item">
-            <span>Teams Analyzed:</span>
-            <span id="teamsAnalyzed">0</span>
-        </div>
-    </div>
 </body>
 </html>
