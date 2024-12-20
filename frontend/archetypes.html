@@ -75,17 +75,27 @@
 
         .metrics {
             display: flex;
-            gap: 30px;
+            gap: 20px;  /* Increased from 30px to fit more metrics */
             margin-right: 20px;
         }
 
         .metric {
             text-align: center;
+            min-width: 80px;  /* Ensure enough space for the record */
         }
 
         .metric-value {
-            font-size: 1.2em;
+            font-size: 1.1em;  /* Slightly reduced from 1.2em to fit better */
             font-weight: bold;
+        }
+
+        /* Add color for win rates */
+        .metric-value.high-winrate {
+            color: #66bb6a;  /* Green for good win rates */
+        }
+
+        .metric-value.low-winrate {
+            color: #ff4e50;  /* Red for poor win rates */
         }
 
         .metric-label {
@@ -140,19 +150,10 @@
                 <div class="pokemon-list">
                     <!-- Pokemon icons will be inserted here -->
                 </div>
-                <div class="metrics">
-                    <div class="metric">
-                        <div class="metric-value">4.02</div>
-                        <div class="metric-label">Avg Place</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">16.3%</div>
-                        <div class="metric-label">Usage Rate</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">58.6%</div>
-                        <div class="metric-label">Win Rate</div>
-                    </div>
+                <div class="metric">
+                    <div class="metric-value ${getWinRateClass(info.win_rate)}">${(info.win_rate * 100).toFixed(1)}%</div>
+                    <div class="metric-label">Win Rate</div>
+                </div>
                 </div>
             </div>
         </div>
@@ -223,6 +224,14 @@
                         <div class="metric-value">${frequency}%</div>
                         <div class="metric-label">Usage Rate</div>
                     </div>
+                    <div class="metric">
+                        <div class="metric-value">${(info.win_rate * 100).toFixed(1)}%</div>
+                        <div class="metric-label">Win Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${info.total_wins}-${info.total_losses}</div>
+                        <div class="metric-label">Record</div>
+                    </div>
                 `;
                 content.appendChild(metrics);
                 
@@ -231,6 +240,12 @@
             });
 
             updateStats(archetypes);
+        }
+
+        function getWinRateClass(winRate) {
+            if (winRate >= 0.55) return 'high-winrate';
+            if (winRate <= 0.45) return 'low-winrate';
+            return '';
         }
 
         function formatPokemonName(name) {
@@ -248,7 +263,10 @@
                 .replace(/[\[\]()-]+/g, '')  // Remove spaces, brackets, parentheses
                 .replace(/[\s]+/g, '-')
                 .replace(/[.']/g, '')          // Remove periods and apostrophes
-                .replace(/é/g, 'e');           // Replace é with e
+                .replace(/é/g, 'e')      // Replace é with e
+                .replace("flutter-mane", 'fluttermane')
+                .replace("iron-hands", 'ironhands')
+                .replace("raging-bolt", 'ragingbolt');
         }
 
         function getPokemonIconUrl(pokemonName) {

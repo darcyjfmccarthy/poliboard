@@ -3,11 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any, List
 import numpy as np
 import json
-from classes import PokemonTeamClustering
-from functions import process_multiple_entries
+from backend.classes import PokemonTeamClustering
+from backend.functions import process_multiple_entries, calculate_cluster_winrates
 from fastapi.responses import StreamingResponse
 import httpx
 import asyncio
+from collections import defaultdict
 
 app = FastAPI(title="Pokemon Team Analysis API")
 
@@ -20,6 +21,7 @@ app.add_middleware(
 )
 
 clusterer_instance = None
+tournament_data_cache = None
 
 def numpy_to_python(obj):
     """Convert numpy types to Python native types"""
@@ -38,6 +40,9 @@ def numpy_to_python(obj):
 @app.post("/analyze")
 async def analyze_teams(tournament_data: List[Dict[str, Any]], tournament_name: str = "Unknown"):
     try:
+        global clusterer_instance, tournament_data_cache
+        tournament_data_cache = tournament_data  # Store the tournament data
+        
         # Extract Pokemon list
         pokemon_list = []
         for player in tournament_data:
@@ -50,29 +55,34 @@ async def analyze_teams(tournament_data: List[Dict[str, Any]], tournament_name: 
         df = process_multiple_entries(tournament_data, pokemon_set, tournament_name)
         
         # Initialize clusterer
-        global clusterer_instance
         clusterer = PokemonTeamClustering(df)
-        
-        # Apply preprocessing
         clusterer.select_features(method='frequency', threshold=0.03)
-
         clusterer.select_features(method='variance', threshold=0.01)
-
-        # Weight Pokemon more heavily than moves
         clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
-
-        optimal_clusters = clusterer.find_optimal_clusters(max_clusters=20)
         
         # Perform clustering
-        labels = clusterer.cluster_teams(n_clusters=optimal_clusters)
+        clusterer.cluster_teams()
         
         # Store instance
         clusterer_instance = clusterer
         
+        # Get archetypes and add win rates
+        archetypes = clusterer.identify_archetypes()
+        cluster_stats = calculate_cluster_winrates(tournament_data, clusterer.labels_)
+        
+        # Add win rates to archetypes
+        for cluster_id, archetype in archetypes.items():
+            if cluster_id in cluster_stats:
+                stats = cluster_stats[cluster_id]
+                total_games = stats['wins'] + stats['losses']
+                archetype['win_rate'] = stats['wins'] / total_games if total_games > 0 else 0
+                archetype['total_wins'] = stats['wins']
+                archetype['total_losses'] = stats['losses']
+        
         # Convert numpy types to Python native types
         response_data = {
             "status": "success",
-            "archetypes": numpy_to_python(clusterer.identify_archetypes())
+            "archetypes": numpy_to_python(archetypes)
         }
         
         return response_data
@@ -98,9 +108,25 @@ async def get_archetypes():
     if clusterer_instance is None:
         raise HTTPException(status_code=400, detail="No clustering results available. Run /analyze first.")
     
+    if tournament_data_cache is None:
+        raise HTTPException(status_code=400, detail="No tournament data available")
+    
+    archetypes = clusterer_instance.identify_archetypes()
+    cluster_stats = calculate_cluster_winrates(tournament_data_cache, clusterer_instance.labels_)
+    
+    # Add win rates to archetypes
+    for cluster_id, archetype in archetypes.items():
+        if cluster_id in cluster_stats:
+            stats = cluster_stats[cluster_id]
+            total_games = stats['wins'] + stats['losses']
+            archetype['win_rate'] = stats['wins'] / total_games if total_games > 0 else 0
+            archetype['total_wins'] = stats['wins']
+            archetype['total_losses'] = stats['losses']
+    
     return {
-        "archetypes": numpy_to_python(clusterer_instance.identify_archetypes())
+        "archetypes": numpy_to_python(archetypes)
     }
+
 
 @app.get("/pokemon/sprite/{pokemon_name}")
 async def get_pokemon_sprite(pokemon_name: str):

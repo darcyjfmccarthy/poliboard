@@ -77,35 +77,23 @@ def preprocess_all_data(input_file_name, tournament_name):
     df = process_multiple_entries(worlds_data, pokemon_set, tournament_name)
 
 
-def calculate_cluster_winrates(tournament_data, cluster_labels):
+def calculate_cluster_winrates(tournament_data, labels):
     """
     Calculate win rates for each cluster using tournament results
-    
-    Parameters:
-    tournament_data: List of dictionaries containing team data with win/loss records
-    cluster_labels: Array of cluster assignments matching the order of tournament_data
-    
-    Returns:
-    Dictionary of cluster stats including win rates
     """
+    from collections import defaultdict
+    
     cluster_stats = defaultdict(lambda: {'wins': 0, 'losses': 0, 'teams': 0})
     
     # Combine tournament results with cluster assignments
-    for team_data, cluster in zip(tournament_data, cluster_labels):
+    for team_data, cluster in zip(tournament_data, labels):
         if cluster == -1:  # Skip noise cluster if using DBSCAN
             continue
             
-        cluster_stats[f"Cluster_{cluster+1}"]["teams"] += 1
-        cluster_stats[f"Cluster_{cluster+1}"]["wins"] += team_data['record']['wins']
-        cluster_stats[f"Cluster_{cluster+1}"]["losses"] += team_data['record']['losses']
-    
-    # Calculate win rates and add to stats
-    for cluster_id, stats in cluster_stats.items():
-        total_games = stats['wins'] + stats['losses']
-        if total_games > 0:
-            stats['win_rate'] = stats['wins'] / total_games
-        else:
-            stats['win_rate'] = 0
+        cluster_name = f"Cluster_{cluster+1}"
+        cluster_stats[cluster_name]["teams"] += 1
+        cluster_stats[cluster_name]["wins"] += team_data['record']['wins']
+        cluster_stats[cluster_name]["losses"] += team_data['record']['losses']
     
     return dict(cluster_stats)
 
