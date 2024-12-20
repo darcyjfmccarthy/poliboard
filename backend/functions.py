@@ -76,24 +76,49 @@ def preprocess_all_data(input_file_name, tournament_name):
 
     df = process_multiple_entries(worlds_data, pokemon_set, tournament_name)
 
+    return df
 
-def calculate_cluster_winrates(tournament_data, labels):
+
+def calculate_cluster_winrates(tournament_data, labels, clusterer):
     """
-    Calculate win rates for each cluster using tournament results
+    Calculate win rates for clusters based on exact Pokemon matches
+    
+    Parameters:
+    tournament_data: List of tournament entries
+    labels: Cluster labels
+    clusterer: PokemonTeamClustering instance (needed for core Pokemon info)
     """
     from collections import defaultdict
     
+    # First get the core Pokemon for each cluster
+    cluster_analysis = clusterer.analyze_clusters()
     cluster_stats = defaultdict(lambda: {'wins': 0, 'losses': 0, 'teams': 0})
     
-    # Combine tournament results with cluster assignments
-    for team_data, cluster in zip(tournament_data, labels):
-        if cluster == -1:  # Skip noise cluster if using DBSCAN
+    # For each cluster
+    for team_data, cluster_label in zip(tournament_data, labels):
+        if cluster_label == -1:
             continue
             
-        cluster_name = f"Cluster_{cluster+1}"
-        cluster_stats[cluster_name]["teams"] += 1
-        cluster_stats[cluster_name]["wins"] += team_data['record']['wins']
-        cluster_stats[cluster_name]["losses"] += team_data['record']['losses']
+        cluster_name = f"Cluster_{cluster_label+1}"
+        
+        # Skip if cluster wasn't significant enough to be in analysis
+        if cluster_label not in cluster_analysis:
+            continue
+            
+        # Get core Pokemon for this cluster
+        core_pokemon = cluster_analysis[cluster_label]['core_pokemon']
+        
+        # Check if this team has all core Pokemon
+        has_all_core = all(
+            any(pokemon['name'] == core_mon for pokemon in team_data['decklist'])
+            for core_mon in core_pokemon
+        )
+        
+        # Only count stats if team has all core Pokemon
+        if has_all_core:
+            cluster_stats[cluster_name]["teams"] += 1
+            cluster_stats[cluster_name]["wins"] += team_data['record']['wins']
+            cluster_stats[cluster_name]["losses"] += team_data['record']['losses']
     
     return dict(cluster_stats)
 

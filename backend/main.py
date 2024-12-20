@@ -68,7 +68,7 @@ async def analyze_teams(tournament_data: List[Dict[str, Any]], tournament_name: 
         
         # Get archetypes and add win rates
         archetypes = clusterer.identify_archetypes()
-        cluster_stats = calculate_cluster_winrates(tournament_data, clusterer.labels_)
+        cluster_stats = calculate_cluster_winrates(tournament_data, clusterer.labels_, clusterer)
         
         # Add win rates to archetypes
         for cluster_id, archetype in archetypes.items():
@@ -117,7 +117,7 @@ async def get_archetypes():
         print("Raw archetypes:", archetypes)  # Debug print
         
         # Get cluster stats
-        cluster_stats = calculate_cluster_winrates(tournament_data_cache, clusterer_instance.labels_)
+        cluster_stats = calculate_cluster_winrates(tournament_data_cache, clusterer_instance.labels_, clusterer_instance)
         print("Cluster stats:", cluster_stats)  # Debug print
         
         # Make sure archetypes is not None
