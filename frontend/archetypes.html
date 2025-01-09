@@ -64,13 +64,29 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 0.6em;
+            position: relative;  /* Added for tooltip positioning */
         }
 
         .pokemon-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+
+        .pokemon-icon:hover::after {
+            content: attr(data-name);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 1000;
+            pointer-events: none;
         }
 
         .metrics {
@@ -130,6 +146,11 @@
             color: red;
             font-size: 0.8em;
             margin-top: 2px;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -334,16 +355,15 @@
 
         function createPokemonIcon(pokemonName) {
             const container = document.createElement('div');
-            container.className = 'pokemon-icon-container';
-            
-            const icon = document.createElement('div');
-            icon.className = 'pokemon-icon';
+            container.className = 'pokemon-icon';
+            container.setAttribute('data-name', pokemonName);
+            container.setAttribute('title', pokemonName); // Fallback tooltip
             
             const img = document.createElement('img');
             const url = getPokemonIconUrl(pokemonName);
             img.src = url;
+            img.alt = pokemonName;
             
-            // Add detailed error handling
             img.onerror = () => {
                 console.error(`Failed to load image for ${pokemonName} from ${url}`);
                 const debug = document.createElement('div');
@@ -352,17 +372,10 @@
                 container.appendChild(debug);
             };
             
-            icon.appendChild(img);
-            
-            const name = document.createElement('div');
-            name.className = 'pokemon-name';
-            name.textContent = pokemonName;
-            
-            container.appendChild(icon);
-            container.appendChild(name);
+            container.appendChild(img);
             return container;
         }
-
+        
         function getGrade(frequency) {
             // Convert frequency to percentage
             const percentage = frequency * 100;
