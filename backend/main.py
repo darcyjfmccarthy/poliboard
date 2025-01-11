@@ -4,12 +4,12 @@ from typing import Dict, Any, List
 import numpy as np
 import json
 from backend.classes import PokemonTeamClustering
-from backend.functions import process_tournament_data, calculate_cluster_winrates, find_teams_from_cluster
+from backend.functions import process_tournament_data, calculate_cluster_winrates
 from fastapi.responses import StreamingResponse
 import httpx
 import asyncio
 from collections import defaultdict
-from backend.database import get_top_teams_in_cluster
+from backend.database import get_top_teams_in_cluster, find_teams_from_cluster
 from backend.database import engine
 from sqlalchemy import text, create_engine
 

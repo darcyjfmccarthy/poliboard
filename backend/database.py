@@ -11,12 +11,6 @@ teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='
 cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
 
 def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> tuple[pd.DataFrame, dict]:
-    """
-    Find teams from a specific cluster and calculate statistics
-    
-    Returns:
-        Tuple of (DataFrame containing teams, Dict containing stats)
-    """
     try:
         # First get the cluster features
         with engine.connect() as conn:
@@ -54,20 +48,22 @@ def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> tuple[p
 
         # Execute the final query
         with engine.connect() as conn:
-            # Execute query and fetch all results
-            results = conn.execute(
+            result = conn.execute(
                 text(query.format(features=features)), 
                 {"limit": limit}
-            ).fetchall()
+            )
+            # Get column names from result
+            columns = result.keys()
+            # Fetch all rows
+            rows = result.fetchall()
             
-            if not results:
+            if not rows:
                 return pd.DataFrame(), {'appearances': 0, 'winrate': 0.0}
             
-            # Convert to DataFrame
-            result_df = pd.DataFrame(results)
-            result_df.columns = results[0].keys()
+            # Create DataFrame with explicit column names
+            result_df = pd.DataFrame(rows, columns=columns)
 
-            # Extract stats from first row (they'll be the same for all rows)
+            # Extract stats
             stats = {
                 'appearances': int(result_df['total_appearances'].iloc[0]),
                 'winrate': round(float(result_df['winrate'].iloc[0]), 1)

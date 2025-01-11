@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pokemon Team Archetypes</title>
+        <title>Pokemon Team Clusters</title>
         <style>
             body {
                 background-color: #1a1a1a;
@@ -295,10 +295,30 @@
                 document.getElementById('lastUpdated').textContent = 'just now';
             }
 
-            function displayArchetypes(archetypes) {
+            async function displayArchetypes(archetypes) {
                 const container = document.getElementById('archetypes-container');
                 container.innerHTML = '';
 
+                // Fetch all stats first before building the UI
+                const statsPromises = Object.entries(archetypes).map(async ([id, info]) => {
+                    const index = parseInt(id.split('_')[1]) - 1;
+                    try {
+                        const response = await fetch(`http://127.0.0.1:8000/cluster/${index+1}/top_teams`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            return { index, stats: data.stats };
+                        }
+                    } catch (error) {
+                        console.error(`Error fetching stats for cluster ${index+1}:`, error);
+                    }
+                    return { index, stats: null };
+                });
+
+                // Wait for all stats to load
+                const allStats = await Promise.all(statsPromises);
+                const statsMap = new Map(allStats.map(item => [item.index, item.stats]));
+
+                // Now build the UI with the stats already available
                 Object.entries(archetypes).forEach(([id, info], index) => {
                     const row = document.createElement('div');
                     row.className = 'archetype-row';
@@ -312,16 +332,16 @@
                     grade.textContent = getGrade(info.frequency);
                     content.appendChild(grade);
 
-                    // Add stats container
+                    const stats = statsMap.get(index);
                     const statsContainer = document.createElement('div');
                     statsContainer.className = 'archetype-stats';
                     statsContainer.innerHTML = `
                         <div class="stat">
-                            <span class="stat-value" id="appearances-${index}">-</span>
+                            <span class="stat-value" id="appearances-${index}">${stats ? stats.appearances : '-'}</span>
                             <span class="stat-label">Teams</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-value" id="winrate-${index}">-</span>
+                            <span class="stat-value" id="winrate-${index}">${stats ? `${stats.winrate}%` : '-'}</span>
                             <span class="stat-label">Win Rate</span>
                         </div>
                     `;
@@ -337,13 +357,11 @@
 
                     row.appendChild(content);
 
-                    // Create similar teams section
                     const similarTeamsSection = document.createElement('div');
                     similarTeamsSection.className = 'similar-teams';
                     similarTeamsSection.id = `similar-teams-${index}`;
                     row.appendChild(similarTeamsSection);
 
-                    // Add click event to show/fetch similar teams
                     row.addEventListener('click', () => toggleSimilarTeams(index, info));
 
                     container.appendChild(row);
@@ -374,7 +392,7 @@
 
                     // Header with archetype info
                     const header = document.createElement('h3');
-                    header.textContent = `Top Teams for this Archetype`;
+                    header.textContent = `Top Teams for this archetype`;
                     header.style.color = '#ccc';
                     header.style.marginBottom = '10px';
                     teamsList.appendChild(header);
