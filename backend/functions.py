@@ -105,3 +105,27 @@ def load_tournament_data(engine, filename='data/worlds.json'):
         
     except Exception as e:
         print(f"Error loading data: {e}")
+
+def find_teams_from_cluster(engine, cluster_id, limit=20):
+    with engine.connect() as conn:
+
+        cluster_data = conn.execute(text(f'SELECT * from cluster_features WHERE cluster_id = {cluster_id};'))
+        df = pd.DataFrame(cluster_data.mappings().all())
+
+    query = """
+        SELECT *
+        FROM tournament_teams
+        WHERE 1=1 {features}
+        ORDER BY "Wins" DESC
+            """
+
+    features = ""
+    for row in df['core_pokemon'].to_list():
+        features += f'\n\tAND "{row}" = 1'
+
+    with engine.connect() as conn:
+
+        data = conn.execute(text(query.format(features=features)))
+        df = pd.DataFrame(data.mappings().all())
+
+    return df
