@@ -158,7 +158,7 @@ async def get_pokemon_sprite(pokemon_name: str):
 async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
     try:
         # Use the find_teams_from_cluster function directly
-        teams_df = find_teams_from_cluster(engine, cluster_id, limit)
+        teams_df, stats = find_teams_from_cluster(engine, cluster_id, limit)
         
         # Convert DataFrame to the expected format while preserving metadata
         teams_list = []
@@ -176,7 +176,10 @@ async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
             }
             teams_list.append(team_obj)
             
-        return {"teams": teams_list}
+        return {
+            "teams": teams_list,
+            "stats": stats
+        }
         
     except Exception as e:
         print(f"Error in get_cluster_top_teams: {str(e)}")

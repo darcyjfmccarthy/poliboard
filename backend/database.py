@@ -10,17 +10,12 @@ metadata = MetaData()
 teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
 cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
 
-def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> pd.DataFrame:
+def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> tuple[pd.DataFrame, dict]:
     """
-    Find teams from a specific cluster using direct SQL queries.
-    
-    Args:
-        engine: SQLAlchemy engine instance
-        cluster_id: ID of the cluster to search for
-        limit: Maximum number of teams to return (default: 20)
+    Find teams from a specific cluster and calculate statistics
     
     Returns:
-        DataFrame containing the matching teams
+        Tuple of (DataFrame containing teams, Dict containing stats)
     """
     try:
         # First get the cluster features
@@ -35,10 +30,20 @@ def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> pd.Data
 
         # Build the query with proper parameterization
         query = """
-            SELECT *
-            FROM tournament_teams
-            WHERE 1=1 {features}
-            ORDER BY "Wins" DESC
+            WITH cluster_teams AS (
+                SELECT *
+                FROM tournament_teams
+                WHERE 1=1 {features}
+            ),
+            stats AS (
+                SELECT COUNT(*) as total_appearances,
+                       CAST(SUM("Wins") AS FLOAT) / NULLIF(SUM("Wins" + "Losses"), 0) * 100 as winrate
+                FROM cluster_teams
+            )
+            SELECT t.*, s.total_appearances, s.winrate
+            FROM cluster_teams t
+            CROSS JOIN stats s
+            ORDER BY t."Wins" DESC
             LIMIT :limit
         """
 
@@ -49,13 +54,29 @@ def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> pd.Data
 
         # Execute the final query
         with engine.connect() as conn:
-            data = conn.execute(
+            # Execute query and fetch all results
+            results = conn.execute(
                 text(query.format(features=features)), 
                 {"limit": limit}
-            )
-            result_df = pd.DataFrame(data.mappings().all())
+            ).fetchall()
+            
+            if not results:
+                return pd.DataFrame(), {'appearances': 0, 'winrate': 0.0}
+            
+            # Convert to DataFrame
+            result_df = pd.DataFrame(results)
+            result_df.columns = results[0].keys()
 
-        return result_df
+            # Extract stats from first row (they'll be the same for all rows)
+            stats = {
+                'appearances': int(result_df['total_appearances'].iloc[0]),
+                'winrate': round(float(result_df['winrate'].iloc[0]), 1)
+            }
+
+            # Remove stats columns from main DataFrame
+            result_df = result_df.drop(['total_appearances', 'winrate'], axis=1)
+
+            return result_df, stats
 
     except Exception as e:
         print(f"Error in find_teams_from_cluster: {str(e)}")
@@ -73,7 +94,8 @@ def get_top_teams_in_cluster(cluster_id: int, limit: int = 20) -> list:
         List of teams, where each team is a list of Pokemon names
     """
     try:
-        df = find_teams_from_cluster(engine, cluster_id, limit)
+        # Correctly unpack both values
+        df, stats = find_teams_from_cluster(engine, cluster_id, limit)
         
         if df.empty:
             return []
