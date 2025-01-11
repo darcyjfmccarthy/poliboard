@@ -1,73 +1,62 @@
-import argparse
-import pandas as pd
-from backend.classes import PokemonTeamClustering
-from backend.functions import *
+# Proposed unified pipeline script (pipeline.py)
 import json
+from sqlalchemy import create_engine
+from backend.functions import process_tournament_data
+from backend.classes import PokemonTeamClustering
+from backend.database import engine  # Use your existing engine
 
-
+def process_tournament_pipeline(json_path, tournament_name):
+    """
+    Unified pipeline to:
+    1. Load JSON
+    2. Process tournament data
+    3. Insert into database
+    4. Run clustering
+    5. Insert cluster features into database
+    """
+    try:
+        # 1. Load tournament data
+        with open(json_path, encoding='utf-8') as f:
+            tournament_data = json.load(f)
+        
+        # 2. Process data into DataFrame
+        df = process_tournament_data(tournament_data, tournament_name)
+        
+        # 3. Insert raw tournament data to database
+        df.to_sql(
+            'tournament_teams', 
+            engine, 
+            if_exists='replace', 
+            index=False
+        )
+        
+        # 4. Run clustering
+        clusterer = PokemonTeamClustering(df)
+        clusterer.select_features(method='frequency', threshold=0.03)
+        clusterer.select_features(method='variance', threshold=0.01)
+        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
+        clusterer.cluster_teams()
+        
+        # 5. Insert cluster features to database
+        cluster_features = clusterer.create_long_cluster_features()
+        cluster_features.to_sql(
+            'cluster_features', 
+            engine, 
+            if_exists='replace', 
+            index=False
+        )
+        
+        return clusterer, df
+    
+    except Exception as e:
+        print(f"Error in tournament processing pipeline: {e}")
+        raise
 
 def main():
-    parser = argparse.ArgumentParser(description='Pokemon Team Clustering Pipeline')
-    parser.add_argument('input_file', type=str, help='Path to input JSON file')
-    parser.add_argument('tournament_name', type=str, help='Tournament name')
-    
-    args = parser.parse_args()
-    
-    try:
-        # Load data
-        with open(args.input_file, encoding='utf-8') as f:
-            worlds_data = json.load(f)
-        
-        pokemon_list = []
-        
-        for player in worlds_data:
-            # Loop through each Pokemon in the player's decklist
-            for pokemon in player['decklist']:
-                pokemon_list.append(pokemon['name'])
-
-        pokemon_set = list(set(pokemon_list))
-
-        df = process_multiple_entries(worlds_data, pokemon_set, args.tournament_name)
-        print(f"Loaded {len(df)} teams from {args.input_file}. Pokemon count: {len(pokemon_set)}")
-        
-        # Initialize clusterer
-        clusterer = PokemonTeamClustering(df)
-
-
-        clusterer.select_features(method='frequency', threshold=0.03)
-
-        clusterer.select_features(method='variance', threshold=0.01)
-
-        # Weight Pokemon more heavily than moves
-        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
-
-        optimal_clusters = clusterer.find_optimal_clusters(max_clusters=20)
-
-        best_n = optimal_clusters.loc[optimal_clusters['silhouette_score'].idxmax(), 'n_clusters']
-
-        clusterer.cluster_teams(n_clusters=best_n)
-
-
-        print(clusterer.identify_archetypes())
-        
-        print(clusterer.labels_)
-
-        enhanced_archetypes = analyze_cluster_performance(worlds_data, clusterer)
-
-        # This will now include win rates in your archetype data
-        for cluster_id, info in enhanced_archetypes.items():
-            print(f"\n{cluster_id}:")
-            print(f"Core Pokemon: {', '.join(info['core_pokemon'])}")
-            print(f"Win Rate: {info['win_rate']:.1%}")
-            print(f"Record: {info['total_wins']}-{info['total_losses']} ({info['total_games']} games)")
-            print(f"Usage Rate: {info['frequency']:.1%}")
-
-    except FileNotFoundError:
-        print(f"Error: Could not find file {args.input_file}")
-        return
-    except Exception as e:
-        print(f"Error loading data: {str(e)}")
-        return
+    process_tournament_pipeline(
+        'data/worlds.json', 
+        'Worlds2024'
+    )
 
 if __name__ == "__main__":
     main()
