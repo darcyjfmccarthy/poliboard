@@ -145,9 +145,15 @@ async def get_pokemon_sprite(pokemon_name: str):
 @app.get("/cluster/{cluster_id}/top_teams")
 async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
     try:
+        print(f"Fetching top teams for cluster {cluster_id}")
+        
         teams = get_top_teams_in_cluster(cluster_id, limit)
+        print(f"Found {len(teams)} teams")
         return {
             "teams": teams
         }
+    except ValueError as ve:
+        raise HTTPException(status_code=404, detail=str(ve))
     except Exception as e:
+        print(f"Error in get_cluster_top_teams: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))

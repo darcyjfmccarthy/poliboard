@@ -290,30 +290,26 @@ class PokemonTeamClustering:
 
     def create_cluster_features(self):
         """
-        Create a binary feature matrix for clusters with clean column names
+        Create a binary feature matrix for clusters using original Pokemon names
         """
         # Get cluster analysis first
         cluster_analysis = self.analyze_clusters()
         
-        # Create empty DataFrame with cleaned Pokemon names as columns
-        clean_cols = [pokemon.lower().replace(' ', '_').replace('[', '').replace(']', '').replace('\'', '') 
-                    for pokemon in self.pokemon_cols]
-        
+        # Create empty DataFrame with original Pokemon names as columns
         cluster_features = pd.DataFrame(0, 
                                     index=[f"cluster_{i+1}" for i in range(len(cluster_analysis))],
-                                    columns=clean_cols)
+                                    columns=self.pokemon_cols)
         
         # Fill in 1s for core Pokemon in each cluster
         for i, (cluster_id, data) in enumerate(cluster_analysis.items()):
             cluster_name = f"cluster_{i+1}"
             for pokemon in data['core_pokemon']:
-                # Clean the pokemon name to match column names
-                pokemon_col = pokemon.lower().replace(' ', '_').replace('[', '').replace(']', '').replace('\'', '')
-                cluster_features.loc[cluster_name, pokemon_col] = 1
+                # Use the original Pokemon name directly
+                cluster_features.loc[cluster_name, pokemon] = 1
                 
         # Add metadata columns
         cluster_features.insert(0, 'cluster_id', range(1, len(cluster_analysis) + 1))
         cluster_features.insert(1, 'team_count', [data['size'] for data in cluster_analysis.values()])
         
-        return cluster_features
+        return cluster_features 
     
