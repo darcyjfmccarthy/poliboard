@@ -213,3 +213,14 @@ async def get_archetypes_from_db():
     except Exception as e:
         print(f"Error fetching archetypes: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.get("/total_teams")
+async def get_total_teams():
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT COUNT(*) FROM tournament_teams"))
+            count = result.scalar()
+            return {"total": count}
+    except Exception as e:
+        print(f"Error getting total teams: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))

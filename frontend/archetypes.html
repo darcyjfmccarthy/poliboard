@@ -119,6 +119,7 @@
                 border-radius: 5px;
                 font-weight: bold;
                 color: white;
+                margin-bottom: 5px;
             }
 
             .grade-s {
@@ -289,9 +290,17 @@
                 }
             }
 
-            function updateStats(archetypes) {
-                const totalTeams = Object.values(archetypes).reduce((sum, archetype) => sum + archetype.team_count, 0);
-                document.getElementById('teamsAnalyzed').textContent = totalTeams;
+            async function updateStats(archetypes) {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/total_teams');
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.getElementById('teamsAnalyzed').textContent = data.total;
+                    }
+                } catch (error) {
+                    console.error('Error fetching total teams:', error);
+                    document.getElementById('teamsAnalyzed').textContent = 'Error';
+                }
                 document.getElementById('lastUpdated').textContent = 'just now';
             }
 
@@ -306,20 +315,22 @@
                         const response = await fetch(`http://127.0.0.1:8000/cluster/${index+1}/top_teams`);
                         if (response.ok) {
                             const data = await response.json();
-                            return { index, stats: data.stats };
+                            return { id, info, index, stats: data.stats };
                         }
                     } catch (error) {
                         console.error(`Error fetching stats for cluster ${index+1}:`, error);
                     }
-                    return { index, stats: null };
+                    return { id, info, index, stats: null };
                 });
 
-                // Wait for all stats to load
-                const allStats = await Promise.all(statsPromises);
-                const statsMap = new Map(allStats.map(item => [item.index, item.stats]));
+                // Wait for all stats to load and sort by winrate
+                const allArchetypes = await Promise.all(statsPromises);
+                allArchetypes.sort((a, b) => {
+                    return (b.stats?.winrate || 0) - (a.stats?.winrate || 0);
+                });
 
-                // Now build the UI with the stats already available
-                Object.entries(archetypes).forEach(([id, info], index) => {
+                // Now build the UI with the sorted archetypes
+                allArchetypes.forEach(({ id, info, index, stats }) => {
                     const row = document.createElement('div');
                     row.className = 'archetype-row';
                     row.setAttribute('data-cluster-id', index);
@@ -327,12 +338,14 @@
                     const content = document.createElement('div');
                     content.className = 'archetype-content';
 
+                    // First add the grade
+                    const gradeInfo = getGrade(stats?.winrate || 0);
                     const grade = document.createElement('div');
-                    grade.className = `grade grade-${getGrade(info.frequency)}`;
-                    grade.textContent = getGrade(info.frequency);
+                    grade.className = `grade ${gradeInfo.class}`;
+                    grade.textContent = gradeInfo.grade;
                     content.appendChild(grade);
 
-                    const stats = statsMap.get(index);
+                    // Then add the stats
                     const statsContainer = document.createElement('div');
                     statsContainer.className = 'archetype-stats';
                     statsContainer.innerHTML = `
@@ -347,6 +360,7 @@
                     `;
                     content.appendChild(statsContainer);
 
+                    // Then add the pokemon list
                     const pokemonList = document.createElement('div');
                     pokemonList.className = 'pokemon-list';
                     info.core_pokemon.forEach(pokemon => {
@@ -357,16 +371,20 @@
 
                     row.appendChild(content);
 
+                    // Create similar teams section
                     const similarTeamsSection = document.createElement('div');
                     similarTeamsSection.className = 'similar-teams';
                     similarTeamsSection.id = `similar-teams-${index}`;
                     row.appendChild(similarTeamsSection);
 
+                    // Add click event
                     row.addEventListener('click', () => toggleSimilarTeams(index, info));
 
+                    // Add the row to the container
                     container.appendChild(row);
                 });
             }
+
 
             async function toggleSimilarTeams(clusterId, archetype) {
                 const similarTeamsSection = document.getElementById(`similar-teams-${clusterId}`);
@@ -496,11 +514,15 @@
                     .replace("raging-bolt", 'ragingbolt');
             }
 
-            function getGrade(frequency) {
-                const percentage = frequency * 100;
-                if (percentage >= 10) return 'S';
-                if (percentage >= 5) return 'A';
-                return 'B';
+            function getGrade(winrate) {
+                // Return an object with both the grade and its class
+                if (winrate >= 55) {
+                    return { grade: 'S', class: 'grade-s' };
+                } else if (winrate >= 52) {
+                    return { grade: 'A', class: 'grade-a' };
+                } else {
+                    return { grade: 'B', class: 'grade-b' };
+                }
             }
 
             // Run the analysis on page load
