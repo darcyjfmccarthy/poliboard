@@ -1,93 +1,47 @@
-# database.py
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, Table, MetaData, select, and_
 
-# Create engine once and reuse
-DATABASE_URL = "postgresql://localhost/pokemon_vgc"
-engine = create_engine(DATABASE_URL)
+# Example database URL (replace with your actual connection string)
+engine = create_engine("postgresql://localhost/vgc_clustering")
 
-from sqlalchemy import inspect, text
-import re
+metadata = MetaData()
 
-def clean_pokemon_name(pokemon_name):
-    """
-    Clean Pokemon names to match the column name generation in create_cluster_features
-    """
-    return re.sub(r'[\'\[\]]', '', pokemon_name.lower().replace(' ', '_'))
+# Define the tables
+teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
+cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
 
-def get_top_teams_in_cluster(cluster_id, limit=20):
+# Function to query teams based on cluster ID
+def get_teams_for_cluster(cluster_id: int):
+    # Step 1: Fetch the Pokémon requirements for the given cluster
+    cluster_query = select([cluster_features]).where(cluster_features.c.cluster_id == cluster_id)
+    with engine.connect() as connection:
+        cluster_result = connection.execute(cluster_query).fetchone()
     
-    """
-    Dynamically get top teams for a cluster based on core Pokemon
-    """
-    # First, find the core Pokemon for this cluster
-    with engine.connect() as conn:
-        # Query to find core Pokemon for the specific cluster
-        core_pokemon_query = text("""
-        SELECT column_name
-        FROM information_schema.columns
-        WHERE table_name = 'cluster_features' 
-        AND column_name NOT IN ('cluster_id', (
-            SELECT column_name 
-            FROM information_schema.columns 
-            WHERE table_name = 'cluster_features' 
-            LIMIT 1
-        ))
-        AND EXISTS (
-            SELECT 1 
-            FROM cluster_features 
-            WHERE cluster_id = :cluster_id 
-            AND cluster_features."{column_name}" = 1
-        )
-        """)
-        
-        core_pokemon_result = conn.execute(
-            core_pokemon_query,
-            {"cluster_id": cluster_id}
-        )
-        core_pokemon_list = [row.column_name for row in core_pokemon_result]
-        
-        print(f"Core Pokemon for cluster {cluster_id}: {core_pokemon_list}")
-        
-        # If no core Pokemon found, return empty list
-        if not core_pokemon_list:
-            return []
-        
-        # Construct the main query dynamically
-        teams_query = text(f"""
-        WITH matching_teams AS (
-            SELECT 
-                ARRAY(
-                    SELECT column_name 
-                    FROM (VALUES {', '.join([f'(t."{col}")' for col in core_pokemon_list])}) 
-                    AS team_columns(column_name)
-                    WHERE team_columns.column_name = 1
-                ) AS team_pokemon,
-                ("Wins"::float / NULLIF("Wins" + "Losses", 0)) as win_rate
-            FROM tournament_teams t
-            WHERE
-                {' OR '.join([f't."{col}" = 1' for col in core_pokemon_list])}
-            ORDER BY
-                win_rate DESC
-            LIMIT :limit
-        )
-        SELECT 
-            team_pokemon
-        FROM matching_teams
-        WHERE 
-            array_length(team_pokemon, 1) > 0
-        """)
-        
-        # Execute the query
-        result = conn.execute(
-            teams_query,
-            {"cluster_id": cluster_id, "limit": limit}
-        )
-        
-        teams = []
-        for row in result:
-            teams.append(row.team_pokemon)
-        
-        return teams
+    if not cluster_result:
+        print(f"No cluster found with ID {cluster_id}")
+        return []
+    
+    # Step 2: Build the condition for querying teams that meet the cluster's Pokémon requirements
+    conditions = []
+    
+    # Dynamically generate conditions based on the Pokémon columns from the cluster
+    for column_name in cluster_result.keys():
+        if column_name != 'cluster_id' and column_name != 'team_count':  # Skip non-Pokemon columns
+            if cluster_result[column_name] == 1:
+                # Add the condition that the team has this Pokémon with value 1
+                conditions.append(teams_table.c[column_name] == 1)
+    
+    # Step 3: Query teams that match all conditions
+    team_query = select([teams_table]).where(and_(*conditions))
+    
+    # Step 4: Execute the query
+    with engine.connect() as connection:
+        team_results = connection.execute(team_query).fetchall()
+    
+    return team_results
 
-if __name__ == "__main__":
-    get_top_teams_in_cluster(1)
+# Example usage
+cluster_id = 1
+teams = get_teams_for_cluster(cluster_id)
+
+for team in teams:
+    print(team)

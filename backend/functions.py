@@ -2,6 +2,8 @@ import re
 import pandas as pd
 import json
 from collections import defaultdict
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 
 def process_tournament_data(tournament_data, competition_name):
     """
@@ -72,3 +74,34 @@ def calculate_cluster_winrates(tournament_data, labels, clusterer):
             cluster_stats[cluster_name]["losses"] += team_data['record']['losses']
     
     return dict(cluster_stats)
+
+def test_connection(engine):
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT 1"))
+            print("Connected to PostgreSQL!")
+    except Exception as e:
+        print(f"Connection failed: {e}")
+
+def load_tournament_data(engine, filename='data/worlds.json'):
+    try:
+        # Load JSON data
+        with open(filename, encoding='utf-8') as f:
+            tournament_data = json.load(f)
+        
+        # Process data with new simplified function
+        df = process_tournament_data(tournament_data, "Worlds2024")
+        
+        # Save to PostgreSQL
+        df.to_sql(
+            'tournament_teams',
+            engine,
+            if_exists='replace',
+            index=False
+        )
+        
+        print(f"Successfully loaded {len(df)} teams into database!")
+        return df
+        
+    except Exception as e:
+        print(f"Error loading data: {e}")

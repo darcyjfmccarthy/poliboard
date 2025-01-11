@@ -6,7 +6,7 @@ from functions import process_tournament_data  # using the new simplified functi
 from classes import PokemonTeamClustering
 
 # Local connection string
-DATABASE_URL = "postgresql://localhost/pokemon_vgc"
+DATABASE_URL = "postgresql://localhost/vgc_clustering"
 engine = create_engine(DATABASE_URL)
 
 def test_connection():
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     clusterer = PokemonTeamClustering(df)
     clusterer.cluster_teams()
-    cluster_features = clusterer.create_cluster_features()
+    cluster_features = clusterer.create_long_cluster_features()
     cluster_features.to_sql(
         'cluster_features',
         engine,
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             for row in result:
                 print(row)
 
-            result = conn.execute(text("SELECT cluster_id, team_count FROM cluster_features WHERE koraidon = 1;"))
+            result = conn.execute(text("SELECT * FROM cluster_features WHERE cluster_id = 3;"))
             for row in result:
                 print(row)
     except Exception as e:

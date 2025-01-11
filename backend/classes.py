@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 from sklearn.manifold import TSNE
 import umap.umap_ as UMAP
 from sklearn.cluster import AgglomerativeClustering, DBSCAN
@@ -288,28 +290,30 @@ class PokemonTeamClustering:
         
         return plt.gcf()
 
-    def create_cluster_features(self):
+    def create_long_cluster_features(self):
         """
-        Create a binary feature matrix for clusters using original Pokemon names
+        Create a long-format table with cluster_id and core Pokemon
         """
         # Get cluster analysis first
         cluster_analysis = self.analyze_clusters()
         
-        # Create empty DataFrame with original Pokemon names as columns
-        cluster_features = pd.DataFrame(0, 
-                                    index=[f"cluster_{i+1}" for i in range(len(cluster_analysis))],
-                                    columns=self.pokemon_cols)
+        # Prepare data for long-format DataFrame
+        long_data = []
         
-        # Fill in 1s for core Pokemon in each cluster
+        # Iterate through clusters
         for i, (cluster_id, data) in enumerate(cluster_analysis.items()):
             cluster_name = f"cluster_{i+1}"
+            
+            # Create an entry for each core Pokemon in the cluster
             for pokemon in data['core_pokemon']:
-                # Use the original Pokemon name directly
-                cluster_features.loc[cluster_name, pokemon] = 1
-                
-        # Add metadata columns
-        cluster_features.insert(0, 'cluster_id', range(1, len(cluster_analysis) + 1))
-        cluster_features.insert(1, 'team_count', [data['size'] for data in cluster_analysis.values()])
+                long_data.append({
+                    'cluster_id': i + 1,
+                    'cluster_name': cluster_name,
+                    'core_pokemon': pokemon
+                })
         
-        return cluster_features 
+        # Create DataFrame from the long-format data
+        cluster_features_long = pd.DataFrame(long_data)
+        
+        return cluster_features_long
     
