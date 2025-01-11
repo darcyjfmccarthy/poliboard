@@ -10,6 +10,8 @@ import httpx
 import asyncio
 from collections import defaultdict
 from backend.database import get_top_teams_in_cluster
+from backend.database import engine
+from sqlalchemy import text
 
 app = FastAPI(title="Pokemon Team Analysis API")
 
@@ -157,3 +159,17 @@ async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
     except Exception as e:
         print(f"Error in get_cluster_top_teams: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/archetypes_from_db")
+async def get_archetypes_from_db():
+    archetypes = {}
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT cluster_id, core_pokemon FROM cluster_features"))
+        for row in result:
+            cluster_id = row['cluster_id']
+            pokemon = row['core_pokemon']
+            if cluster_id not in archetypes:
+                archetypes[cluster_id] = []
+            archetypes[cluster_id].append(pokemon)
+    
+    return {f"Cluster_{cluster_id}": {"core_pokemon": pokemons} for cluster_id, pokemons in archetypes.items()}

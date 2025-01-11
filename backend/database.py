@@ -12,7 +12,11 @@ cluster_features = Table('cluster_features', metadata, autoload_with=engine, sch
 # Function to query teams based on cluster ID
 def get_teams_for_cluster(cluster_id: int):
     # Step 1: Fetch the Pokémon requirements for the given cluster
-    cluster_query = select([cluster_features]).where(cluster_features.c.cluster_id == cluster_id)
+    cluster_query = select([
+        cluster_features.c.cluster_id,
+        cluster_features.c.cluster_name,
+        cluster_features.c.core_pokemon
+    ]).where(cluster_features.c.cluster_id == cluster_id)
     with engine.connect() as connection:
         cluster_result = connection.execute(cluster_query).fetchone()
     
