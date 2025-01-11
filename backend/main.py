@@ -4,24 +4,34 @@ from typing import Dict, Any, List
 import numpy as np
 import json
 from backend.classes import PokemonTeamClustering
-from backend.functions import process_tournament_data, calculate_cluster_winrates
+from backend.functions import process_tournament_data, calculate_cluster_winrates, find_teams_from_cluster
 from fastapi.responses import StreamingResponse
 import httpx
 import asyncio
 from collections import defaultdict
 from backend.database import get_top_teams_in_cluster
 from backend.database import engine
-from sqlalchemy import text
+from sqlalchemy import text, create_engine
 
 app = FastAPI(title="Pokemon Team Analysis API")
 
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "http://127.0.0.1",
+    "http://127.0.0.1:8000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Database connection
+engine = create_engine("postgresql://localhost/vgc_clustering")
 
 clusterer_instance = None
 tournament_data_cache = None
@@ -44,7 +54,7 @@ def numpy_to_python(obj):
 async def analyze_teams(tournament_data: List[Dict[str, Any]], tournament_name: str = "Unknown"):
     try:
         # Process data
-        df = process_tournament_data(tournament_data, "Worlds2024")
+        df = process_tournament_data(tournament_data, "Worlds 2024")
         clusterer = PokemonTeamClustering(df)
         
         clusterer.select_features(method='frequency', threshold=0.03)
@@ -147,29 +157,56 @@ async def get_pokemon_sprite(pokemon_name: str):
 @app.get("/cluster/{cluster_id}/top_teams")
 async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
     try:
-        print(f"Fetching top teams for cluster {cluster_id}")
+        # Use the find_teams_from_cluster function directly
+        teams_df = find_teams_from_cluster(engine, cluster_id, limit)
         
-        teams = get_top_teams_in_cluster(cluster_id, limit)
-        print(f"Found {len(teams)} teams")
-        return {
-            "teams": teams
-        }
-    except ValueError as ve:
-        raise HTTPException(status_code=404, detail=str(ve))
+        # Convert DataFrame to the expected format while preserving metadata
+        teams_list = []
+        for _, row in teams_df.iterrows():
+            # Create a team object with metadata and Pokemon
+            team_obj = {
+                "Competition": row["Competition"],
+                "Name": row["Name"],
+                "Nationality": row["Nationality"],
+                "Wins": int(row["Wins"]),  # Convert to int for JSON serialization
+                "Losses": int(row["Losses"]),
+                "pokemon": [col for col in teams_df.columns 
+                           if not col.startswith(('Competition', 'Name', 'Nationality', 'Wins', 'Losses', 'move_'))
+                           and row[col] == 1]
+            }
+            teams_list.append(team_obj)
+            
+        return {"teams": teams_list}
+        
     except Exception as e:
         print(f"Error in get_cluster_top_teams: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/archetypes_from_db")
 async def get_archetypes_from_db():
-    archetypes = {}
-    with engine.connect() as conn:
-        result = conn.execute(text("SELECT cluster_id, core_pokemon FROM cluster_features"))
-        for row in result:
-            cluster_id = row['cluster_id']
-            pokemon = row['core_pokemon']
-            if cluster_id not in archetypes:
-                archetypes[cluster_id] = []
-            archetypes[cluster_id].append(pokemon)
-    
-    return {f"Cluster_{cluster_id}": {"core_pokemon": pokemons} for cluster_id, pokemons in archetypes.items()}
+    try:
+        # Use your existing database connection
+        with engine.connect() as conn:
+            cluster_data = conn.execute(text("SELECT cluster_id, core_pokemon FROM cluster_features"))
+            archetypes = {}
+            
+            # Process the results
+            for row in cluster_data:
+                cluster_id = row[0]
+                pokemon = row[1]
+                if cluster_id not in archetypes:
+                    archetypes[cluster_id] = []
+                archetypes[cluster_id].append(pokemon)
+            
+            # Format the response
+            formatted_archetypes = {
+                f"Cluster_{cluster_id}": {
+                    "core_pokemon": pokemons
+                } for cluster_id, pokemons in archetypes.items()
+            }
+            
+            return formatted_archetypes
+            
+    except Exception as e:
+        print(f"Error fetching archetypes: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))

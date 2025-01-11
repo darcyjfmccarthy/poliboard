@@ -139,6 +139,8 @@
                 padding: 15px;
                 margin-top: 10px;
                 display: none;
+                max-height: 500px;  /* Set a fixed max height */
+                overflow-y: auto;   /* Enable vertical scrolling */
             }
 
             .similar-teams-list {
@@ -148,23 +150,49 @@
             }
 
             .similar-team {
-                background-color: #3a3a3a;
-                border-radius: 5px;
-                padding: 10px;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .team-metadata {
+                color: #ccc;
+                margin-bottom: 8px;
+                font-size: 0.9em;
+            }
+
+            .team-pokemon {
                 display: flex;
                 gap: 5px;
-                align-items: center;
             }
 
-            .similar-team-pokemon {
-                width: 40px;
-                height: 40px;
+            .tournament {
+                color: #ffa726;
             }
 
-            .similar-team-pokemon img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
+            .player-name {
+                color: #fff;
+            }
+
+            .record {
+                color: #66bb6a;
+            }
+
+            .similar-teams::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .similar-teams::-webkit-scrollbar-track {
+                background: #1a1a1a;
+                border-radius: 4px;
+            }
+
+            .similar-teams::-webkit-scrollbar-thumb {
+                background: #4a4a4a;
+                border-radius: 4px;
+            }
+
+            .similar-teams::-webkit-scrollbar-thumb:hover {
+                background: #5a5a5a;
             }
         </style>
     </head>
@@ -206,9 +234,17 @@
 
             async function fetchArchetypes() {
                 try {
-                    const response = await fetch('http://127.0.0.1:8000/archetypes_from_db');
+                    const response = await fetch('http://127.0.0.1:8000/archetypes_from_db', {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                        credentials: 'omit'  // Important for CORS
+                    });
 
                     if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Server error:', errorText);
                         throw new Error(`Failed to fetch archetypes: ${response.statusText}`);
                     }
 
@@ -218,6 +254,15 @@
                     updateStats(globalArchetypes);
                 } catch (error) {
                     console.error('Error fetching archetypes:', error);
+                    // Show error to user
+                    const container = document.getElementById('archetypes-container');
+                    container.innerHTML = `
+                        <div style="color: #ff4e50; padding: 20px; background: #2a2a2a; border-radius: 8px;">
+                            <h3>Error Loading Archetypes</h3>
+                            <p>There was a problem loading the data. Please try refreshing the page.</p>
+                            <p>Error details: ${error.message}</p>
+                        </div>
+                    `;
                 }
             }
 
@@ -279,8 +324,7 @@
                 }
 
                 try {
-                    // Fetch top teams for this cluster
-                    const response = await fetch(`http://127.0.0.1:8000/cluster/${clusterId}/top_teams`);
+                    const response = await fetch(`http://127.0.0.1:8000/cluster/${clusterId+1}/top_teams`);
                     
                     if (!response.ok) {
                         throw new Error('Failed to fetch teams');
@@ -288,7 +332,6 @@
                     
                     const data = await response.json();
 
-                    // Create similar teams list
                     const teamsList = document.createElement('div');
                     teamsList.className = 'similar-teams-list';
 
@@ -302,19 +345,30 @@
                     // Populate teams
                     if (data.teams && data.teams.length > 0) {
                         data.teams.forEach(team => {
-                            if (Array.isArray(team)) {
-                                const teamElement = document.createElement('div');
-                                teamElement.className = 'similar-team';
+                            const teamElement = document.createElement('div');
+                            teamElement.className = 'similar-team';
 
-                                // Add pokemon sprites to team
-                                team.forEach(pokemon => {
-                                    const pokemonIcon = createPokemonIcon(pokemon);
-                                    pokemonIcon.classList.add('similar-team-pokemon');
-                                    teamElement.appendChild(pokemonIcon);
-                                });
+                            // Add team metadata
+                            const metadataElement = document.createElement('div');
+                            metadataElement.className = 'team-metadata';
+                            metadataElement.innerHTML = `
+                                <span class="tournament">${team.Competition}</span> |
+                                <span class="player-name">${team.Name}</span> |
+                                <span class="record">${team.Wins}-${team.Losses}</span>
+                            `;
+                            teamElement.appendChild(metadataElement);
 
-                                teamsList.appendChild(teamElement);
-                            }
+                            // Add pokemon sprites
+                            const pokemonContainer = document.createElement('div');
+                            pokemonContainer.className = 'team-pokemon';
+                            team.pokemon.forEach(pokemon => {
+                                const pokemonIcon = createPokemonIcon(pokemon);
+                                pokemonIcon.classList.add('similar-team-pokemon');
+                                pokemonContainer.appendChild(pokemonIcon);
+                            });
+                            teamElement.appendChild(pokemonContainer);
+
+                            teamsList.appendChild(teamElement);
                         });
                     } else {
                         const noTeamsMessage = document.createElement('p');
@@ -323,7 +377,6 @@
                         teamsList.appendChild(noTeamsMessage);
                     }
 
-                    // Clear and add teams to section
                     similarTeamsSection.innerHTML = '';
                     similarTeamsSection.appendChild(teamsList);
                     similarTeamsSection.style.display = 'block';
@@ -345,8 +398,18 @@
                 container.setAttribute('data-name', pokemonName);
 
                 const img = document.createElement('img');
-                img.src = `http://localhost:8000/pokemon/sprite/${formatPokemonName(pokemonName)}`;
+                const formattedName = formatPokemonName(pokemonName);
+                
+                // Set CDN URL directly
+                const cdnUrl =  `https://play.pokemonshowdown.com/sprites/gen5/${formattedName}.png`;
+                console.log(`Loading sprite for ${pokemonName} as ${formattedName} from ${cdnUrl}`); // Debug log
+                img.src = cdnUrl;
                 img.alt = pokemonName;
+                
+                // Add loading error handler for debugging
+                img.onerror = () => {
+                    console.error(`Failed to load sprite for ${pokemonName} (${formattedName}) from ${cdnUrl}`);
+                };
 
                 container.appendChild(img);
                 return container;
@@ -369,7 +432,7 @@
                     .replace(/[.']/g, '')          // Remove periods and apostrophes
                     .replace(/é/g, 'e')      // Replace é with e
                     .replace("flutter-mane", 'fluttermane')
-                    .replace("iron-hands", 'ironhands')
+                    .replace("iron-", 'iron')
                     .replace("raging-bolt", 'ragingbolt');
             }
 

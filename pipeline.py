@@ -32,9 +32,9 @@ def process_tournament_pipeline(json_path, tournament_name):
         
         # 4. Run clustering
         clusterer = PokemonTeamClustering(df)
-        clusterer.select_features(method='frequency', threshold=0.03)
+        clusterer.select_features(method='frequency', threshold=0.02)
         clusterer.select_features(method='variance', threshold=0.01)
-        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
+        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.5)
         clusterer.cluster_teams()
         
         # 5. Insert cluster features to database
@@ -55,7 +55,7 @@ def process_tournament_pipeline(json_path, tournament_name):
 def main():
     process_tournament_pipeline(
         'data/worlds.json', 
-        'Worlds2024'
+        'Worlds 2024'
     )
 
 if __name__ == "__main__":
