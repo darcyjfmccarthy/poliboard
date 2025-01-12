@@ -26,11 +26,12 @@
         </div>
 
         <script>
+            const API_URL = 'https://poliboard-swzt.onrender.com';
             let globalArchetypes = {};
 
             async function loadArchetypes() {
                 try {
-                    const response = await fetch('http://127.0.0.1:8000/archetypes', {
+                    const response = await fetch(`${API_URL}/archetypes`, {
                         method: 'GET',
                         headers: {
                             'Accept': 'application/json',
@@ -63,7 +64,7 @@
 
             async function updateStats() {
                 try {
-                    const response = await fetch('http://127.0.0.1:8000/total_teams');
+                    const response = await fetch(`${API_URL}/total_teams`);
                     if (response.ok) {
                         const data = await response.json();
                         document.getElementById('teamsAnalyzed').textContent = data.total;
@@ -83,7 +84,7 @@
                 const statsPromises = Object.entries(archetypes).map(async ([id, info]) => {
                     const index = parseInt(id.split('_')[1]) - 1;
                     try {
-                        const response = await fetch(`http://127.0.0.1:8000/cluster/${index+1}/top_teams`);
+                        const response = await fetch(`${API_URL}/cluster/${index+1}/top_teams`);
                         if (response.ok) {
                             const data = await response.json();
                             return { id, info, index, stats: data.stats };
@@ -159,7 +160,6 @@
             async function toggleSimilarTeams(clusterId, archetype) {
                 const similarTeamsSection = document.getElementById(`similar-teams-${clusterId}`);
                 
-                // If teams are already loaded, just toggle visibility
                 if (similarTeamsSection.children.length > 0) {
                     similarTeamsSection.style.display = 
                         similarTeamsSection.style.display === 'none' ? 'block' : 'none';
@@ -167,7 +167,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://127.0.0.1:8000/cluster/${clusterId+1}/top_teams`);
+                    const response = await fetch(`${API_URL}/cluster/${clusterId+1}/top_teams`);
                     
                     if (!response.ok) {
                         throw new Error('Failed to fetch teams');
