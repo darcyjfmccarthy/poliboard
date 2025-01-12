@@ -28,34 +28,14 @@
         <script>
             let globalArchetypes = {};
 
-            async function runAnalysis() {
+            async function loadArchetypes() {
                 try {
-                    // Load tournament data
-                    const response = await fetch('../data/worlds.json');
-                    const tournamentData = await response.json();
-
-                    // Post the data to the /analyze endpoint
-                    await fetch('http://127.0.0.1:8000/analyze', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(tournamentData),
-                    });
-
-                    // Fetch archetypes from the backend
-                    fetchArchetypes();
-                } catch (error) {
-                    console.error('Error running analysis:', error);
-                }
-            }
-
-            async function fetchArchetypes() {
-                try {
-                    const response = await fetch('http://127.0.0.1:8000/archetypes_from_db', {
+                    const response = await fetch('http://127.0.0.1:8000/archetypes', {
                         method: 'GET',
                         headers: {
                             'Accept': 'application/json',
                         },
-                        credentials: 'omit'  // Important for CORS
+                        credentials: 'omit'
                     });
 
                     if (!response.ok) {
@@ -67,10 +47,9 @@
                     const data = await response.json();
                     globalArchetypes = data;
                     displayArchetypes(globalArchetypes);
-                    updateStats(globalArchetypes);
+                    updateStats();
                 } catch (error) {
                     console.error('Error fetching archetypes:', error);
-                    // Show error to user
                     const container = document.getElementById('archetypes-container');
                     container.innerHTML = `
                         <div style="color: #ff4e50; padding: 20px; background: #2a2a2a; border-radius: 8px;">
@@ -82,7 +61,7 @@
                 }
             }
 
-            async function updateStats(archetypes) {
+            async function updateStats() {
                 try {
                     const response = await fetch('http://127.0.0.1:8000/total_teams');
                     if (response.ok) {
@@ -177,7 +156,6 @@
                 });
             }
 
-
             async function toggleSimilarTeams(clusterId, archetype) {
                 const similarTeamsSection = document.getElementById(`similar-teams-${clusterId}`);
                 
@@ -242,11 +220,6 @@
                         teamsList.appendChild(noTeamsMessage);
                     }
 
-                    if (data.stats) {
-                        document.getElementById(`appearances-${clusterId}`).textContent = data.stats.appearances;
-                        document.getElementById(`winrate-${clusterId}`).textContent = `${data.stats.winrate}%`;
-                    }
-
                     similarTeamsSection.innerHTML = '';
                     similarTeamsSection.appendChild(teamsList);
                     similarTeamsSection.style.display = 'block';
@@ -272,7 +245,6 @@
                 
                 // Set CDN URL directly
                 const cdnUrl =  `https://play.pokemonshowdown.com/sprites/gen5/${formattedName}.png`;
-                console.log(`Loading sprite for ${pokemonName} as ${formattedName} from ${cdnUrl}`); // Debug log
                 img.src = cdnUrl;
                 img.alt = pokemonName;
                 
@@ -286,7 +258,6 @@
             }
 
             function formatPokemonName(name) {
-                // Remove special characters, spaces, and make lowercase
                 return name.toLowerCase()
                     .replace(" mask]", '')
                     .replace(" rider]", '')
@@ -297,17 +268,16 @@
                     .replace(" form]", '')
                     .replace(" [incarnate forme]", '')
                     .replace("female", 'f')
-                    .replace(/[\[\]()-]+/g, '')  // Remove spaces, brackets, parentheses
+                    .replace(/[\[\]()-]+/g, '')
                     .replace(/[\s]+/g, '-')
-                    .replace(/[.']/g, '')          // Remove periods and apostrophes
-                    .replace(/é/g, 'e')      // Replace é with e
+                    .replace(/[.']/g, '')
+                    .replace(/é/g, 'e')
                     .replace("flutter-mane", 'fluttermane')
                     .replace("iron-", 'iron')
                     .replace("raging-bolt", 'ragingbolt');
             }
 
             function getGrade(winrate) {
-                // Return an object with both the grade and its class
                 if (winrate >= 55) {
                     return { grade: 'S', class: 'grade-s' };
                 } else if (winrate >= 52) {
@@ -317,8 +287,8 @@
                 }
             }
 
-            // Run the analysis on page load
-            document.addEventListener('DOMContentLoaded', runAnalysis);
+            // Load archetypes when the page loads
+            document.addEventListener('DOMContentLoaded', loadArchetypes);
         </script>
     </body>
 </html>
