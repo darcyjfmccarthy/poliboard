@@ -3,7 +3,12 @@ import json
 from sqlalchemy import create_engine
 from backend.functions import process_tournament_data
 from backend.classes import PokemonTeamClustering
-from backend.database import engine  # Use your existing engine
+from backend.database import engine, get_db_info
+import os
+from dotenv import load_dotenv
+
+# Add these debug prints right at the start of your script
+
 
 def process_tournament_pipeline(json_path, tournament_name):
     """
@@ -15,6 +20,12 @@ def process_tournament_pipeline(json_path, tournament_name):
     5. Insert cluster features into database
     """
     try:
+        db_info = get_db_info()
+        print(f"Running pipeline in {db_info['environment']} mode")
+        print(f"Using database: {db_info['database']}")
+        
+        print(f"\nStarting pipeline for tournament: {tournament_name}")
+        print(f"Reading data from: {json_path}")
         # 1. Load tournament data
         with open(json_path, encoding='utf-8') as f:
             tournament_data = json.load(f)

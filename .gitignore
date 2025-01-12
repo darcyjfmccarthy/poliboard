@@ -1,5 +1,5 @@
 *.ipynb
 __pycache__/*
-.env/*
 config.yaml
 *.md
+.env

@@ -1,14 +1,54 @@
-from sqlalchemy import create_engine, Table, MetaData, text
+from sqlalchemy import create_engine, Table, MetaData, text, inspect
 import pandas as pd
 from typing import Optional
+import os
+from dotenv import load_dotenv
 
-# Database connection
-engine = create_engine("postgresql://localhost/vgc_clustering")
+load_dotenv()  # Load environment variables from .env file
+
+# Get environment setting
+ENV = os.getenv('APP_ENV', 'development')  # Default to development if not set
+
+print("Database configuration:")
+print(f"ENV: {ENV}")
+print(f"DATABASE_URL from env: {os.getenv('DATABASE_URL')}")
+
+if ENV == 'production':
+    # Supabase configuration
+    DB_URL = os.getenv('DATABASE_URL')
+    if not DB_URL:
+        raise ValueError("No DATABASE_URL found in environment variables")
+    
+    print(f"Using production database URL: {DB_URL}")
+    
+    engine = create_engine(
+        DB_URL,
+        connect_args={"sslmode": "require"}
+    )
+else:
+    print("Using local database")
+    engine = create_engine("postgresql://localhost/vgc_clustering")
+
+def get_db_info():
+    """Helper function to check which database we're connected to"""
+    return {
+        "environment": ENV,
+        "database": "Supabase" if ENV == "production" else "Local PostgreSQL"
+    }
+
+
 metadata = MetaData()
 
 # Define the tables
-teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
-cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
+def get_tables():
+    """Initialize tables only if they exist"""
+    inspector = inspect(engine)
+    if 'tournament_teams' in inspector.get_table_names(schema='public'):
+        global teams_table
+        teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
+    if 'cluster_features' in inspector.get_table_names(schema='public'):
+        global cluster_features
+        cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
 
 def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> tuple[pd.DataFrame, dict]:
     try:
