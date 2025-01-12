@@ -216,6 +216,7 @@ strong {
 .similar-team {
     flex-direction: column;
     width: 100%;
+    margin-left: 20px
 }
 
 .team-metadata {
