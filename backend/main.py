@@ -17,6 +17,7 @@ origins = [
     "http://127.0.0.1",
     "http://127.0.0.1:8000",
     "https://darcyjfmccarthy.github.io",
+    "https://poliboard-swzt.onrender.com",
     # Add your frontend URL when you deploy it
 ]
 
