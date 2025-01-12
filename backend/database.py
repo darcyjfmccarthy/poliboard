@@ -1,41 +1,32 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine, Table, MetaData, text, inspect
 import pandas as pd
 from typing import Optional
-import os
-from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+load_dotenv()
 
 # Get environment setting
-ENV = os.getenv('APP_ENV', 'development')  # Default to development if not set
+ENV = os.getenv('APP_ENV', 'development')
 
 print("Database configuration:")
 print(f"ENV: {ENV}")
 print(f"DATABASE_URL from env: {os.getenv('DATABASE_URL')}")
 
-if ENV == 'production':
-    # Supabase configuration
-    DB_URL = os.getenv('DATABASE_URL')
-    if not DB_URL:
+# Create the database engine
+DB_URL = os.getenv('DATABASE_URL')
+if not DB_URL:
+    if ENV == 'production':
         raise ValueError("No DATABASE_URL found in environment variables")
-    
-    print(f"Using production database URL: {DB_URL}")
-    
-    engine = create_engine(
-        DB_URL,
-        connect_args={"sslmode": "require"}
-    )
-else:
-    print("Using local database")
-    engine = create_engine("postgresql://localhost/vgc_clustering")
+    else:
+        DB_URL = "postgresql://localhost/vgc_clustering"
 
-def get_db_info():
-    """Helper function to check which database we're connected to"""
-    return {
-        "environment": ENV,
-        "database": "Supabase" if ENV == "production" else "Local PostgreSQL"
-    }
+print(f"Using database URL: {DB_URL}")
 
+engine = create_engine(
+    DB_URL,
+    connect_args={"sslmode": "require"} if ENV == 'production' else {}
+)
 
 metadata = MetaData()
 

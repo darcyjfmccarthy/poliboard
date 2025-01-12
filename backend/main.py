@@ -1,22 +1,22 @@
-# In backend/main.py - Remove analysis endpoints and simplify to database-only endpoints
-
+# backend/main.py
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 import httpx
+import os
 from backend.database import get_top_teams_in_cluster, find_teams_from_cluster, engine
-from sqlalchemy import text, create_engine
+from sqlalchemy import text
 
 app = FastAPI(title="Pokemon Team Analysis API")
 
-# CORS setup remains the same
+# CORS setup
 origins = [
     "http://localhost",
     "http://localhost:8000",
-    "http://localhost:8080",  # Added for frontend server
+    "http://localhost:8080",
     "http://127.0.0.1",
     "http://127.0.0.1:8000",
-    "http://127.0.0.1:8080",  # Added for frontend server
+    # Add your frontend URL when you deploy it
 ]
 
 app.add_middleware(
@@ -27,9 +27,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Database connection
-engine = create_engine("postgresql://localhost/vgc_clustering")
-
+# Your existing endpoints...
 @app.get("/cluster/{cluster_id}/top_teams")
 async def get_cluster_top_teams(cluster_id: int, limit: int = 20):
     try:
@@ -95,7 +93,6 @@ async def get_total_teams():
         print(f"Error getting total teams: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# Pokemon sprite endpoint
 @app.get("/pokemon/sprite/{pokemon_name}")
 async def get_pokemon_sprite(pokemon_name: str):
     async with httpx.AsyncClient() as client:
