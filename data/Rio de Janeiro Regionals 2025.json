@@ -1,0 +1,8212 @@
+[
+    {
+      "name": "juan salerno [AR]",
+      "placing": 1,
+      "record": {
+        "wins": 11,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "2": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 24
+        },
+        "3": {
+          "name": "Vinicius Souza [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "4": {
+          "name": "Michael Navas [AU]",
+          "result": "L",
+          "table": 18
+        },
+        "5": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "6": {
+          "name": "Bruno Takashi [BR]",
+          "result": "W",
+          "table": 34
+        },
+        "7": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "8": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "9": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "W",
+          "table": 5
+        },
+        "10": {
+          "name": "Luiz Lima [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "11": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "12": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "W",
+          "table": 1
+        },
+        "13": {
+          "name": "Daniel Vieira [BR]",
+          "result": "W",
+          "table": 1
+        }
+      }
+    },
+    {
+      "name": "Daniel Vieira [BR]",
+      "placing": 2,
+      "record": {
+        "wins": 10,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "2": {
+          "name": "Vinicius Souza [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "3": {
+          "name": "Camilo Liberona [CL]",
+          "result": "W",
+          "table": 13
+        },
+        "4": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "W",
+          "table": 9
+        },
+        "5": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "6": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "W",
+          "table": 3
+        },
+        "7": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "8": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "9": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "10": {
+          "name": "Igor Fagundes [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "11": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "12": {
+          "name": "Gustavo kengo [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "13": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 1
+        }
+      }
+    },
+    {
+      "name": "Gustavo kengo [BR]",
+      "placing": 3,
+      "record": {
+        "wins": 10,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "2": {
+          "name": "Yan Fernandes [BR]",
+          "result": "W",
+          "table": 30
+        },
+        "3": {
+          "name": "Javier Ponce [CL]",
+          "result": "W",
+          "table": 12
+        },
+        "4": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "5": {
+          "name": "Breno Silva [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "6": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "7": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "8": {
+          "name": "cristhian andrade [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "9": {
+          "name": "Bruno Rebello [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "10": {
+          "name": "BYE",
+          "result": "W",
+          "table": 0
+        },
+        "11": {
+          "name": "Bruno Rebello [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "12": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 2
+        }
+      }
+    },
+    {
+      "name": "Esteban Ojeda [CL]",
+      "placing": 4,
+      "record": {
+        "wins": 9,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "W",
+          "table": 11
+        },
+        "2": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "L",
+          "table": 25
+        },
+        "3": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "4": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "W",
+          "table": 34
+        },
+        "5": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 16
+        },
+        "6": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "7": {
+          "name": "Breno Silva [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "8": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "W",
+          "table": 16
+        },
+        "9": {
+          "name": "cristhian andrade [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "10": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "11": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "12": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 1
+        }
+      }
+    },
+    {
+      "name": "Tiago Pimentel [BR]",
+      "placing": 5,
+      "record": {
+        "wins": 9,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Lucas Lira [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "2": {
+          "name": "juan salerno [AR]",
+          "result": "W",
+          "table": 24
+        },
+        "3": {
+          "name": "Diego Ortiz [PE]",
+          "result": "W",
+          "table": 9
+        },
+        "4": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "5": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "W",
+          "table": 2
+        },
+        "6": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "7": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "8": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "9": {
+          "name": "Daniel Vieira [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "10": {
+          "name": "BYE",
+          "result": "W",
+          "table": 0
+        },
+        "11": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 1
+        }
+      }
+    },
+    {
+      "name": "Guilherme Queiroz [BR]",
+      "placing": 6,
+      "record": {
+        "wins": 9,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Maicon De Moraes Silveira [BR]",
+          "result": "W",
+          "table": 47
+        },
+        "2": {
+          "name": "Dylan Torres [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "3": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "L",
+          "table": 18
+        },
+        "4": {
+          "name": "Javier Ponce [CL]",
+          "result": "W",
+          "table": 11
+        },
+        "5": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "6": {
+          "name": "Thiago Reis [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "7": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "8": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "9": {
+          "name": "Luiz Lima [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "10": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "11": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 3
+        }
+      }
+    },
+    {
+      "name": "Pedro Cadaval [BR]",
+      "placing": 7,
+      "record": {
+        "wins": 8,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Gabriel Castro [BR]",
+          "result": "W",
+          "table": 30
+        },
+        "2": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "3": {
+          "name": "Theo Branco [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "4": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "5": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 21
+        },
+        "6": {
+          "name": "nicolas del campo [CL]",
+          "result": "W",
+          "table": 30
+        },
+        "7": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "W",
+          "table": 11
+        },
+        "8": {
+          "name": "Rogério Catel [BR]",
+          "result": "W",
+          "table": 15
+        },
+        "9": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "W",
+          "table": 7
+        },
+        "10": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "W",
+          "table": 2
+        },
+        "11": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 2
+        }
+      }
+    },
+    {
+      "name": "Bruno Rebello [BR]",
+      "placing": 8,
+      "record": {
+        "wins": 8,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Vitor Keller [BR]",
+          "result": "W",
+          "table": 46
+        },
+        "2": {
+          "name": "Murilo Vieira Santa Barbara [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "3": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 17
+        },
+        "4": {
+          "name": "Dylan Torres [BR]",
+          "result": "W",
+          "table": 15
+        },
+        "5": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "6": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "7": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "8": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "W",
+          "table": 2
+        },
+        "9": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "10": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "11": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 4
+        }
+      }
+    },
+    {
+      "name": "Luiz Lima [BR]",
+      "placing": 9,
+      "record": {
+        "wins": 8,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "2": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "3": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "4": {
+          "name": "cristhian andrade [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "5": {
+          "name": "Kaue Mota [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "6": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "7": {
+          "name": "Gustavo kengo [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "8": {
+          "name": "Daniel Vieira [BR]",
+          "result": "W",
+          "table": 1
+        },
+        "9": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "10": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 3
+        }
+      }
+    },
+    {
+      "name": "Pedro H Soares Feitosa [BR]",
+      "placing": 10,
+      "record": {
+        "wins": 7,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Victor Rachik [BR]",
+          "result": "W",
+          "table": 71
+        },
+        "2": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "W",
+          "table": 16
+        },
+        "3": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "W",
+          "table": 5
+        },
+        "4": {
+          "name": "Thiago Flores [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "5": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "6": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 14
+        },
+        "7": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "W",
+          "table": 24
+        },
+        "8": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "W",
+          "table": 11
+        },
+        "9": {
+          "name": "Kaue Mota [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "10": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 6
+        }
+      }
+    },
+    {
+      "name": "Gabriel Guerra [BR]",
+      "placing": 11,
+      "record": {
+        "wins": 7,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Caio Geremias [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "2": {
+          "name": "Fernando Junior [BR]",
+          "result": "L",
+          "table": 19
+        },
+        "3": {
+          "name": "Valter Lorenzo [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "4": {
+          "name": "Camilo Liberona [CL]",
+          "result": "W",
+          "table": 28
+        },
+        "5": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "6": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "W",
+          "table": 12
+        },
+        "7": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "8": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "W",
+          "table": 10
+        },
+        "9": {
+          "name": "Michael Navas [AU]",
+          "result": "W",
+          "table": 11
+        },
+        "10": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 1
+        }
+      }
+    },
+    {
+      "name": "Igor Fagundes [BR]",
+      "placing": 12,
+      "record": {
+        "wins": 7,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Thiago Reis [BR]",
+          "result": "W",
+          "table": 68
+        },
+        "2": {
+          "name": "Camilo Liberona [CL]",
+          "result": "L",
+          "table": 26
+        },
+        "3": {
+          "name": "Jose Rodrigo Souza [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "4": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "5": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 19
+        },
+        "6": {
+          "name": "Diego Ortiz [PE]",
+          "result": "W",
+          "table": 26
+        },
+        "7": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "8": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "9": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "10": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 5
+        }
+      }
+    },
+    {
+      "name": "Sebastian Escalante [AR]",
+      "placing": 13,
+      "record": {
+        "wins": 7,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "W",
+          "table": 42
+        },
+        "2": {
+          "name": "Felipe Nahum [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "3": {
+          "name": "Thiago Flores [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "4": {
+          "name": "Bruno Takashi [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "5": {
+          "name": "Michael Navas [AU]",
+          "result": "W",
+          "table": 24
+        },
+        "6": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 12
+        },
+        "7": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "W",
+          "table": 15
+        },
+        "8": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "9": {
+          "name": "Yan Sym [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "10": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 2
+        }
+      }
+    },
+    {
+      "name": "João Eduardo Bozano [BR]",
+      "placing": 14,
+      "record": {
+        "wins": 7,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.25,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Yan Fernandes [BR]",
+          "result": "L",
+          "table": 55
+        },
+        "2": {
+          "name": "Lucas Lira [BR]",
+          "result": "L",
+          "table": 50
+        },
+        "3": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "W",
+          "table": 60
+        },
+        "4": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "5": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "W",
+          "table": 40
+        },
+        "6": {
+          "name": "Ali Dakik [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "7": {
+          "name": "Italo Massuco [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "8": {
+          "name": "Camilo Liberona [CL]",
+          "result": "W",
+          "table": 13
+        },
+        "9": {
+          "name": "Victor Rachik [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "10": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 4
+        }
+      }
+    },
+    {
+      "name": "Gabriel Rigo [BR]",
+      "placing": 15,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.654320987654321,
+        "oppopp": 0.576055401584502
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "W",
+          "table": 15
+        },
+        "2": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "3": {
+          "name": "Henrique Xavier [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "4": {
+          "name": "Igor Corrêa [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "5": {
+          "name": "Ali Dakik [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "6": {
+          "name": "Victor Rachik [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "7": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "8": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "9": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 4
+        }
+      }
+    },
+    {
+      "name": "cristhian andrade [BR]",
+      "placing": 16,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.65379188712522,
+        "oppopp": 0.597371084236164
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "W",
+          "table": 69
+        },
+        "2": {
+          "name": "Valter Lorenzo [BR]",
+          "result": "W",
+          "table": 34
+        },
+        "3": {
+          "name": "Bruno Ayres [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "4": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "5": {
+          "name": "Igor Fagundes [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "6": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "7": {
+          "name": "Kaue Mota [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "8": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "9": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 9
+        }
+      }
+    },
+    {
+      "name": "Nicolás Miniero [AR]",
+      "placing": 17,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.641093474426808,
+        "oppopp": 0.59149869824473
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "2": {
+          "name": "Javier Nain [CL]",
+          "result": "W",
+          "table": 11
+        },
+        "3": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "4": {
+          "name": "Victor Vieira [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "5": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "W",
+          "table": 11
+        },
+        "6": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "W",
+          "table": 11
+        },
+        "7": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "W",
+          "table": 3
+        },
+        "8": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "9": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 7
+        }
+      }
+    },
+    {
+      "name": "Gabriel Menegon [BR]",
+      "placing": 18,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.625,
+        "opp": 0.640873015873016,
+        "oppopp": 0.557652273872512
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "none",
+          "result": "W",
+          "table": 0
+        },
+        "2": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "3": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "W",
+          "table": 15
+        },
+        "4": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "5": {
+          "name": "Pedro Bauer [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "6": {
+          "name": "Rogério Catel [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "7": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "8": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 12
+        },
+        "9": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "W",
+          "table": 14
+        }
+      }
+    },
+    {
+      "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+      "placing": 19,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.627865961199295,
+        "oppopp": 0.566988606142045
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Raul Gioielli [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "2": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "3": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "W",
+          "table": 11
+        },
+        "4": {
+          "name": "Nader El bacha [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "5": {
+          "name": "Thiago Flores [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "6": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "7": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "8": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "9": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "W",
+          "table": 15
+        }
+      }
+    },
+    {
+      "name": "Kaue Mota [BR]",
+      "placing": 20,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.619047619047619,
+        "oppopp": 0.58641835334957
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Igor Corrêa [BR]",
+          "result": "W",
+          "table": 74
+        },
+        "2": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "3": {
+          "name": "Allan Gabriel [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "4": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "W",
+          "table": 3
+        },
+        "5": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "6": {
+          "name": "Breno Silva [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "7": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "8": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "9": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 6
+        }
+      }
+    },
+    {
+      "name": "Fernando Ferreira [AR]",
+      "placing": 21,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.606701940035273,
+        "oppopp": 0.545979955768316
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Pedro Bauer [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "2": {
+          "name": "Victor Vieira [BR]",
+          "result": "L",
+          "table": 18
+        },
+        "3": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "W",
+          "table": 34
+        },
+        "4": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "5": {
+          "name": "Italo Massuco [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "6": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "7": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 3
+        },
+        "8": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "9": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 5
+        }
+      }
+    },
+    {
+      "name": "Victor Rachik [BR]",
+      "placing": 22,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.589638447971781,
+        "oppopp": 0.561882786036225
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 71
+        },
+        "2": {
+          "name": "Davison Dos Santos Gomes [BR]",
+          "result": "W",
+          "table": 76
+        },
+        "3": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "W",
+          "table": 44
+        },
+        "4": {
+          "name": "Heitor Basilio Tonini [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "5": {
+          "name": "Yan Sym [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "6": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "7": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "8": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "9": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 8
+        }
+      }
+    },
+    {
+      "name": "Rogério Catel [BR]",
+      "placing": 23,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.560626102292769,
+        "oppopp": 0.575085034013605
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Julio Pena [BR]",
+          "result": "W",
+          "table": 24
+        },
+        "2": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 8
+        },
+        "3": {
+          "name": "Bruno Rebello [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "4": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 10
+        },
+        "5": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "6": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "7": {
+          "name": "Javier Nain [CL]",
+          "result": "W",
+          "table": 18
+        },
+        "8": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 15
+        },
+        "9": {
+          "name": "Camilo Liberona [CL]",
+          "result": "W",
+          "table": 16
+        }
+      }
+    },
+    {
+      "name": "Leonardo Ritter [BR]",
+      "placing": 24,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.555555555555556,
+        "oppopp": 0.564724531788024
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "W",
+          "table": 66
+        },
+        "2": {
+          "name": "Allan Gabriel [BR]",
+          "result": "L",
+          "table": 32
+        },
+        "3": {
+          "name": "Fábio Souza [BR]",
+          "result": "W",
+          "table": 26
+        },
+        "4": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "5": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "W",
+          "table": 14
+        },
+        "6": {
+          "name": "Fernando Junior [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "7": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "8": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "9": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "W",
+          "table": 13
+        }
+      }
+    },
+    {
+      "name": "Rômulo Fagundes Sodré [BR]",
+      "placing": 25,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.551940035273369,
+        "oppopp": 0.566862909772963
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Davison Dos Santos Gomes [BR]",
+          "result": "W",
+          "table": 51
+        },
+        "2": {
+          "name": "Theo Branco [BR]",
+          "result": "L",
+          "table": 22
+        },
+        "3": {
+          "name": "Vitor Milioni [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "4": {
+          "name": "Pedro Andrade [BR]",
+          "result": "W",
+          "table": 26
+        },
+        "5": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "W",
+          "table": 16
+        },
+        "6": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "7": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "8": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 6
+        },
+        "9": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "W",
+          "table": 12
+        }
+      }
+    },
+    {
+      "name": "Ivo Giorgini [AR]",
+      "placing": 26,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.548500881834215,
+        "oppopp": 0.526361943954537
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Michael Navas [AU]",
+          "result": "L",
+          "table": 1
+        },
+        "2": {
+          "name": "Luan Gaspar [BR]",
+          "result": "W",
+          "table": 65
+        },
+        "3": {
+          "name": "Raul Gioielli [BR]",
+          "result": "W",
+          "table": 28
+        },
+        "4": {
+          "name": "Rogério Catel [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "5": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 14
+        },
+        "6": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "7": {
+          "name": "Yan Fernandes [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "8": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 16
+        },
+        "9": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "W",
+          "table": 17
+        }
+      }
+    },
+    {
+      "name": "Yan Sym [BR]",
+      "placing": 27,
+      "record": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.666666666666667,
+        "opp": 0.544973544973545,
+        "oppopp": 0.562062932168752
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Júlio Eller [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "2": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "3": {
+          "name": "Victor Vieira [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "4": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "L",
+          "table": 6
+        },
+        "5": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 20
+        },
+        "6": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "7": {
+          "name": "Javier Ponce [CL]",
+          "result": "W",
+          "table": 16
+        },
+        "8": {
+          "name": "Michael Navas [AU]",
+          "result": "W",
+          "table": 7
+        },
+        "9": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 10
+        }
+      }
+    },
+    {
+      "name": "Camilo Liberona [CL]",
+      "placing": 28,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.641975308641975,
+        "oppopp": 0.524409311049523
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Pedro Soares [BR]",
+          "result": "W",
+          "table": 18
+        },
+        "2": {
+          "name": "Igor Fagundes [BR]",
+          "result": "W",
+          "table": 26
+        },
+        "3": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "4": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 28
+        },
+        "5": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "6": {
+          "name": "Henrique Xavier [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "7": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "8": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "9": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 16
+        }
+      }
+    },
+    {
+      "name": "Michael Navas [AU]",
+      "placing": 29,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.617724867724868,
+        "oppopp": 0.547222572156435
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "W",
+          "table": 1
+        },
+        "2": {
+          "name": "Bruno Ayres [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "3": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "4": {
+          "name": "juan salerno [AR]",
+          "result": "W",
+          "table": 18
+        },
+        "5": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 24
+        },
+        "6": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "W",
+          "table": 24
+        },
+        "7": {
+          "name": "Dylan Torres [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "8": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "9": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 11
+        }
+      }
+    },
+    {
+      "name": "Francisco Alca Chacon [PE]",
+      "placing": 30,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.590388007054674,
+        "oppopp": 0.548527126900143
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Vitor Serber Silva [BR]",
+          "result": "W",
+          "table": 60
+        },
+        "2": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "3": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "W",
+          "table": 10
+        },
+        "4": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "5": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "6": {
+          "name": "Jamerson Silva [BR]",
+          "result": "W",
+          "table": 28
+        },
+        "7": {
+          "name": "Thiago Flores [BR]",
+          "result": "W",
+          "table": 26
+        },
+        "8": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 10
+        },
+        "9": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 12
+        }
+      }
+    },
+    {
+      "name": "Bruno Cotrim [BR]",
+      "placing": 31,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.572663139329806,
+        "oppopp": 0.561619145600627
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Pedro Andrade [BR]",
+          "result": "L",
+          "table": 61
+        },
+        "2": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "3": {
+          "name": "Mel Mourão",
+          "result": "W",
+          "table": 24
+        },
+        "4": {
+          "name": "Bruno Ayres [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "5": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "6": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "7": {
+          "name": "Thiago Reis [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "8": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 17
+        },
+        "9": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 13
+        }
+      }
+    },
+    {
+      "name": "miguel esh barbosa [BR]",
+      "placing": 32,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.543430335097002,
+        "oppopp": 0.551128187900675
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "2": {
+          "name": "Breno Silva [BR]",
+          "result": "L",
+          "table": 37
+        },
+        "3": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "W",
+          "table": 43
+        },
+        "4": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "W",
+          "table": 24
+        },
+        "5": {
+          "name": "Theo Branco [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "6": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 11
+        },
+        "7": {
+          "name": "Fernando Junior [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "8": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 8
+        },
+        "9": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "L",
+          "table": 14
+        }
+      }
+    },
+    {
+      "name": "Diego Gutierrez [PE]",
+      "placing": 33,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.541798941798942,
+        "oppopp": 0.577252456538171
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Carlos Muniz [BR]",
+          "result": "W",
+          "table": 2
+        },
+        "2": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "3": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "L",
+          "table": 10
+        },
+        "4": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "5": {
+          "name": "Pedro Andrade [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "6": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "7": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "W",
+          "table": 19
+        },
+        "8": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 11
+        },
+        "9": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 15
+        }
+      }
+    },
+    {
+      "name": "José Wilton Arruda [BR]",
+      "placing": 34,
+      "record": {
+        "wins": 5,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.555555555555556,
+        "opp": 0.505731922398589,
+        "oppopp": 0.571861090115058
+      },
+      "decklist": "",
+      "drop": -1,
+      "rounds": {
+        "1": {
+          "name": "Breno Silva [BR]",
+          "result": "L",
+          "table": 73
+        },
+        "2": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "L",
+          "table": 66
+        },
+        "3": {
+          "name": "Vitor Keller [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "4": {
+          "name": "Gabriel Castro [BR]",
+          "result": "W",
+          "table": 55
+        },
+        "5": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "6": {
+          "name": "Victor Vieira [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "7": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "W",
+          "table": 21
+        },
+        "8": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 14
+        },
+        "9": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 17
+        }
+      }
+    },
+    {
+      "name": "Ricardo Torrijos [CL]",
+      "placing": 35,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.709183673469388,
+        "oppopp": 0.549125364431487
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Leonardo Couto Furtado Nery Rodrigues [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "2": {
+          "name": "Jamerson Silva [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "3": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "W",
+          "table": 18
+        },
+        "4": {
+          "name": "Yan Sym [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "5": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "6": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "7": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "L",
+          "table": 19
+        }
+      }
+    },
+    {
+      "name": "Breno Silva [BR]",
+      "placing": 36,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.673469387755102,
+        "oppopp": 0.549951409135083
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "W",
+          "table": 73
+        },
+        "2": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "3": {
+          "name": "Bruno Takashi [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "4": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "5": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "6": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 10
+        },
+        "7": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 23
+        }
+      }
+    },
+    {
+      "name": "Javier Ponce [CL]",
+      "placing": 37,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.63265306122449,
+        "oppopp": 0.53002915451895
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "2": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "W",
+          "table": 3
+        },
+        "3": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 12
+        },
+        "4": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 11
+        },
+        "5": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "6": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "7": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 16
+        }
+      }
+    },
+    {
+      "name": "Victor Vieira [BR]",
+      "placing": 38,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.619047619047619,
+        "oppopp": 0.483568189180434
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "W",
+          "table": 40
+        },
+        "2": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "W",
+          "table": 18
+        },
+        "3": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "4": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 19
+        },
+        "5": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "W",
+          "table": 26
+        },
+        "6": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "L",
+          "table": 36
+        },
+        "7": {
+          "name": "Matheus Carretta [BR]",
+          "result": "W",
+          "table": 27
+        }
+      }
+    },
+    {
+      "name": "Paulo Victor Leite de Souza [BR]",
+      "placing": 39,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.612244897959184,
+        "oppopp": 0.532215743440233
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "W",
+          "table": 44
+        },
+        "2": {
+          "name": "nicolas del campo [CL]",
+          "result": "W",
+          "table": 14
+        },
+        "3": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "L",
+          "table": 14
+        },
+        "4": {
+          "name": "Igor Fernandes [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "5": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "W",
+          "table": 7
+        },
+        "6": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "7": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 22
+        }
+      }
+    },
+    {
+      "name": "Thiago Reis [BR]",
+      "placing": 40,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.608163265306122,
+        "oppopp": 0.546540330417881
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 68
+        },
+        "2": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "W",
+          "table": 74
+        },
+        "3": {
+          "name": "Maicon De Moraes Silveira [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "4": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "W",
+          "table": 21
+        },
+        "5": {
+          "name": "Yan Fernandes [BR]",
+          "result": "W",
+          "table": 15
+        },
+        "6": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "7": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "L",
+          "table": 17
+        }
+      }
+    },
+    {
+      "name": "Jorge Baca Elera [PE]",
+      "placing": 41,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.591836734693877,
+        "oppopp": 0.555150631681244
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Caio Iracema [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "2": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "3": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "4": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "5": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 11
+        },
+        "6": {
+          "name": "Allan Gabriel [BR]",
+          "result": "W",
+          "table": 15
+        },
+        "7": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 15
+        }
+      }
+    },
+    {
+      "name": "Daniel Bezerra [BR]",
+      "placing": 42,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.591836734693878,
+        "oppopp": 0.496307094266278
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 15
+        },
+        "2": {
+          "name": "Matheus Carretta [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "3": {
+          "name": "Rafael Martin [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "4": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "W",
+          "table": 38
+        },
+        "5": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "6": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "L",
+          "table": 29
+        },
+        "7": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "W",
+          "table": 41
+        }
+      }
+    },
+    {
+      "name": "Dylan Torres [BR]",
+      "placing": 43,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.58843537414966,
+        "oppopp": 0.532482993197279
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Geovane Santos [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "2": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 21
+        },
+        "3": {
+          "name": "Gael Garcia [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "4": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 15
+        },
+        "5": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "W",
+          "table": 51
+        },
+        "6": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "W",
+          "table": 18
+        },
+        "7": {
+          "name": "Michael Navas [AU]",
+          "result": "L",
+          "table": 12
+        }
+      }
+    },
+    {
+      "name": "Thiago Flores [BR]",
+      "placing": 44,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.587755102040816,
+        "oppopp": 0.559368318756074
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "david Schulmann durval [BR]",
+          "result": "W",
+          "table": 43
+        },
+        "2": {
+          "name": "Jose Rodrigo Souza [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "3": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "W",
+          "table": 1
+        },
+        "4": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "5": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "6": {
+          "name": "Igor Corrêa [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "7": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "L",
+          "table": 26
+        }
+      }
+    },
+    {
+      "name": "Igor Corrêa [BR]",
+      "placing": 45,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.587755102040816,
+        "oppopp": 0.55290573372206
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 74
+        },
+        "2": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "3": {
+          "name": "Jamerson Silva [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "4": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 14
+        },
+        "5": {
+          "name": "Valter Lorenzo [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "6": {
+          "name": "Thiago Flores [BR]",
+          "result": "L",
+          "table": 27
+        },
+        "7": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "W",
+          "table": 30
+        }
+      }
+    },
+    {
+      "name": "Claudio Kamoda [BR]",
+      "placing": 46,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.571428571428571,
+        "oppopp": 0.547862001943635
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Ali Dakik [BR]",
+          "result": "W",
+          "table": 67
+        },
+        "2": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 27
+        },
+        "3": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "W",
+          "table": 30
+        },
+        "4": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 37
+        },
+        "5": {
+          "name": "Gustavo Santos [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "6": {
+          "name": "Theo Branco [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "7": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 11
+        }
+      }
+    },
+    {
+      "name": "Fernando Junior [BR]",
+      "placing": 47,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.566326530612245,
+        "oppopp": 0.588824101068999
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Leonardo Martin [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "2": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "3": {
+          "name": "Nader El bacha [BR]",
+          "result": "L",
+          "table": 16
+        },
+        "4": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "5": {
+          "name": "Diego Ortiz [PE]",
+          "result": "W",
+          "table": 18
+        },
+        "6": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "7": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "L",
+          "table": 13
+        }
+      }
+    },
+    {
+      "name": "Diego Ortiz [PE]",
+      "placing": 48,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.566326530612245,
+        "oppopp": 0.51381195335277
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gustavo Campello [BR]",
+          "result": "W",
+          "table": 76
+        },
+        "2": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "W",
+          "table": 15
+        },
+        "3": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "4": {
+          "name": "Gustavo Santos [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "5": {
+          "name": "Fernando Junior [BR]",
+          "result": "L",
+          "table": 18
+        },
+        "6": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 26
+        },
+        "7": {
+          "name": "Bruno Takashi [BR]",
+          "result": "W",
+          "table": 29
+        }
+      }
+    },
+    {
+      "name": "Fábio Silva Júnior [BR]",
+      "placing": 49,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.55952380952381,
+        "oppopp": 0.539346452866861
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Erick Faria [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "2": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "L",
+          "table": 23
+        },
+        "3": {
+          "name": "Julio Pena [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "4": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "W",
+          "table": 20
+        },
+        "5": {
+          "name": "Nader El bacha [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "6": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "7": {
+          "name": "Camilo Liberona [CL]",
+          "result": "L",
+          "table": 10
+        }
+      }
+    },
+    {
+      "name": "Yan Fernandes [BR]",
+      "placing": 50,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.557823129251701,
+        "oppopp": 0.513872691933916
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "W",
+          "table": 55
+        },
+        "2": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 30
+        },
+        "3": {
+          "name": "Igor Souza [BR]",
+          "result": "W",
+          "table": 40
+        },
+        "4": {
+          "name": "Mario Queiroz [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "5": {
+          "name": "Thiago Reis [BR]",
+          "result": "L",
+          "table": 15
+        },
+        "6": {
+          "name": "Valter Junior [BR]",
+          "result": "W",
+          "table": 38
+        },
+        "7": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 25
+        }
+      }
+    },
+    {
+      "name": "Rafael Ribeiro [BR]",
+      "placing": 51,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.546938775510204,
+        "oppopp": 0.506141885325559
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Heitor Basilio Tonini [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "2": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "3": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "W",
+          "table": 46
+        },
+        "4": {
+          "name": "Allan Gabriel [BR]",
+          "result": "W",
+          "table": 16
+        },
+        "5": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "6": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "7": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "L",
+          "table": 21
+        }
+      }
+    },
+    {
+      "name": "Theo Branco [BR]",
+      "placing": 52,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.54421768707483,
+        "oppopp": 0.510754778101717
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "cleomar melo [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "2": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "3": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "4": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "5": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "L",
+          "table": 22
+        },
+        "6": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "L",
+          "table": 31
+        },
+        "7": {
+          "name": "Caio Iracema [BR]",
+          "result": "W",
+          "table": 44
+        }
+      }
+    },
+    {
+      "name": "Javier Nain [CL]",
+      "placing": 53,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.541836734693878,
+        "oppopp": 0.498182701652089
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Luiz Felipe Duarte da Silva [BR]",
+          "result": "W",
+          "table": 13
+        },
+        "2": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 11
+        },
+        "3": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "4": {
+          "name": "Italo Massuco [BR]",
+          "result": "L",
+          "table": 30
+        },
+        "5": {
+          "name": "Jose Rodrigo Souza [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "6": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "7": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 18
+        }
+      }
+    },
+    {
+      "name": "Sergio Igarashi [BR]",
+      "placing": 54,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.526530612244898,
+        "oppopp": 0.558192419825073
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gael Garcia [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "2": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "W",
+          "table": 25
+        },
+        "3": {
+          "name": "Pedro Andrade [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "4": {
+          "name": "Breno Silva [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "5": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "L",
+          "table": 17
+        },
+        "6": {
+          "name": "Javier Nain [CL]",
+          "result": "L",
+          "table": 35
+        },
+        "7": {
+          "name": "Henrique Xavier [BR]",
+          "result": "W",
+          "table": 36
+        }
+      }
+    },
+    {
+      "name": "Nader El bacha [BR]",
+      "placing": 55,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.517006802721088,
+        "oppopp": 0.531122448979592
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Matheus Carretta [BR]",
+          "result": "W",
+          "table": 14
+        },
+        "2": {
+          "name": "Mario Queiroz [BR]",
+          "result": "W",
+          "table": 6
+        },
+        "3": {
+          "name": "Fernando Junior [BR]",
+          "result": "W",
+          "table": 16
+        },
+        "4": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "5": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "L",
+          "table": 23
+        },
+        "6": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "L",
+          "table": 32
+        },
+        "7": {
+          "name": "Allan Gabriel [BR]",
+          "result": "W",
+          "table": 38
+        }
+      }
+    },
+    {
+      "name": "Carlos Alberto Agarie Junior [BR]",
+      "placing": 56,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.517006802721089,
+        "oppopp": 0.516601878846777
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "W",
+          "table": 38
+        },
+        "2": {
+          "name": "Javier Ponce [CL]",
+          "result": "L",
+          "table": 3
+        },
+        "3": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "4": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 34
+        },
+        "5": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "W",
+          "table": 44
+        },
+        "6": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "7": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 24
+        }
+      }
+    },
+    {
+      "name": "BRUNO PIONTE [BR]",
+      "placing": 57,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.505102040816327,
+        "oppopp": 0.532596371882086
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Fábio Souza [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "2": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "L",
+          "table": 36
+        },
+        "3": {
+          "name": "Lucas Lira [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "4": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 12
+        },
+        "5": {
+          "name": "Igor Souza [BR]",
+          "result": "W",
+          "table": 28
+        },
+        "6": {
+          "name": "Michael Navas [AU]",
+          "result": "L",
+          "table": 24
+        },
+        "7": {
+          "name": "Ali Dakik [BR]",
+          "result": "W",
+          "table": 31
+        }
+      }
+    },
+    {
+      "name": "Thiago Lattanzi [BR]",
+      "placing": 58,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.503401360544218,
+        "oppopp": 0.531665046971169
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "2": {
+          "name": "Carlos Muniz [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "3": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "L",
+          "table": 53
+        },
+        "4": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "5": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "W",
+          "table": 38
+        },
+        "6": {
+          "name": "Javier Ponce [CL]",
+          "result": "L",
+          "table": 22
+        },
+        "7": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "W",
+          "table": 47
+        }
+      }
+    },
+    {
+      "name": "Caio Lattanzi [BR]",
+      "placing": 59,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.501020408163265,
+        "oppopp": 0.53392371234208
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Jamerson Silva [BR]",
+          "result": "L",
+          "table": 36
+        },
+        "2": {
+          "name": "Gael Garcia [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "3": {
+          "name": "Murilo Vieira Santa Barbara [BR]",
+          "result": "W",
+          "table": 37
+        },
+        "4": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "L",
+          "table": 24
+        },
+        "5": {
+          "name": "Heitor Basilio Tonini [BR]",
+          "result": "W",
+          "table": 30
+        },
+        "6": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "7": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 9
+        }
+      }
+    },
+    {
+      "name": "Rodrigo Franco Costa [BR]",
+      "placing": 60,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.496598639455782,
+        "oppopp": 0.504462261094914
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "2": {
+          "name": "Igor Corrêa [BR]",
+          "result": "L",
+          "table": 39
+        },
+        "3": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "4": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "W",
+          "table": 60
+        },
+        "5": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "6": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "L",
+          "table": 21
+        },
+        "7": {
+          "name": "Fábio Souza [BR]",
+          "result": "W",
+          "table": 33
+        }
+      }
+    },
+    {
+      "name": "Jamerson Silva [BR]",
+      "placing": 61,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.491496598639456,
+        "oppopp": 0.565666504697117
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "2": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "L",
+          "table": 35
+        },
+        "3": {
+          "name": "Igor Corrêa [BR]",
+          "result": "L",
+          "table": 31
+        },
+        "4": {
+          "name": "Murilo Vieira Santa Barbara [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "5": {
+          "name": "Geovane Santos [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "6": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "L",
+          "table": 28
+        },
+        "7": {
+          "name": "Valter Junior [BR]",
+          "result": "W",
+          "table": 45
+        }
+      }
+    },
+    {
+      "name": "Italo Massuco [BR]",
+      "placing": 62,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.489795918367347,
+        "oppopp": 0.516909620991254
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "L",
+          "table": 65
+        },
+        "2": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "W",
+          "table": 73
+        },
+        "3": {
+          "name": "nicolas del campo [CL]",
+          "result": "W",
+          "table": 47
+        },
+        "4": {
+          "name": "Javier Nain [CL]",
+          "result": "W",
+          "table": 30
+        },
+        "5": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 12
+        },
+        "6": {
+          "name": "Pedro Bauer [BR]",
+          "result": "W",
+          "table": 16
+        },
+        "7": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 14
+        }
+      }
+    },
+    {
+      "name": "Rodrigo Avendaño [CL]",
+      "placing": 63,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.485714285714286,
+        "oppopp": 0.560790411402656
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Valter Junior [BR]",
+          "result": "W",
+          "table": 16
+        },
+        "2": {
+          "name": "Heitor Basilio Tonini [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "3": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "L",
+          "table": 15
+        },
+        "4": {
+          "name": "Thiago Reis [BR]",
+          "result": "L",
+          "table": 21
+        },
+        "5": {
+          "name": "Dylan Torres [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "6": {
+          "name": "Geovane Santos [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "7": {
+          "name": "Pedro Bauer [BR]",
+          "result": "W",
+          "table": 28
+        }
+      }
+    },
+    {
+      "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+      "placing": 64,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.485714285714286,
+        "oppopp": 0.503683187560739
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "2": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "3": {
+          "name": "Valter Junior [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "4": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "L",
+          "table": 20
+        },
+        "5": {
+          "name": "Maicon De Moraes Silveira [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "6": {
+          "name": "Nader El bacha [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "7": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 20
+        }
+      }
+    },
+    {
+      "name": "Hugo Nascimento Vilela dos Santos [BR]",
+      "placing": 65,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.469387755102041,
+        "oppopp": 0.473906705539359
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 11
+        },
+        "2": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "L",
+          "table": 40
+        },
+        "3": {
+          "name": "Luan Gaspar [BR]",
+          "result": "W",
+          "table": 70
+        },
+        "4": {
+          "name": "Clara Coutinho [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "5": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "W",
+          "table": 34
+        },
+        "6": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 17
+        },
+        "7": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "W",
+          "table": 32
+        }
+      }
+    },
+    {
+      "name": "Sebastian Rodriguez [PE]",
+      "placing": 66,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.464285714285714,
+        "oppopp": 0.504518950437318
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "L",
+          "table": 26
+        },
+        "2": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "W",
+          "table": 40
+        },
+        "3": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 44
+        },
+        "4": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "L",
+          "table": 60
+        },
+        "5": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "6": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "W",
+          "table": 42
+        },
+        "7": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "W",
+          "table": 46
+        }
+      }
+    },
+    {
+      "name": "Tobias Stegelmann [AR]",
+      "placing": 67,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.464285714285714,
+        "oppopp": 0.463605442176871
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Breno de Castro [BR]",
+          "result": "W",
+          "table": 19
+        },
+        "2": {
+          "name": "Diego Ortiz [PE]",
+          "result": "L",
+          "table": 15
+        },
+        "3": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "L",
+          "table": 46
+        },
+        "4": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "W",
+          "table": 40
+        },
+        "5": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 40
+        },
+        "6": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "W",
+          "table": 55
+        },
+        "7": {
+          "name": "Raul Gioielli [BR]",
+          "result": "W",
+          "table": 37
+        }
+      }
+    },
+    {
+      "name": "Igor Fernandes [BR]",
+      "placing": 68,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.45578231292517,
+        "oppopp": 0.508584386135407
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Allan Gabriel [BR]",
+          "result": "L",
+          "table": 53
+        },
+        "2": {
+          "name": "Pedro Soares [BR]",
+          "result": "W",
+          "table": 55
+        },
+        "3": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "W",
+          "table": 36
+        },
+        "4": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "L",
+          "table": 13
+        },
+        "5": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "L",
+          "table": 42
+        },
+        "6": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "7": {
+          "name": "nicolas del campo [CL]",
+          "result": "W",
+          "table": 34
+        }
+      }
+    },
+    {
+      "name": "Caio Geremias [BR]",
+      "placing": 69,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.431292517006803,
+        "oppopp": 0.500051830255912
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 50
+        },
+        "2": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "W",
+          "table": 44
+        },
+        "3": {
+          "name": "Heitor Basilio Tonini [BR]",
+          "result": "L",
+          "table": 55
+        },
+        "4": {
+          "name": "Geovane Santos [BR]",
+          "result": "L",
+          "table": 43
+        },
+        "5": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "W",
+          "table": 55
+        },
+        "6": {
+          "name": "Rafael Martin [BR]",
+          "result": "W",
+          "table": 47
+        },
+        "7": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "W",
+          "table": 40
+        }
+      }
+    },
+    {
+      "name": "Rafael Cassemiro Tezzotto [BR]",
+      "placing": 70,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.428571428571429,
+        "oppopp": 0.498931000971817
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "2": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "L",
+          "table": 57
+        },
+        "3": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "4": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "5": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "W",
+          "table": 65
+        },
+        "6": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "7": {
+          "name": "Mel Mourão",
+          "result": "W",
+          "table": 42
+        }
+      }
+    },
+    {
+      "name": "Pedro Soares [BR]",
+      "placing": 71,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.416666666666667,
+        "oppopp": 0.499453352769679
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Camilo Liberona [CL]",
+          "result": "L",
+          "table": 18
+        },
+        "2": {
+          "name": "Igor Fernandes [BR]",
+          "result": "L",
+          "table": 55
+        },
+        "3": {
+          "name": "Geovane Santos [BR]",
+          "result": "L",
+          "table": 64
+        },
+        "4": {
+          "name": "Vitor Serber Silva [BR]",
+          "result": "W",
+          "table": 68
+        },
+        "5": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "6": {
+          "name": "Júlio Eller [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "7": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "W",
+          "table": 39
+        }
+      }
+    },
+    {
+      "name": "Gustavo Santos [BR]",
+      "placing": 72,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.409863945578231,
+        "oppopp": 0.488382734045999
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "L",
+          "table": 33
+        },
+        "2": {
+          "name": "Gustavo Campello [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "3": {
+          "name": "Felipe Nahum [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "4": {
+          "name": "Diego Ortiz [PE]",
+          "result": "L",
+          "table": 35
+        },
+        "5": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "L",
+          "table": 27
+        },
+        "6": {
+          "name": "david Schulmann durval [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "7": {
+          "name": "Gabriel Castro [BR]",
+          "result": "W",
+          "table": 43
+        }
+      }
+    },
+    {
+      "name": "Lucas Rodrigues Carneiro [NL]",
+      "placing": 73,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.571428571428571,
+        "opp": 0.352040816326531,
+        "oppopp": 0.489836410754778
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Murilo Vieira Santa Barbara [BR]",
+          "result": "L",
+          "table": 34
+        },
+        "2": {
+          "name": "Mel Mourão",
+          "result": "L",
+          "table": 68
+        },
+        "3": {
+          "name": "Caroline Alexandra Pereira de Souza",
+          "result": "W",
+          "table": 71
+        },
+        "4": {
+          "name": "Vinicius Souza [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "5": {
+          "name": "Victor Vieira [BR]",
+          "result": "L",
+          "table": 26
+        },
+        "6": {
+          "name": "Igor Souza [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "7": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "W",
+          "table": 35
+        }
+      }
+    },
+    {
+      "name": "Lucas Pinheiro [BR]",
+      "placing": 74,
+      "record": {
+        "wins": 3,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.5,
+        "opp": 0.597222222222222,
+        "oppopp": 0.545833333333333
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Nicolás Miniero [AR]",
+          "result": "L",
+          "table": 37
+        },
+        "2": {
+          "name": "Vitor Keller [BR]",
+          "result": "W",
+          "table": 69
+        },
+        "3": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "W",
+          "table": 23
+        },
+        "4": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "5": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 10
+        },
+        "6": {
+          "name": "Dylan Torres [BR]",
+          "result": "L",
+          "table": 18
+        }
+      }
+    },
+    {
+      "name": "Allan Gabriel [BR]",
+      "placing": 75,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.591836734693877,
+        "oppopp": 0.538046647230321
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Igor Fernandes [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "2": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "W",
+          "table": 32
+        },
+        "3": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "4": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "L",
+          "table": 16
+        },
+        "5": {
+          "name": "Mel Mourão",
+          "result": "W",
+          "table": 47
+        },
+        "6": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "L",
+          "table": 15
+        },
+        "7": {
+          "name": "Nader El bacha [BR]",
+          "result": "L",
+          "table": 38
+        }
+      }
+    },
+    {
+      "name": "Gustavo Gomes [BR]",
+      "placing": 76,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.566326530612245,
+        "oppopp": 0.500291545189504
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 69
+        },
+        "2": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "W",
+          "table": 66
+        },
+        "3": {
+          "name": "Erick Faria [BR]",
+          "result": "W",
+          "table": 42
+        },
+        "4": {
+          "name": "Fernando Junior [BR]",
+          "result": "L",
+          "table": 36
+        },
+        "5": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "W",
+          "table": 43
+        },
+        "6": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "L",
+          "table": 23
+        },
+        "7": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "L",
+          "table": 46
+        }
+      }
+    },
+    {
+      "name": "Ali Dakik [BR]",
+      "placing": 77,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.525510204081633,
+        "oppopp": 0.483381924198251
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "L",
+          "table": 67
+        },
+        "2": {
+          "name": "Diego Marques [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "3": {
+          "name": "Breno de Castro [BR]",
+          "result": "W",
+          "table": 51
+        },
+        "4": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "5": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "6": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 19
+        },
+        "7": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "L",
+          "table": 31
+        }
+      }
+    },
+    {
+      "name": "Bruno Takashi [BR]",
+      "placing": 78,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.523809523809524,
+        "oppopp": 0.522797214123745
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "W",
+          "table": 75
+        },
+        "2": {
+          "name": "Henrique Xavier [BR]",
+          "result": "W",
+          "table": 9
+        },
+        "3": {
+          "name": "Breno Silva [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "4": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 17
+        },
+        "5": {
+          "name": "Mario Queiroz [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "6": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 34
+        },
+        "7": {
+          "name": "Diego Ortiz [PE]",
+          "result": "L",
+          "table": 29
+        }
+      }
+    },
+    {
+      "name": "Rafael Sant'Anna [BR]",
+      "placing": 79,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.513605442176871,
+        "oppopp": 0.486467444120505
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "W",
+          "table": 26
+        },
+        "2": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "L",
+          "table": 4
+        },
+        "3": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "L",
+          "table": 23
+        },
+        "4": {
+          "name": "Júlio Eller [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "5": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "6": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "L",
+          "table": 37
+        },
+        "7": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "L",
+          "table": 32
+        }
+      }
+    },
+    {
+      "name": "Pedro Bauer [BR]",
+      "placing": 80,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.510204081632653,
+        "oppopp": 0.513103336572724
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 39
+        },
+        "2": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "W",
+          "table": 70
+        },
+        "3": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "4": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "5": {
+          "name": "Gabriel Menegon [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "6": {
+          "name": "Italo Massuco [BR]",
+          "result": "L",
+          "table": 16
+        },
+        "7": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "L",
+          "table": 28
+        }
+      }
+    },
+    {
+      "name": "Henrique Xavier [BR]",
+      "placing": 81,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.505102040816327,
+        "oppopp": 0.51573534175575
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "W",
+          "table": 28
+        },
+        "2": {
+          "name": "Bruno Takashi [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "3": {
+          "name": "Gabriel Rigo [BR]",
+          "result": "L",
+          "table": 33
+        },
+        "4": {
+          "name": "Lucas Lira [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "5": {
+          "name": "Rafael Martin [BR]",
+          "result": "W",
+          "table": 29
+        },
+        "6": {
+          "name": "Camilo Liberona [CL]",
+          "result": "L",
+          "table": 25
+        },
+        "7": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "L",
+          "table": 36
+        }
+      }
+    },
+    {
+      "name": "nicolas del campo [CL]",
+      "placing": 82,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.505102040816327,
+        "oppopp": 0.495408163265306
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Alina Bezerra [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "2": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "L",
+          "table": 14
+        },
+        "3": {
+          "name": "Italo Massuco [BR]",
+          "result": "L",
+          "table": 47
+        },
+        "4": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "5": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "6": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 30
+        },
+        "7": {
+          "name": "Igor Fernandes [BR]",
+          "result": "L",
+          "table": 34
+        }
+      }
+    },
+    {
+      "name": "Pedro Guedelha [BR]",
+      "placing": 83,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.5,
+        "oppopp": 0.533228053126012
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Vitor Milioni [BR]",
+          "result": "W",
+          "table": 10
+        },
+        "2": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "L",
+          "table": 33
+        },
+        "3": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "4": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "L",
+          "table": 29
+        },
+        "5": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 32
+        },
+        "6": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "W",
+          "table": 51
+        },
+        "7": {
+          "name": "Igor Corrêa [BR]",
+          "result": "L",
+          "table": 30
+        }
+      }
+    },
+    {
+      "name": "Alexsander Camargo [BR]",
+      "placing": 84,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.5,
+        "oppopp": 0.505818756073858
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "L",
+          "table": 45
+        },
+        "2": {
+          "name": "Thiago Reis [BR]",
+          "result": "L",
+          "table": 74
+        },
+        "3": {
+          "name": "Diego Marques [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "4": {
+          "name": "Julio Pena [BR]",
+          "result": "W",
+          "table": 47
+        },
+        "5": {
+          "name": "Igor Fernandes [BR]",
+          "result": "W",
+          "table": 42
+        },
+        "6": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 20
+        },
+        "7": {
+          "name": "Pedro Soares [BR]",
+          "result": "L",
+          "table": 39
+        }
+      }
+    },
+    {
+      "name": "Lorenzo Tonetti [BR]",
+      "placing": 85,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.489795918367347,
+        "oppopp": 0.49421768707483
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Rafael Martin [BR]",
+          "result": "W",
+          "table": 5
+        },
+        "2": {
+          "name": "Pedro H Soares Feitosa [BR]",
+          "result": "L",
+          "table": 16
+        },
+        "3": {
+          "name": "Igor Fernandes [BR]",
+          "result": "L",
+          "table": 36
+        },
+        "4": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "W",
+          "table": 44
+        },
+        "5": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "6": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "W",
+          "table": 40
+        },
+        "7": {
+          "name": "Caio Geremias [BR]",
+          "result": "L",
+          "table": 40
+        }
+      }
+    },
+    {
+      "name": "Leonardo Damasceno [BR]",
+      "placing": 86,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.48469387755102,
+        "oppopp": 0.461329770003239
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Javier Ponce [CL]",
+          "result": "L",
+          "table": 7
+        },
+        "2": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "3": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "4": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "W",
+          "table": 42
+        },
+        "5": {
+          "name": "Matheus Carretta [BR]",
+          "result": "W",
+          "table": 46
+        },
+        "6": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 33
+        },
+        "7": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "L",
+          "table": 35
+        }
+      }
+    },
+    {
+      "name": "Raul Gioielli [BR]",
+      "placing": 87,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.480612244897959,
+        "oppopp": 0.50495869776482
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "2": {
+          "name": "Vitor Serber Silva [BR]",
+          "result": "W",
+          "table": 47
+        },
+        "3": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 28
+        },
+        "4": {
+          "name": "Valter Lorenzo [BR]",
+          "result": "L",
+          "table": 53
+        },
+        "5": {
+          "name": "Erick Faria [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "6": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "7": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "L",
+          "table": 37
+        }
+      }
+    },
+    {
+      "name": "João Carlos Camelo dos Santos [BR]",
+      "placing": 88,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.469387755102041,
+        "oppopp": 0.514723032069971
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Paulo Victor Leite de Souza [BR]",
+          "result": "L",
+          "table": 44
+        },
+        "2": {
+          "name": "Caio Iracema [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "3": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "4": {
+          "name": "Ali Dakik [BR]",
+          "result": "L",
+          "table": 25
+        },
+        "5": {
+          "name": "Camilo Liberona [CL]",
+          "result": "L",
+          "table": 45
+        },
+        "6": {
+          "name": "Gabriel Castro [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "7": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "W",
+          "table": 57
+        }
+      }
+    },
+    {
+      "name": "André Luiz Leal de Carvalho [BR]",
+      "placing": 89,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.467006802721088,
+        "oppopp": 0.528057985098801
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gustavo Santos [BR]",
+          "result": "W",
+          "table": 33
+        },
+        "2": {
+          "name": "Pedro Andrade [BR]",
+          "result": "L",
+          "table": 28
+        },
+        "3": {
+          "name": "Fernando Ferreira [AR]",
+          "result": "L",
+          "table": 34
+        },
+        "4": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "5": {
+          "name": "nicolas del campo [CL]",
+          "result": "L",
+          "table": 50
+        },
+        "6": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "W",
+          "table": 46
+        },
+        "7": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "L",
+          "table": 41
+        }
+      }
+    },
+    {
+      "name": "Gabriel Castro [BR]",
+      "placing": 90,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.465986394557823,
+        "oppopp": 0.51199384515711
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Pedro Cadaval [BR]",
+          "result": "L",
+          "table": 30
+        },
+        "2": {
+          "name": "Leonardo Martin [BR]",
+          "result": "W",
+          "table": 42
+        },
+        "3": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "L",
+          "table": 25
+        },
+        "4": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "L",
+          "table": 55
+        },
+        "5": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "6": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "7": {
+          "name": "Gustavo Santos [BR]",
+          "result": "L",
+          "table": 43
+        }
+      }
+    },
+    {
+      "name": "Valter Junior [BR]",
+      "placing": 91,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.464285714285714,
+        "oppopp": 0.47332361516035
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "L",
+          "table": 16
+        },
+        "2": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "3": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "4": {
+          "name": "Erick Faria [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "5": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "W",
+          "table": 35
+        },
+        "6": {
+          "name": "Yan Fernandes [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "7": {
+          "name": "Jamerson Silva [BR]",
+          "result": "L",
+          "table": 45
+        }
+      }
+    },
+    {
+      "name": "Fábio Souza [BR]",
+      "placing": 92,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.462585034013605,
+        "oppopp": 0.492670877874959
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "L",
+          "table": 32
+        },
+        "2": {
+          "name": "Geovane Santos [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "3": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 26
+        },
+        "4": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "5": {
+          "name": "Vitor Milioni [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "6": {
+          "name": "Mario Queiroz [BR]",
+          "result": "W",
+          "table": 43
+        },
+        "7": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "L",
+          "table": 33
+        }
+      }
+    },
+    {
+      "name": "Vinicius Moscão Junqueira [BR]",
+      "placing": 93,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.454081632653061,
+        "oppopp": 0.531061710398445
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Bruno Ayres [BR]",
+          "result": "L",
+          "table": 4
+        },
+        "2": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "W",
+          "table": 67
+        },
+        "3": {
+          "name": "Javier Nain [CL]",
+          "result": "L",
+          "table": 57
+        },
+        "4": {
+          "name": "Fábio Souza [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "5": {
+          "name": "Javier Ponce [CL]",
+          "result": "L",
+          "table": 36
+        },
+        "6": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "L",
+          "table": 52
+        },
+        "7": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "W",
+          "table": 48
+        }
+      }
+    },
+    {
+      "name": "Matheus Carretta [BR]",
+      "placing": 94,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.443877551020408,
+        "oppopp": 0.526542759961127
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Nader El bacha [BR]",
+          "result": "L",
+          "table": 14
+        },
+        "2": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "L",
+          "table": 52
+        },
+        "3": {
+          "name": "Vitor Serber Silva [BR]",
+          "result": "W",
+          "table": 67
+        },
+        "4": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "5": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "L",
+          "table": 46
+        },
+        "6": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "W",
+          "table": 41
+        },
+        "7": {
+          "name": "Victor Vieira [BR]",
+          "result": "L",
+          "table": 27
+        }
+      }
+    },
+    {
+      "name": "Vivian Alves Trajano de Oliveira [BR]",
+      "placing": 95,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.414965986394558,
+        "oppopp": 0.469816974408811
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "W",
+          "table": 49
+        },
+        "2": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "3": {
+          "name": "Esteban Ojeda [CL]",
+          "result": "L",
+          "table": 39
+        },
+        "4": {
+          "name": "nicolas del campo [CL]",
+          "result": "L",
+          "table": 61
+        },
+        "5": {
+          "name": "Júlio Eller [BR]",
+          "result": "L",
+          "table": 61
+        },
+        "6": {
+          "name": "Breno de Castro [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "7": {
+          "name": "Vitor Milioni [BR]",
+          "result": "W",
+          "table": 50
+        }
+      }
+    },
+    {
+      "name": "Caio Iracema [BR]",
+      "placing": 96,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.414965986394558,
+        "oppopp": 0.467565597667639
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Jorge Baca Elera [PE]",
+          "result": "L",
+          "table": 58
+        },
+        "2": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "3": {
+          "name": "cleomar melo [BR]",
+          "result": "W",
+          "table": 68
+        },
+        "4": {
+          "name": "Igor Souza [BR]",
+          "result": "L",
+          "table": 52
+        },
+        "5": {
+          "name": "Gael Garcia [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "6": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "7": {
+          "name": "Theo Branco [BR]",
+          "result": "L",
+          "table": 44
+        }
+      }
+    },
+    {
+      "name": "Carlos Muniz [BR]",
+      "placing": 97,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.406746031746032,
+        "oppopp": 0.491931216931217
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "L",
+          "table": 2
+        },
+        "2": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "L",
+          "table": 58
+        },
+        "3": {
+          "name": "Leonardo Couto Furtado Nery Rodrigues [BR]",
+          "result": "W",
+          "table": 73
+        },
+        "4": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "L",
+          "table": 46
+        },
+        "5": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "6": {
+          "name": "BYE",
+          "result": "W",
+          "table": 0
+        },
+        "7": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "W",
+          "table": 53
+        }
+      }
+    },
+    {
+      "name": "Diego Pradel Seixas [BR]",
+      "placing": 98,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.403061224489796,
+        "oppopp": 0.480766115970198
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Igor Souza [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "2": {
+          "name": "Kaue Mota [BR]",
+          "result": "L",
+          "table": 2
+        },
+        "3": {
+          "name": "Pedro Bauer [BR]",
+          "result": "L",
+          "table": 52
+        },
+        "4": {
+          "name": "Matheus Carretta [BR]",
+          "result": "L",
+          "table": 57
+        },
+        "5": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "W",
+          "table": 60
+        },
+        "6": {
+          "name": "Caio Iracema [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "7": {
+          "name": "Bruno Luvizotto Carli [BR]",
+          "result": "W",
+          "table": 54
+        }
+      }
+    },
+    {
+      "name": "Rafael Martin [BR]",
+      "placing": 99,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.403061224489796,
+        "oppopp": 0.475607385811467
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "2": {
+          "name": "Orleani Ramos [BR]",
+          "result": "W",
+          "table": 45
+        },
+        "3": {
+          "name": "Daniel Bezerra [BR]",
+          "result": "L",
+          "table": 32
+        },
+        "4": {
+          "name": "Vitor Milioni [BR]",
+          "result": "W",
+          "table": 51
+        },
+        "5": {
+          "name": "Henrique Xavier [BR]",
+          "result": "L",
+          "table": 29
+        },
+        "6": {
+          "name": "Caio Geremias [BR]",
+          "result": "L",
+          "table": 47
+        },
+        "7": {
+          "name": "david Schulmann durval [BR]",
+          "result": "W",
+          "table": 51
+        }
+      }
+    },
+    {
+      "name": "Bernardo José Santos [BR]",
+      "placing": 100,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.403061224489796,
+        "oppopp": 0.468764172335601
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "2": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "3": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "W",
+          "table": 69
+        },
+        "4": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "L",
+          "table": 40
+        },
+        "5": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "L",
+          "table": 64
+        },
+        "6": {
+          "name": "Gael Garcia [BR]",
+          "result": "W",
+          "table": 58
+        },
+        "7": {
+          "name": "Luan Gaspar [BR]",
+          "result": "W",
+          "table": 49
+        }
+      }
+    },
+    {
+      "name": "Erick Faria [BR]",
+      "placing": 101,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.389455782312925,
+        "oppopp": 0.460285066407515
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "L",
+          "table": 9
+        },
+        "2": {
+          "name": "cleomar melo [BR]",
+          "result": "W",
+          "table": 71
+        },
+        "3": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "L",
+          "table": 42
+        },
+        "4": {
+          "name": "Valter Junior [BR]",
+          "result": "L",
+          "table": 45
+        },
+        "5": {
+          "name": "Raul Gioielli [BR]",
+          "result": "L",
+          "table": 57
+        },
+        "6": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "W",
+          "table": 60
+        },
+        "7": {
+          "name": "Clara Coutinho [BR]",
+          "result": "W",
+          "table": 52
+        }
+      }
+    },
+    {
+      "name": "Giovanni Sbrissa [BR]",
+      "placing": 102,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.377551020408163,
+        "oppopp": 0.566958211856171
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Marcel Silva Araujo [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "2": {
+          "name": "Paulo André De Amorim Ferreira [BR]",
+          "result": "L",
+          "table": 31
+        },
+        "3": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "L",
+          "table": 45
+        },
+        "4": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "L",
+          "table": 42
+        },
+        "5": {
+          "name": "Caio Geremias [BR]",
+          "result": "L",
+          "table": 55
+        },
+        "6": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "7": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "W",
+          "table": 56
+        }
+      }
+    },
+    {
+      "name": "cleomar melo [BR]",
+      "placing": 103,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.375,
+        "oppopp": 0.472836356764928
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Theo Branco [BR]",
+          "result": "L",
+          "table": 29
+        },
+        "2": {
+          "name": "Erick Faria [BR]",
+          "result": "L",
+          "table": 71
+        },
+        "3": {
+          "name": "Caio Iracema [BR]",
+          "result": "L",
+          "table": 68
+        },
+        "4": {
+          "name": "Arthur Haus Assad [BR]",
+          "result": "L",
+          "table": 70
+        },
+        "5": {
+          "name": "BYE",
+          "result": "W",
+          "table": 0
+        },
+        "6": {
+          "name": "Lucas Lira [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "7": {
+          "name": "Igor Souza [BR]",
+          "result": "W",
+          "table": 55
+        }
+      }
+    },
+    {
+      "name": "Mel Mourão",
+      "placing": 104,
+      "record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.428571428571429,
+        "opp": 0.443877551020408,
+        "oppopp": 0.41865889212828
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "LATE",
+          "result": "L",
+          "table": 0
+        },
+        "2": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "W",
+          "table": 68
+        },
+        "3": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "L",
+          "table": 24
+        },
+        "4": {
+          "name": "Breno de Castro [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "5": {
+          "name": "Allan Gabriel [BR]",
+          "result": "L",
+          "table": 47
+        },
+        "6": {
+          "name": "Clara Coutinho [BR]",
+          "result": "W",
+          "table": 44
+        },
+        "7": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "L",
+          "table": 42
+        }
+      }
+    },
+    {
+      "name": "Bruno Ayres [BR]",
+      "placing": 105,
+      "record": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.5,
+        "opp": 0.6875,
+        "oppopp": 0.489583333333333
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "W",
+          "table": 4
+        },
+        "2": {
+          "name": "Michael Navas [AU]",
+          "result": "W",
+          "table": 38
+        },
+        "3": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 7
+        },
+        "4": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "L",
+          "table": 23
+        }
+      }
+    },
+    {
+      "name": "Pedro Andrade [BR]",
+      "placing": 106,
+      "record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.4,
+        "opp": 0.64,
+        "oppopp": 0.486
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Bruno Cotrim [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "2": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "W",
+          "table": 28
+        },
+        "3": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "L",
+          "table": 19
+        },
+        "4": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 26
+        },
+        "5": {
+          "name": "Diego Gutierrez [PE]",
+          "result": "L",
+          "table": 37
+        }
+      }
+    },
+    {
+      "name": "Paulo André De Amorim Ferreira [BR]",
+      "placing": 107,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.63265306122449,
+        "oppopp": 0.485325558794947
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Italo Massuco [BR]",
+          "result": "W",
+          "table": 65
+        },
+        "2": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "W",
+          "table": 31
+        },
+        "3": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "4": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 32
+        },
+        "5": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "L",
+          "table": 52
+        },
+        "6": {
+          "name": "Matheus Carretta [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "7": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "L",
+          "table": 47
+        }
+      }
+    },
+    {
+      "name": "Valter Lorenzo [BR]",
+      "placing": 108,
+      "record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.4,
+        "opp": 0.57,
+        "oppopp": 0.664
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Carlos M Ribeiro [BR]",
+          "result": "W",
+          "table": 27
+        },
+        "2": {
+          "name": "cristhian andrade [BR]",
+          "result": "L",
+          "table": 34
+        },
+        "3": {
+          "name": "Gabriel Guerra [BR]",
+          "result": "L",
+          "table": 56
+        },
+        "4": {
+          "name": "Raul Gioielli [BR]",
+          "result": "W",
+          "table": 53
+        },
+        "5": {
+          "name": "Igor Corrêa [BR]",
+          "result": "L",
+          "table": 31
+        }
+      }
+    },
+    {
+      "name": "Maicon De Moraes Silveira [BR]",
+      "placing": 109,
+      "record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.4,
+        "opp": 0.57,
+        "oppopp": 0.506
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Guilherme Queiroz [BR]",
+          "result": "L",
+          "table": 47
+        },
+        "2": {
+          "name": "Leonardo Couto Furtado Nery Rodrigues [BR]",
+          "result": "W",
+          "table": 56
+        },
+        "3": {
+          "name": "Thiago Reis [BR]",
+          "result": "L",
+          "table": 35
+        },
+        "4": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "W",
+          "table": 39
+        },
+        "5": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "L",
+          "table": 33
+        }
+      }
+    },
+    {
+      "name": "Heitor Basilio Tonini [BR]",
+      "placing": 110,
+      "record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.4,
+        "opp": 0.56,
+        "oppopp": 0.504
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Rafael Ribeiro [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "2": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "L",
+          "table": 12
+        },
+        "3": {
+          "name": "Caio Geremias [BR]",
+          "result": "W",
+          "table": 55
+        },
+        "4": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 22
+        },
+        "5": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "L",
+          "table": 30
+        }
+      }
+    },
+    {
+      "name": "Geovane Santos [BR]",
+      "placing": 111,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.527777777777778,
+        "oppopp": 0.481944444444444
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Dylan Torres [BR]",
+          "result": "L",
+          "table": 35
+        },
+        "2": {
+          "name": "Fábio Souza [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "3": {
+          "name": "Pedro Soares [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "4": {
+          "name": "Caio Geremias [BR]",
+          "result": "W",
+          "table": 43
+        },
+        "5": {
+          "name": "Jamerson Silva [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "6": {
+          "name": "Rodrigo Avendaño [CL]",
+          "result": "L",
+          "table": 39
+        }
+      }
+    },
+    {
+      "name": "Arthur Haus Assad [BR]",
+      "placing": 112,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.523809523809524,
+        "oppopp": 0.445157110463233
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 41
+        },
+        "2": {
+          "name": "Caio Geremias [BR]",
+          "result": "L",
+          "table": 44
+        },
+        "3": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "L",
+          "table": 61
+        },
+        "4": {
+          "name": "cleomar melo [BR]",
+          "result": "W",
+          "table": 70
+        },
+        "5": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "W",
+          "table": 64
+        },
+        "6": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "7": {
+          "name": "Carlos Muniz [BR]",
+          "result": "L",
+          "table": 53
+        }
+      }
+    },
+    {
+      "name": "Jose Rodrigo Souza [BR]",
+      "placing": 113,
+      "record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.4,
+        "opp": 0.52,
+        "oppopp": 0.522
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Clara Coutinho [BR]",
+          "result": "W",
+          "table": 12
+        },
+        "2": {
+          "name": "Thiago Flores [BR]",
+          "result": "L",
+          "table": 10
+        },
+        "3": {
+          "name": "Igor Fagundes [BR]",
+          "result": "L",
+          "table": 21
+        },
+        "4": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "W",
+          "table": 65
+        },
+        "5": {
+          "name": "Javier Nain [CL]",
+          "result": "L",
+          "table": 39
+        }
+      }
+    },
+    {
+      "name": "João Paulo Farias Nascimento [BR]",
+      "placing": 114,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.513888888888889,
+        "oppopp": 0.522685185185185
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Leonardo Ritter [BR]",
+          "result": "L",
+          "table": 66
+        },
+        "2": {
+          "name": "Renato Spinassi [BR]",
+          "result": "W",
+          "table": 72
+        },
+        "3": {
+          "name": "Rodrigo Franco Costa [BR]",
+          "result": "W",
+          "table": 38
+        },
+        "4": {
+          "name": "Theo Branco [BR]",
+          "result": "L",
+          "table": 33
+        },
+        "5": {
+          "name": "Thiago Lattanzi [BR]",
+          "result": "L",
+          "table": 38
+        },
+        "6": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "L",
+          "table": 46
+        }
+      }
+    },
+    {
+      "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+      "placing": 115,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.511904761904762,
+        "oppopp": 0.488184321347587
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Renato Spinassi [BR]",
+          "result": "W",
+          "table": 17
+        },
+        "2": {
+          "name": "Luiz Lima [BR]",
+          "result": "L",
+          "table": 17
+        },
+        "3": {
+          "name": "Claudio Kamoda [BR]",
+          "result": "L",
+          "table": 30
+        },
+        "4": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "L",
+          "table": 44
+        },
+        "5": {
+          "name": "Pedro Soares [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "6": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "7": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "L",
+          "table": 48
+        }
+      }
+    },
+    {
+      "name": "Bruno Luvizotto Carli [BR]",
+      "placing": 116,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.510204081632653,
+        "oppopp": 0.474149659863945
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "2": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "W",
+          "table": 7
+        },
+        "3": {
+          "name": "Pedro Henrique Samayoa Rubini Cini [BR]",
+          "result": "L",
+          "table": 11
+        },
+        "4": {
+          "name": "Pedro Bauer [BR]",
+          "result": "L",
+          "table": 27
+        },
+        "5": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "L",
+          "table": 34
+        },
+        "6": {
+          "name": "Raul Gioielli [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "7": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "L",
+          "table": 54
+        }
+      }
+    },
+    {
+      "name": "Orlando Gomes Mariano [BR]",
+      "placing": 117,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.5,
+        "oppopp": 0.484596695821186
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Gustavo kengo [BR]",
+          "result": "L",
+          "table": 21
+        },
+        "2": {
+          "name": "\u003ETABLE 96 marcos Henrique Sena [BR]",
+          "result": "L",
+          "table": 61
+        },
+        "3": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 60
+        },
+        "4": {
+          "name": "Davison Dos Santos Gomes [BR]",
+          "result": "W",
+          "table": 73
+        },
+        "5": {
+          "name": "Rafael Cassemiro Tezzotto [BR]",
+          "result": "L",
+          "table": 65
+        },
+        "6": {
+          "name": "Vitor Milioni [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "7": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "W",
+          "table": 59
+        }
+      }
+    },
+    {
+      "name": "Arthur Barbosa [BR]",
+      "placing": 118,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.467006802721088,
+        "oppopp": 0.48263524457402
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Diego Marques [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "2": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 5
+        },
+        "3": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "L",
+          "table": 43
+        },
+        "4": {
+          "name": "Jose Rodrigo Souza [BR]",
+          "result": "L",
+          "table": 65
+        },
+        "5": {
+          "name": "Carlos Muniz [BR]",
+          "result": "W",
+          "table": 54
+        },
+        "6": {
+          "name": "Lorenzo Tonetti [BR]",
+          "result": "L",
+          "table": 40
+        },
+        "7": {
+          "name": "João Carlos Camelo dos Santos [BR]",
+          "result": "L",
+          "table": 57
+        }
+      }
+    },
+    {
+      "name": "Mario Queiroz [BR]",
+      "placing": 119,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.458333333333333,
+        "oppopp": 0.505787037037037
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Daniel Pacheco [BR]",
+          "result": "W",
+          "table": 72
+        },
+        "2": {
+          "name": "Nader El bacha [BR]",
+          "result": "L",
+          "table": 6
+        },
+        "3": {
+          "name": "Júlio Eller [BR]",
+          "result": "W",
+          "table": 48
+        },
+        "4": {
+          "name": "Yan Fernandes [BR]",
+          "result": "L",
+          "table": 31
+        },
+        "5": {
+          "name": "Bruno Takashi [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "6": {
+          "name": "Fábio Souza [BR]",
+          "result": "L",
+          "table": 43
+        }
+      }
+    },
+    {
+      "name": "Paula Oyarzún [CL]",
+      "placing": 120,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.452380952380952,
+        "oppopp": 0.46031746031746
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 42
+        },
+        "2": {
+          "name": "Vinicius Moscão Junqueira [BR]",
+          "result": "L",
+          "table": 67
+        },
+        "3": {
+          "name": "BYE",
+          "result": "W",
+          "table": 0
+        },
+        "4": {
+          "name": "Luan Gaspar [BR]",
+          "result": "W",
+          "table": 66
+        },
+        "5": {
+          "name": "Gustavo Gomes [BR]",
+          "result": "L",
+          "table": 43
+        },
+        "6": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "L",
+          "table": 55
+        },
+        "7": {
+          "name": "Breno de Castro [BR]",
+          "result": "L",
+          "table": 58
+        }
+      }
+    },
+    {
+      "name": "Igor Souza [BR]",
+      "placing": 121,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.450680272108844,
+        "oppopp": 0.416221250404924
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "L",
+          "table": 25
+        },
+        "2": {
+          "name": "Caroline Alexandra Pereira de Souza",
+          "result": "W",
+          "table": 46
+        },
+        "3": {
+          "name": "Yan Fernandes [BR]",
+          "result": "L",
+          "table": 40
+        },
+        "4": {
+          "name": "Caio Iracema [BR]",
+          "result": "W",
+          "table": 52
+        },
+        "5": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "L",
+          "table": 28
+        },
+        "6": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "L",
+          "table": 53
+        },
+        "7": {
+          "name": "cleomar melo [BR]",
+          "result": "L",
+          "table": 55
+        }
+      }
+    },
+    {
+      "name": "THOR TUCUNDUVA [BR]",
+      "placing": 122,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.444444444444444,
+        "oppopp": 0.484027777777778
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Bruno Takashi [BR]",
+          "result": "L",
+          "table": 75
+        },
+        "2": {
+          "name": "Pedro Bauer [BR]",
+          "result": "L",
+          "table": 70
+        },
+        "3": {
+          "name": "Daniel Pacheco [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "4": {
+          "name": "Carlos Muniz [BR]",
+          "result": "W",
+          "table": 46
+        },
+        "5": {
+          "name": "Carlos Alberto Agarie Junior [BR]",
+          "result": "L",
+          "table": 44
+        },
+        "6": {
+          "name": "Igor Fernandes [BR]",
+          "result": "L",
+          "table": 50
+        }
+      }
+    },
+    {
+      "name": "Gael Garcia [BR]",
+      "placing": 123,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.438775510204082,
+        "oppopp": 0.482555879494655
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Sergio Igarashi [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "2": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "L",
+          "table": 64
+        },
+        "3": {
+          "name": "Dylan Torres [BR]",
+          "result": "L",
+          "table": 58
+        },
+        "4": {
+          "name": "Leonardo Couto Furtado Nery Rodrigues [BR]",
+          "result": "W",
+          "table": 67
+        },
+        "5": {
+          "name": "Caio Iracema [BR]",
+          "result": "L",
+          "table": 58
+        },
+        "6": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "L",
+          "table": 58
+        },
+        "7": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 60
+        }
+      }
+    },
+    {
+      "name": "Júlio Eller [BR]",
+      "placing": 124,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.430555555555556,
+        "oppopp": 0.449074074074074
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Yan Sym [BR]",
+          "result": "L",
+          "table": 63
+        },
+        "2": {
+          "name": "Alina Bezerra [BR]",
+          "result": "W",
+          "table": 60
+        },
+        "3": {
+          "name": "Mario Queiroz [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "4": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "5": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "W",
+          "table": 61
+        },
+        "6": {
+          "name": "Pedro Soares [BR]",
+          "result": "L",
+          "table": 56
+        }
+      }
+    },
+    {
+      "name": "Vitor Milioni [BR]",
+      "placing": 125,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.428571428571429,
+        "oppopp": 0.454956268221574
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Pedro Guedelha [BR]",
+          "result": "L",
+          "table": 10
+        },
+        "2": {
+          "name": "david Schulmann durval [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "3": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 27
+        },
+        "4": {
+          "name": "Rafael Martin [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "5": {
+          "name": "Fábio Souza [BR]",
+          "result": "L",
+          "table": 53
+        },
+        "6": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "W",
+          "table": 59
+        },
+        "7": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "L",
+          "table": 50
+        }
+      }
+    },
+    {
+      "name": "Fabio Sarabia [BR]",
+      "placing": 126,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.418367346938776,
+        "oppopp": 0.453717201166181
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Henrique Xavier [BR]",
+          "result": "L",
+          "table": 28
+        },
+        "2": {
+          "name": "Italo Massuco [BR]",
+          "result": "L",
+          "table": 73
+        },
+        "3": {
+          "name": "Davison Dos Santos Gomes [BR]",
+          "result": "W",
+          "table": 66
+        },
+        "4": {
+          "name": "Alina Bezerra [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "5": {
+          "name": "Valter Junior [BR]",
+          "result": "L",
+          "table": 35
+        },
+        "6": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "L",
+          "table": 42
+        },
+        "7": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "L",
+          "table": 56
+        }
+      }
+    },
+    {
+      "name": "Robson Hamilton Carréa Filho [BR]",
+      "placing": 127,
+      "record": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.413888888888889,
+        "oppopp": 0.517453703703704
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Victor Vieira [BR]",
+          "result": "L",
+          "table": 40
+        },
+        "2": {
+          "name": "Daniel Pacheco [BR]",
+          "result": "W",
+          "table": 75
+        },
+        "3": {
+          "name": "Gabriel Castro [BR]",
+          "result": "W",
+          "table": 25
+        },
+        "4": {
+          "name": "Maicon De Moraes Silveira [BR]",
+          "result": "L",
+          "table": 39
+        },
+        "5": {
+          "name": "Rafael Sant'Anna [BR]",
+          "result": "L",
+          "table": 25
+        },
+        "6": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "L",
+          "table": 57
+        }
+      }
+    },
+    {
+      "name": "Luan Gaspar [BR]",
+      "placing": 128,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.387755102040816,
+        "oppopp": 0.483175413022352
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Vinicius Souza [BR]",
+          "result": "L",
+          "table": 70
+        },
+        "2": {
+          "name": "Ivo Giorgini [AR]",
+          "result": "L",
+          "table": 65
+        },
+        "3": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "L",
+          "table": 70
+        },
+        "4": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "L",
+          "table": 66
+        },
+        "5": {
+          "name": "Davison Dos Santos Gomes [BR]",
+          "result": "W",
+          "table": 67
+        },
+        "6": {
+          "name": "Leonardo Santos [BR]",
+          "result": "W",
+          "table": 62
+        },
+        "7": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "L",
+          "table": 49
+        }
+      }
+    },
+    {
+      "name": "david Schulmann durval [BR]",
+      "placing": 129,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.38265306122449,
+        "oppopp": 0.432896015549077
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Thiago Flores [BR]",
+          "result": "L",
+          "table": 43
+        },
+        "2": {
+          "name": "Vitor Milioni [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "3": {
+          "name": "Clara Coutinho [BR]",
+          "result": "L",
+          "table": 65
+        },
+        "4": {
+          "name": "Diego Marques [BR]",
+          "result": "W",
+          "table": 71
+        },
+        "5": {
+          "name": "Breno de Castro [BR]",
+          "result": "W",
+          "table": 63
+        },
+        "6": {
+          "name": "Gustavo Santos [BR]",
+          "result": "L",
+          "table": 45
+        },
+        "7": {
+          "name": "Rafael Martin [BR]",
+          "result": "L",
+          "table": 51
+        }
+      }
+    },
+    {
+      "name": "Breno de Castro [BR]",
+      "placing": 130,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.377551020408163,
+        "oppopp": 0.429096209912536
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Tobias Stegelmann [AR]",
+          "result": "L",
+          "table": 19
+        },
+        "2": {
+          "name": "Luiz Felipe Duarte da Silva [BR]",
+          "result": "W",
+          "table": 51
+        },
+        "3": {
+          "name": "Ali Dakik [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "4": {
+          "name": "Mel Mourão",
+          "result": "L",
+          "table": 63
+        },
+        "5": {
+          "name": "david Schulmann durval [BR]",
+          "result": "L",
+          "table": 63
+        },
+        "6": {
+          "name": "Vivian Alves Trajano de Oliveira [BR]",
+          "result": "L",
+          "table": 63
+        },
+        "7": {
+          "name": "Paula Oyarzún [CL]",
+          "result": "W",
+          "table": 58
+        }
+      }
+    },
+    {
+      "name": "Clara Coutinho [BR]",
+      "placing": 131,
+      "record": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.285714285714286,
+        "opp": 0.373469387755102,
+        "oppopp": 0.46882329122125
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "Jose Rodrigo Souza [BR]",
+          "result": "L",
+          "table": 12
+        },
+        "2": {
+          "name": "Julio Pena [BR]",
+          "result": "L",
+          "table": 43
+        },
+        "3": {
+          "name": "david Schulmann durval [BR]",
+          "result": "W",
+          "table": 65
+        },
+        "4": {
+          "name": "Hugo Nascimento Vilela dos Santos [BR]",
+          "result": "L",
+          "table": 56
+        },
+        "5": {
+          "name": "Lucas Lira [BR]",
+          "result": "W",
+          "table": 66
+        },
+        "6": {
+          "name": "Mel Mourão",
+          "result": "L",
+          "table": 44
+        },
+        "7": {
+          "name": "Erick Faria [BR]",
+          "result": "L",
+          "table": 52
+        }
+      }
+    },
+    {
+      "name": "Vinicius Souza [BR]",
+      "placing": 132,
+      "record": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5625,
+        "oppopp": 0.458333333333333
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Luan Gaspar [BR]",
+          "result": "W",
+          "table": 70
+        },
+        "2": {
+          "name": "Daniel Vieira [BR]",
+          "result": "L",
+          "table": 1
+        },
+        "3": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 20
+        },
+        "4": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "L",
+          "table": 64
+        }
+      }
+    },
+    {
+      "name": "Murilo Vieira Santa Barbara [BR]",
+      "placing": 133,
+      "record": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5625,
+        "oppopp": 0.4375
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "W",
+          "table": 34
+        },
+        "2": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 20
+        },
+        "3": {
+          "name": "Caio Lattanzi [BR]",
+          "result": "L",
+          "table": 37
+        },
+        "4": {
+          "name": "Jamerson Silva [BR]",
+          "result": "L",
+          "table": 58
+        }
+      }
+    },
+    {
+      "name": "Julio Pena [BR]",
+      "placing": 134,
+      "record": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5625,
+        "oppopp": 0.432291666666667
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 24
+        },
+        "2": {
+          "name": "Clara Coutinho [BR]",
+          "result": "W",
+          "table": 43
+        },
+        "3": {
+          "name": "Fábio Silva Júnior [BR]",
+          "result": "L",
+          "table": 29
+        },
+        "4": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "L",
+          "table": 47
+        }
+      }
+    },
+    {
+      "name": "Felipe Nahum [BR]",
+      "placing": 135,
+      "record": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.333333333333333,
+        "opp": 0.527777777777778,
+        "oppopp": 0.444444444444444
+      },
+      "decklist": "",
+      "drop": 3,
+      "rounds": {
+        "1": {
+          "name": "Orleani Ramos [BR]",
+          "result": "W",
+          "table": 22
+        },
+        "2": {
+          "name": "Sebastian Escalante [AR]",
+          "result": "L",
+          "table": 29
+        },
+        "3": {
+          "name": "Gustavo Santos [BR]",
+          "result": "L",
+          "table": 50
+        }
+      }
+    },
+    {
+      "name": "Lucas Lira [BR]",
+      "placing": 136,
+      "record": {
+        "wins": 1,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.513888888888889,
+        "oppopp": 0.468518518518519
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "Tiago Pimentel [BR]",
+          "result": "L",
+          "table": 3
+        },
+        "2": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "W",
+          "table": 50
+        },
+        "3": {
+          "name": "BRUNO PIONTE [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "4": {
+          "name": "Henrique Xavier [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "5": {
+          "name": "Clara Coutinho [BR]",
+          "result": "L",
+          "table": 66
+        },
+        "6": {
+          "name": "cleomar melo [BR]",
+          "result": "L",
+          "table": 64
+        }
+      }
+    },
+    {
+      "name": "Guilherme Ryuta Ojima Takashi [BR]",
+      "placing": 137,
+      "record": {
+        "wins": 1,
+        "losses": 6,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.48469387755102,
+        "oppopp": 0.434927113702624
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "juan salerno [AR]",
+          "result": "L",
+          "table": 31
+        },
+        "2": {
+          "name": "Valter Junior [BR]",
+          "result": "L",
+          "table": 49
+        },
+        "3": {
+          "name": "Luiz Felipe Duarte da Silva [BR]",
+          "result": "W",
+          "table": 72
+        },
+        "4": {
+          "name": "João Eduardo Bozano [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "5": {
+          "name": "Sebastian Rodriguez [PE]",
+          "result": "L",
+          "table": 56
+        },
+        "6": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "L",
+          "table": 61
+        },
+        "7": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "L",
+          "table": 59
+        }
+      }
+    },
+    {
+      "name": "Leonardo Santos [BR]",
+      "placing": 138,
+      "record": {
+        "wins": 1,
+        "losses": 6,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.443877551020408,
+        "oppopp": 0.55578231292517
+      },
+      "decklist": "",
+      "drop": 7,
+      "rounds": {
+        "1": {
+          "name": "JESSICA DA SILVA [BR]",
+          "result": "W",
+          "table": 57
+        },
+        "2": {
+          "name": "Rogério Catel [BR]",
+          "result": "L",
+          "table": 8
+        },
+        "3": {
+          "name": "Michael Navas [AU]",
+          "result": "L",
+          "table": 22
+        },
+        "4": {
+          "name": "André Luiz Leal de Carvalho [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "5": {
+          "name": "Gabriel Castro [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "6": {
+          "name": "Luan Gaspar [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "7": {
+          "name": "Gael Garcia [BR]",
+          "result": "L",
+          "table": 60
+        }
+      }
+    },
+    {
+      "name": "MARTIN JAQUES [BR]",
+      "placing": 139,
+      "record": {
+        "wins": 1,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.402777777777778,
+        "oppopp": 0.449166666666667
+      },
+      "decklist": "",
+      "drop": 6,
+      "rounds": {
+        "1": {
+          "name": "miguel esh barbosa [BR]",
+          "result": "L",
+          "table": 23
+        },
+        "2": {
+          "name": "Leonardo Damasceno [BR]",
+          "result": "L",
+          "table": 63
+        },
+        "3": {
+          "name": "Bernardo José Santos [BR]",
+          "result": "L",
+          "table": 69
+        },
+        "4": {
+          "name": "Luiz Felipe Duarte da Silva [BR]",
+          "result": "W",
+          "table": 72
+        },
+        "5": {
+          "name": "Diego Pradel Seixas [BR]",
+          "result": "L",
+          "table": 60
+        },
+        "6": {
+          "name": "Erick Faria [BR]",
+          "result": "L",
+          "table": 60
+        }
+      }
+    },
+    {
+      "name": "Alina Bezerra [BR]",
+      "placing": 140,
+      "record": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.375,
+        "oppopp": 0.46875
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "nicolas del campo [CL]",
+          "result": "L",
+          "table": 52
+        },
+        "2": {
+          "name": "Júlio Eller [BR]",
+          "result": "L",
+          "table": 60
+        },
+        "3": {
+          "name": "Gustavo Campello [BR]",
+          "result": "W",
+          "table": 74
+        },
+        "4": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "L",
+          "table": 50
+        }
+      }
+    },
+    {
+      "name": "Carlos M Ribeiro [BR]",
+      "placing": 141,
+      "record": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 1,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": 1,
+      "rounds": {
+        "1": {
+          "name": "Valter Lorenzo [BR]",
+          "result": "L",
+          "table": 27
+        }
+      }
+    },
+    {
+      "name": "Marcel Silva Araujo [BR]",
+      "placing": 142,
+      "record": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 1,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": 1,
+      "rounds": {
+        "1": {
+          "name": "Giovanni Sbrissa [BR]",
+          "result": "L",
+          "table": 56
+        }
+      }
+    },
+    {
+      "name": "JESSICA DA SILVA [BR]",
+      "placing": 143,
+      "record": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 1,
+        "oppopp": 0.25
+      },
+      "decklist": "",
+      "drop": 1,
+      "rounds": {
+        "1": {
+          "name": "Leonardo Santos [BR]",
+          "result": "L",
+          "table": 57
+        }
+      }
+    },
+    {
+      "name": "Leonardo Martin [BR]",
+      "placing": 144,
+      "record": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.75,
+        "oppopp": 0.5
+      },
+      "decklist": "",
+      "drop": 2,
+      "rounds": {
+        "1": {
+          "name": "Fernando Junior [BR]",
+          "result": "L",
+          "table": 64
+        },
+        "2": {
+          "name": "Gabriel Castro [BR]",
+          "result": "L",
+          "table": 42
+        }
+      }
+    },
+    {
+      "name": "Vitor Keller [BR]",
+      "placing": 145,
+      "record": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.555555555555556,
+        "oppopp": 0.527777777777778
+      },
+      "decklist": "",
+      "drop": 3,
+      "rounds": {
+        "1": {
+          "name": "Bruno Rebello [BR]",
+          "result": "L",
+          "table": 46
+        },
+        "2": {
+          "name": "Lucas Pinheiro [BR]",
+          "result": "L",
+          "table": 69
+        },
+        "3": {
+          "name": "José Wilton Arruda [BR]",
+          "result": "L",
+          "table": 63
+        }
+      }
+    },
+    {
+      "name": "Leonardo Couto Furtado Nery Rodrigues [BR]",
+      "placing": 146,
+      "record": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5,
+        "oppopp": 0.515625
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Ricardo Torrijos [CL]",
+          "result": "L",
+          "table": 20
+        },
+        "2": {
+          "name": "Maicon De Moraes Silveira [BR]",
+          "result": "L",
+          "table": 56
+        },
+        "3": {
+          "name": "Carlos Muniz [BR]",
+          "result": "L",
+          "table": 73
+        },
+        "4": {
+          "name": "Gael Garcia [BR]",
+          "result": "L",
+          "table": 67
+        }
+      }
+    },
+    {
+      "name": "Renato Spinassi [BR]",
+      "placing": 147,
+      "record": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5,
+        "oppopp": 0.5
+      },
+      "decklist": "",
+      "drop": 2,
+      "rounds": {
+        "1": {
+          "name": "Pedro Henrique De Bonis Cardoso da Silva [BR]",
+          "result": "L",
+          "table": 17
+        },
+        "2": {
+          "name": "João Paulo Farias Nascimento [BR]",
+          "result": "L",
+          "table": 72
+        }
+      }
+    },
+    {
+      "name": "Orleani Ramos [BR]",
+      "placing": 148,
+      "record": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5,
+        "oppopp": 0.5
+      },
+      "decklist": "",
+      "drop": 2,
+      "rounds": {
+        "1": {
+          "name": "Felipe Nahum [BR]",
+          "result": "L",
+          "table": 22
+        },
+        "2": {
+          "name": "Rafael Martin [BR]",
+          "result": "L",
+          "table": 45
+        }
+      }
+    },
+    {
+      "name": "Davison Dos Santos Gomes [BR]",
+      "placing": 149,
+      "record": {
+        "wins": 0,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.5,
+        "oppopp": 0.466
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Rômulo Fagundes Sodré [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "2": {
+          "name": "Victor Rachik [BR]",
+          "result": "L",
+          "table": 76
+        },
+        "3": {
+          "name": "Fabio Sarabia [BR]",
+          "result": "L",
+          "table": 66
+        },
+        "4": {
+          "name": "Orlando Gomes Mariano [BR]",
+          "result": "L",
+          "table": 73
+        },
+        "5": {
+          "name": "Luan Gaspar [BR]",
+          "result": "L",
+          "table": 67
+        }
+      }
+    },
+    {
+      "name": "Diego Marques [BR]",
+      "placing": 150,
+      "record": {
+        "wins": 0,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.45,
+        "oppopp": 0.41
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Arthur Barbosa [BR]",
+          "result": "L",
+          "table": 54
+        },
+        "2": {
+          "name": "Ali Dakik [BR]",
+          "result": "L",
+          "table": 53
+        },
+        "3": {
+          "name": "Alexsander Camargo [BR]",
+          "result": "L",
+          "table": 59
+        },
+        "4": {
+          "name": "david Schulmann durval [BR]",
+          "result": "L",
+          "table": 71
+        },
+        "5": {
+          "name": "Luiz Felipe Duarte da Silva [BR]",
+          "result": "L",
+          "table": 68
+        }
+      }
+    },
+    {
+      "name": "Vitor Serber Silva [BR]",
+      "placing": 151,
+      "record": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.4375,
+        "oppopp": 0.53125
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Francisco Alca Chacon [PE]",
+          "result": "L",
+          "table": 60
+        },
+        "2": {
+          "name": "Raul Gioielli [BR]",
+          "result": "L",
+          "table": 47
+        },
+        "3": {
+          "name": "Matheus Carretta [BR]",
+          "result": "L",
+          "table": 67
+        },
+        "4": {
+          "name": "Pedro Soares [BR]",
+          "result": "L",
+          "table": 68
+        }
+      }
+    },
+    {
+      "name": "Gustavo Campello [BR]",
+      "placing": 152,
+      "record": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.4375,
+        "oppopp": 0.458333333333333
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Diego Ortiz [PE]",
+          "result": "L",
+          "table": 76
+        },
+        "2": {
+          "name": "Gustavo Santos [BR]",
+          "result": "L",
+          "table": 48
+        },
+        "3": {
+          "name": "Alina Bezerra [BR]",
+          "result": "L",
+          "table": 74
+        },
+        "4": {
+          "name": "Daniel Pacheco [BR]",
+          "result": "L",
+          "table": 69
+        }
+      }
+    },
+    {
+      "name": "Daniel Pacheco [BR]",
+      "placing": 153,
+      "record": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.4375,
+        "oppopp": 0.4375
+      },
+      "decklist": "",
+      "drop": 4,
+      "rounds": {
+        "1": {
+          "name": "Mario Queiroz [BR]",
+          "result": "L",
+          "table": 72
+        },
+        "2": {
+          "name": "Robson Hamilton Carréa Filho [BR]",
+          "result": "L",
+          "table": 75
+        },
+        "3": {
+          "name": "THOR TUCUNDUVA [BR]",
+          "result": "L",
+          "table": 62
+        },
+        "4": {
+          "name": "Gustavo Campello [BR]",
+          "result": "L",
+          "table": 69
+        }
+      }
+    },
+    {
+      "name": "Luiz Felipe Duarte da Silva [BR]",
+      "placing": 154,
+      "record": {
+        "wins": 0,
+        "losses": 5,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.32,
+        "oppopp": 0.46
+      },
+      "decklist": "",
+      "drop": 5,
+      "rounds": {
+        "1": {
+          "name": "Javier Nain [CL]",
+          "result": "L",
+          "table": 13
+        },
+        "2": {
+          "name": "Breno de Castro [BR]",
+          "result": "L",
+          "table": 51
+        },
+        "3": {
+          "name": "Guilherme Ryuta Ojima Takashi [BR]",
+          "result": "L",
+          "table": 72
+        },
+        "4": {
+          "name": "MARTIN JAQUES [BR]",
+          "result": "L",
+          "table": 72
+        },
+        "5": {
+          "name": "Diego Marques [BR]",
+          "result": "L",
+          "table": 68
+        }
+      }
+    },
+    {
+      "name": "Caroline Alexandra Pereira de Souza",
+      "placing": 155,
+      "record": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0
+      },
+      "resistances": {
+        "self": 0.25,
+        "opp": 0.305555555555556,
+        "oppopp": 0.324074074074074
+      },
+      "decklist": "",
+      "drop": 3,
+      "rounds": {
+        "1": {
+          "name": "LATE",
+          "result": "L",
+          "table": 0
+        },
+        "2": {
+          "name": "Igor Souza [BR]",
+          "result": "L",
+          "table": 46
+        },
+        "3": {
+          "name": "Lucas Rodrigues Carneiro [NL]",
+          "result": "L",
+          "table": 71
+        }
+      }
+    }
+  ]
