@@ -97,7 +97,7 @@ class PokemonTeamClustering:
         for n in range(2, max_clusters + 1):
             clustering = AgglomerativeClustering(
                 n_clusters=n,
-                affinity='cosine',
+                metric='cosine',
                 linkage='complete'
             )
             labels = clustering.fit_predict(self.df)
@@ -113,7 +113,7 @@ class PokemonTeamClustering:
         if method == 'hierarchical':
             clustering = AgglomerativeClustering(
                 n_clusters=n_clusters,
-                affinity='cosine',
+                metric='cosine',
                 linkage='complete'
             )
         elif method == 'dbscan':
