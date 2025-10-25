@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Team Clusters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <h1><span class="poli">poliboard</span></h1>
+        </div>
+        <div class="header-right">
+            <div class="nav-buttons">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="stats">
+                <div>Last Updated: <span id="lastUpdated">just now</span></div>
+                <div>Teams Analyzed: <span id="teamsAnalyzed">0</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Why this is worth looking at</h3>
+        <p>The motivation for this site was to get a solid answer to the question <i>"What do I need to prepare for for my next regional?"</i>. Since the dawn of VGC, conversations about this generally end up being pretty subjective - which makes sense given the data most players have available. For example, an observation like 'lots of people use Calyrex-Shadow' is correct, and <i>probably</i> useful, but if that was the deepest insight you were armed with on your way to Internats, you might feel a little unprepared.</p>
+
+        <p>To get a real answer (or at least as close as I can get), I decided it might be worth while to run some clustering algorithms over tournament data and see what showed up. The result of that, plus a bit of extra time over the holidays, is what you're seeing on this page.</p>
+
+        <p>The goal here is for you to be able to open up this site, have a quick look at the clusters my code has surfaced, and understand that those are the main archetypes you're <i>most likely</i> to face at your next tournament. Do note that we are working in the territory of <i>most likely</i> - if the community decides to start running something weird overnight - this site will likely not show it up.</p>
+        <hr>
+
+        <h3>Hierarchical clustering & why it's useful</h3>
+        <p>Imagine you have a group of friends at a party. Some know each other well, others have just met, and a few are complete strangers. Now, let's say we want to group these friends into clusters based on how similar they are to each other. That's essentially what <strong>hierarchical clustering</strong> does, except instead of friends, it's working with data points.</p>
+
+        <p>In the context of this project, we're clustering <strong>Pokemon teams</strong> based on the similarities in their compositions. Each team is treated as a unique data point, and the goal is to find groups (or clusters) of teams that share common characteristics.</p>
+    
+
+    
+        <h4>&#128269; How Does Hierarchical Clustering Work?</h4>
+        <p>Hierarchical clustering works by building a tree-like structure called a <strong>dendrogram</strong>, which shows how data points (in our case, teams) get grouped together step by step. Here's how the process unfolds:</p>
+    
+        <ol>
+            <li><strong>Start with every team as its own cluster.</strong> At the beginning, each Pokemon team is considered a separate cluster.</li>
+            <li><strong>Find the two most similar teams and merge them.</strong> The algorithm looks for the two closest teams (based on a similarity measure like shared Pokemon or moves) and groups them together into a single cluster.</li>
+            <li><strong>Repeat this process until all teams are in one big cluster.</strong> The merging continues until every team is part of one giant cluster. The result is a tree that shows how clusters were formed along the way.</li>
+            <li><strong>Cut the tree to create meaningful clusters.</strong> Once the tree is built, you can “cut” it at a certain level to decide how many clusters you want. For example, cutting the tree into 5 clusters might reveal distinct team archetypes. We pick the position of this 'cut' at wherever minimizes lost (i.e., wherever gives us the best results, mathematically).</li>
+        </ol>
+    
+
+    
+        <h4>&#129520; Why Use Hierarchical Clustering for Pokemon Teams?</h4>
+        <p>In this project, we're analyzing Pokemon teams from tournaments. Hierarchical clustering helps us:</p>
+        <ul>
+            <li><strong>Identify common archetypes</strong>: Teams that frequently use similar core Pokemon get grouped together. For example, you might see a cluster that represents a popular Rain team archetype.</li>
+            <li><strong>Understand relationships between clusters</strong>: The tree structure shows us how similar or different various archetypes are. Some clusters might merge early in the process, indicating that they're very similar.</li>
+        </ul>
+    
+
+    
+        <h4>&#128202; Example: Rain Teams vs. Trick Room Teams</h4>
+        <p>Let's say we have 100 teams. Some teams are built around a Rain strategy (using Pokemon like Pelipper and Ludicolo), while others rely on Trick Room. Hierarchical clustering might group these into two separate clusters because their core strategies are quite different.</p>
+    
+        <p>If we cut the dendrogram at a higher level, we might see these two clusters. If we cut it lower, we might notice that within the Rain cluster, there are further subgroups based on different variations of the strategy (e.g., some use Politoed, others use Pelipper).</p>
+    
+
+    
+        <h4>&#129514; How We Measure Similarity</h4>
+        <p>In our case, similarity is calculated using a method called <strong>cosine similarity</strong>, which looks at the overlap between teams. The more Pokemon two teams have in common, the more similar they are. This is crucial for finding meaningful clusters that represent real-world team archetypes.</p>
+    
+
+    
+        <p>In short, hierarchical clustering is a way to make sense of large amounts of data by organizing it into meaningful groups. And in the context of Pokemon tournaments, it helps us discover which team archetypes are dominating the meta!</p>
+    
+        <hr>
+        <h3>Roadmap</h3>
+        <p>Things I'd like to add to this site in the near future</p>
+        <ol>
+            <li>pokepas.es exportability (this is actually a little harder than it looks);</li>
+            <li>Ability to filter what tournaments go into the analysis;</li>
+            <li>Win-rates of each archetype versus all the others;</li>
+            <li>What would be the holy grail - a data explorer in the style of <a href="https://tactics.tools/explorer"></a>tactics.tools</li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>poliboard - Pokemon Team Clusters</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-left">
+                <h1><span class="poli">poliboard</span></h1>
+            </div>
+            <div class="header-right">
+                <div class="nav-buttons">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="stats">
+                    <div>Last Updated: <span id="lastUpdated">just now</span></div>
+                    <div>Teams Analyzed: <span id="teamsAnalyzed">0</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="explanation-banner">
+            <p>Ever wondered what you'll be playing against next week? This is what the data says.</p>
+            <p>These are the most common team archetypes from recent VGC tournaments, based on a clustering algorithm. Each row shows a distinct team pattern, with its grade (S/A/B), number of appearances, win rate, and core Pokémon. Click any row to see example teams.</p>
+        </div>
+        <div id="archetypes-container">
+            <!-- Archetypes will be dynamically inserted here -->
+        </div>
+
+        <script>
+            const API_URL = 'https://poliboard-swzt.onrender.com';
+            let globalArchetypes = {};
+
+            async function loadArchetypes() {
+                try {
+                    const response = await fetch(`${API_URL}/archetypes`, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                        credentials: 'omit'
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Server error:', errorText);
+                        throw new Error(`Failed to fetch archetypes: ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    globalArchetypes = data;
+                    displayArchetypes(globalArchetypes);
+                    updateStats();
+                } catch (error) {
+                    console.error('Error fetching archetypes:', error);
+                    const container = document.getElementById('archetypes-container');
+                    container.innerHTML = `
+                        <div style="color: #ff4e50; padding: 20px; background: #2a2a2a; border-radius: 8px;">
+                            <h3>Error Loading Archetypes</h3>
+                            <p>There was a problem loading the data. Please try refreshing the page.</p>
+                            <p>Error details: ${error.message}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            async function updateStats() {
+                try {
+                    const response = await fetch(`${API_URL}/total_teams`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.getElementById('teamsAnalyzed').textContent = data.total;
+                    }
+                } catch (error) {
+                    console.error('Error fetching total teams:', error);
+                    document.getElementById('teamsAnalyzed').textContent = 'Error';
+                }
+                document.getElementById('lastUpdated').textContent = 'just now';
+            }
+
+            async function displayArchetypes(archetypes) {
+                const container = document.getElementById('archetypes-container');
+                container.innerHTML = '';
+
+                // Fetch all stats first before building the UI
+                const statsPromises = Object.entries(archetypes).map(async ([id, info]) => {
+                    const index = parseInt(id.split('_')[1]) - 1;
+                    try {
+                        const response = await fetch(`${API_URL}/cluster/${index+1}/top_teams`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            return { id, info, index, stats: data.stats };
+                        }
+                    } catch (error) {
+                        console.error(`Error fetching stats for cluster ${index+1}:`, error);
+                    }
+                    return { id, info, index, stats: null };
+                });
+
+                // Wait for all stats to load and sort by winrate
+                const allArchetypes = await Promise.all(statsPromises);
+                allArchetypes.sort((a, b) => {
+                    return (b.stats?.winrate || 0) - (a.stats?.winrate || 0);
+                });
+
+                // Now build the UI with the sorted archetypes
+                allArchetypes.forEach(({ id, info, index, stats }) => {
+                    const row = document.createElement('div');
+                    row.className = 'archetype-row';
+                    row.setAttribute('data-cluster-id', index);
+
+                    const content = document.createElement('div');
+                    content.className = 'archetype-content';
+
+                    // First add the grade
+                    const gradeInfo = getGrade(stats?.winrate || 0);
+                    const grade = document.createElement('div');
+                    grade.className = `grade ${gradeInfo.class}`;
+                    grade.textContent = gradeInfo.grade;
+                    content.appendChild(grade);
+
+                    // Then add the stats
+                    const statsContainer = document.createElement('div');
+                    statsContainer.className = 'archetype-stats';
+                    statsContainer.innerHTML = `
+                        <div class="stat">
+                            <span class="stat-value" id="appearances-${index}">${stats ? stats.appearances : '-'}</span>
+                            <span class="stat-label">Teams</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="winrate-${index}">${stats ? `${stats.winrate}%` : '-'}</span>
+                            <span class="stat-label">Win Rate</span>
+                        </div>
+                    `;
+                    content.appendChild(statsContainer);
+
+                    // Then add the pokemon list
+                    const pokemonList = document.createElement('div');
+                    pokemonList.className = 'pokemon-list';
+                    info.core_pokemon.forEach(pokemon => {
+                        const icon = createPokemonIcon(pokemon);
+                        pokemonList.appendChild(icon);
+                    });
+                    content.appendChild(pokemonList);
+
+                    row.appendChild(content);
+
+                    // Create similar teams section
+                    const similarTeamsSection = document.createElement('div');
+                    similarTeamsSection.className = 'similar-teams';
+                    similarTeamsSection.id = `similar-teams-${index}`;
+                    row.appendChild(similarTeamsSection);
+
+                    // Add click event
+                    row.addEventListener('click', () => toggleSimilarTeams(index, info));
+
+                    // Add the row to the container
+                    container.appendChild(row);
+                });
+            }
+
+            async function toggleSimilarTeams(clusterId, archetype) {
+                const similarTeamsSection = document.getElementById(`similar-teams-${clusterId}`);
+                
+                if (similarTeamsSection.children.length > 0) {
+                    similarTeamsSection.style.display = 
+                        similarTeamsSection.style.display === 'none' ? 'block' : 'none';
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${API_URL}/cluster/${clusterId+1}/top_teams`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch teams');
+                    }
+                    
+                    const data = await response.json();
+
+                    const teamsList = document.createElement('div');
+                    teamsList.className = 'similar-teams-list';
+
+                    // Header with archetype info
+                    const header = document.createElement('h3');
+                    header.textContent = `Top Teams for this archetype`;
+                    header.style.color = '#ccc';
+                    header.style.marginBottom = '10px';
+                    teamsList.appendChild(header);
+
+                    // Populate teams
+                    if (data.teams && data.teams.length > 0) {
+                        data.teams.forEach(team => {
+                            const teamElement = document.createElement('div');
+                            teamElement.className = 'similar-team';
+
+                            // Add team metadata
+                            const metadataElement = document.createElement('div');
+                            metadataElement.className = 'team-metadata';
+                            metadataElement.innerHTML = `
+                                <span class="tournament">${team.Competition}</span> |
+                                <span class="player-name">${team.Name}</span> |
+                                <span class="record">${team.Wins}-${team.Losses}</span>
+                            `;
+                            teamElement.appendChild(metadataElement);
+
+                            // Add pokemon sprites
+                            const pokemonContainer = document.createElement('div');
+                            pokemonContainer.className = 'team-pokemon';
+                            team.pokemon.forEach(pokemon => {
+                                const pokemonIcon = createPokemonIcon(pokemon);
+                                pokemonIcon.classList.add('similar-team-pokemon');
+                                pokemonContainer.appendChild(pokemonIcon);
+                            });
+                            teamElement.appendChild(pokemonContainer);
+
+                            teamsList.appendChild(teamElement);
+                        });
+                    } else {
+                        const noTeamsMessage = document.createElement('p');
+                        noTeamsMessage.textContent = 'No similar teams found for this archetype.';
+                        noTeamsMessage.style.color = '#999';
+                        teamsList.appendChild(noTeamsMessage);
+                    }
+
+                    similarTeamsSection.innerHTML = '';
+                    similarTeamsSection.appendChild(teamsList);
+                    similarTeamsSection.style.display = 'block';
+
+                } catch (error) {
+                    console.error('Error fetching similar teams:', error);
+                    similarTeamsSection.innerHTML = '';
+                    const errorMessage = document.createElement('p');
+                    errorMessage.textContent = 'Error loading teams. Please try again.';
+                    errorMessage.style.color = '#ff4e50';
+                    similarTeamsSection.appendChild(errorMessage);
+                    similarTeamsSection.style.display = 'block';
+                }
+            }
+
+            function createPokemonIcon(pokemonName) {
+                const container = document.createElement('div');
+                container.className = 'pokemon-icon';
+                container.setAttribute('data-name', pokemonName);
+
+                const img = document.createElement('img');
+                const formattedName = formatPokemonName(pokemonName);
+                
+                // Set CDN URL directly
+                const cdnUrl =  `https://play.pokemonshowdown.com/sprites/gen5/${formattedName}.png`;
+                img.src = cdnUrl;
+                img.alt = pokemonName;
+                
+                // Add loading error handler for debugging
+                img.onerror = () => {
+                    console.error(`Failed to load sprite for ${pokemonName} (${formattedName}) from ${cdnUrl}`);
+                };
+
+                container.appendChild(img);
+                return container;
+            }
+
+            function formatPokemonName(name) {
+                return name.toLowerCase()
+                    .replace(" mask]", '')
+                    .replace(" rider]", '')
+                    .replace("rapid strike style]", 'rapidstrike')
+                    .replace(" [single strike style]", '')
+                    .replace("ian form]", '')
+                    .replace(" [curly form]", '')
+                    .replace(" form]", '')
+                    .replace(" [incarnate forme]", '')
+                    .replace("female", 'f')
+                    .replace(/[\[\]()-]+/g, '')
+                    .replace(/[\s]+/g, '-')
+                    .replace(/[.']/g, '')
+                    .replace(/é/g, 'e')
+                    .replace("flutter-mane", 'fluttermane')
+                    .replace("iron-", 'iron')
+                    .replace("raging-bolt", 'ragingbolt')
+                    .replace("roaring-moon", "roaringmoon")
+                    .replace("ogerpon-teal", "ogerpon");
+            }
+
+            function getGrade(winrate) {
+                if (winrate >= 55) {
+                    return { grade: 'S', class: 'grade-s' };
+                } else if (winrate >= 52) {
+                    return { grade: 'A', class: 'grade-a' };
+                } else {
+                    return { grade: 'B', class: 'grade-b' };
+                }
+            }
+
+            // Load archetypes when the page loads
+            document.addEventListener('DOMContentLoaded', loadArchetypes);
+        </script>
+    </body>
+</html>

@@ -367,12 +367,22 @@ class PokemonTeamClustering:
         """
         # Get cluster analysis first
         cluster_analysis = self.analyze_clusters()
+
+        # Prune clusters that are too small
+        new_clusters = {}
+        cluster_id = 0
+        for cluster_id, data in cluster_analysis.items():
+            # Skip small clusters
+            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 3):  # Less than 1% of total teams, or cluster is only 0-2 pokemon
+                continue
+            cluster_id += 1
+            new_clusters[cluster_id] = data
         
         # Prepare data for long-format DataFrame
         long_data = []
         
         # Iterate through clusters
-        for i, (cluster_id, data) in enumerate(cluster_analysis.items()):
+        for i, (cluster_id, data) in enumerate(new_clusters.items()):
             cluster_name = f"cluster_{i+1}"
             
             # Create an entry for each core Pokemon in the cluster

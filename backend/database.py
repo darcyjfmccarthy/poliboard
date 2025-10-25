@@ -1,47 +1,166 @@
-from sqlalchemy import create_engine, Table, MetaData, select, and_
+import os
+from dotenv import load_dotenv
+from sqlalchemy import create_engine, Table, MetaData, text, inspect
+import pandas as pd
+from typing import Optional
 
-# Example database URL (replace with your actual connection string)
-engine = create_engine("postgresql://localhost/vgc_clustering")
+load_dotenv()
+
+# Get environment setting
+ENV = os.getenv('APP_ENV', 'development')
+
+print("Database configuration:")
+print(f"ENV: {ENV}")
+print(f"DATABASE_URL from env: {os.getenv('DATABASE_URL')}")
+
+# Create the database engine
+DB_URL = os.getenv('DATABASE_URL')
+if not DB_URL:
+    if ENV == 'production':
+        raise ValueError("No DATABASE_URL found in environment variables")
+    else:
+        DB_URL = "postgresql://localhost/vgc_clustering"
+
+print(f"Using database URL: {DB_URL}")
+
+engine = create_engine(
+    DB_URL,
+    connect_args={"sslmode": "require"} if ENV == 'production' else {}
+)
 
 metadata = MetaData()
 
 # Define the tables
-teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
-cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
+def get_tables():
+    """Initialize tables only if they exist"""
+    inspector = inspect(engine)
+    if 'tournament_teams' in inspector.get_table_names(schema='public'):
+        global teams_table
+        teams_table = Table('tournament_teams', metadata, autoload_with=engine, schema='public')
+    if 'cluster_features' in inspector.get_table_names(schema='public'):
+        global cluster_features
+        cluster_features = Table('cluster_features', metadata, autoload_with=engine, schema='public')
 
-# Function to query teams based on cluster ID
-def get_teams_for_cluster(cluster_id: int):
-    # Step 1: Fetch the Pokémon requirements for the given cluster
-    cluster_query = select([cluster_features]).where(cluster_features.c.cluster_id == cluster_id)
-    with engine.connect() as connection:
-        cluster_result = connection.execute(cluster_query).fetchone()
-    
-    if not cluster_result:
-        print(f"No cluster found with ID {cluster_id}")
-        return []
-    
-    # Step 2: Build the condition for querying teams that meet the cluster's Pokémon requirements
-    conditions = []
-    
-    # Dynamically generate conditions based on the Pokémon columns from the cluster
-    for column_name in cluster_result.keys():
-        if column_name != 'cluster_id' and column_name != 'team_count':  # Skip non-Pokemon columns
-            if cluster_result[column_name] == 1:
-                # Add the condition that the team has this Pokémon with value 1
-                conditions.append(teams_table.c[column_name] == 1)
-    
-    # Step 3: Query teams that match all conditions
-    team_query = select([teams_table]).where(and_(*conditions))
-    
-    # Step 4: Execute the query
-    with engine.connect() as connection:
-        team_results = connection.execute(team_query).fetchall()
-    
-    return team_results
+def find_teams_from_cluster(engine, cluster_id: int, limit: int = 20) -> tuple[pd.DataFrame, dict]:
+    try:
+        # First get the cluster features
+        with engine.connect() as conn:
+            cluster_data = conn.execute(text(
+                "SELECT * from cluster_features WHERE cluster_id = :cluster_id;"
+            ), {"cluster_id": cluster_id})
+            df = pd.DataFrame(cluster_data.mappings().all())
 
-# Example usage
-cluster_id = 1
-teams = get_teams_for_cluster(cluster_id)
+        if df.empty:
+            raise ValueError(f"No cluster found with ID {cluster_id}")
 
-for team in teams:
-    print(team)
+        # Build the query with proper parameterization
+        query = """
+            WITH cluster_teams AS (
+                SELECT *
+                FROM tournament_teams
+                WHERE 1=1 {features}
+            ),
+            stats AS (
+                SELECT COUNT(*) as total_appearances,
+                       CAST(SUM("Wins") AS FLOAT) / NULLIF(SUM("Wins" + "Losses"), 0) * 100 as winrate
+                FROM cluster_teams
+            )
+            SELECT t.*, s.total_appearances, s.winrate
+            FROM cluster_teams t
+            CROSS JOIN stats s
+            ORDER BY t."Wins" DESC
+            LIMIT :limit
+        """
+
+        # Build features string safely
+        features = ""
+        for row in df['core_pokemon'].to_list():
+            features += f'\n\tAND "{row}" = 1'
+
+        # Execute the final query
+        with engine.connect() as conn:
+            result = conn.execute(
+                text(query.format(features=features)), 
+                {"limit": limit}
+            )
+            # Get column names from result
+            columns = result.keys()
+            # Fetch all rows
+            rows = result.fetchall()
+            
+            if not rows:
+                return pd.DataFrame(), {'appearances': 0, 'winrate': 0.0}
+            
+            # Create DataFrame with explicit column names
+            result_df = pd.DataFrame(rows, columns=columns)
+
+            # Extract stats
+            stats = {
+                'appearances': int(result_df['total_appearances'].iloc[0]),
+                'winrate': round(float(result_df['winrate'].iloc[0]), 1)
+            }
+
+            # Remove stats columns from main DataFrame
+            result_df = result_df.drop(['total_appearances', 'winrate'], axis=1)
+
+            return result_df, stats
+
+    except Exception as e:
+        print(f"Error in find_teams_from_cluster: {str(e)}")
+        raise
+
+def get_top_teams_in_cluster(cluster_id: int, limit: int = 20) -> list:
+    """
+    Get top teams from a cluster in a format suitable for the frontend.
+    
+    Args:
+        cluster_id: ID of the cluster to search for
+        limit: Maximum number of teams to return
+    
+    Returns:
+        List of teams, where each team is a list of Pokemon names
+    """
+    try:
+        # Correctly unpack both values
+        df, stats = find_teams_from_cluster(engine, cluster_id, limit)
+        
+        if df.empty:
+            return []
+
+        # Convert DataFrame to list of Pokemon teams
+        teams = []
+        for _, row in df.iterrows():
+            # Get all Pokemon columns where value is 1
+            team_pokemon = [col for col in df.columns 
+                          if not col.startswith(('Competition', 'Name', 'Nationality', 'Wins', 'Losses', 'move_'))
+                          and row[col] == 1]
+            teams.append(team_pokemon)
+
+        return teams
+
+    except Exception as e:
+        print(f"Error in get_top_teams_in_cluster: {str(e)}")
+        raise
+
+def get_all_clusters() -> dict:
+    """
+    Get all clusters and their core Pokemon.
+    
+    Returns:
+        Dictionary mapping cluster IDs to lists of core Pokemon
+    """
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT cluster_id, core_pokemon FROM cluster_features"))
+            clusters = {}
+            for row in result:
+                cluster_id = row[0]
+                if cluster_id not in clusters:
+                    clusters[cluster_id] = []
+                clusters[cluster_id].append(row[1])
+            
+            return {f"Cluster_{k}": {"core_pokemon": v} for k, v in clusters.items()}
+
+    except Exception as e:
+        print(f"Error in get_all_clusters: {str(e)}")
+        raise

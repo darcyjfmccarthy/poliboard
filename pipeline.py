@@ -1,73 +1,161 @@
-import argparse
-import pandas as pd
-from backend.classes import PokemonTeamClustering
-from backend.functions import *
 import json
+import os
+import pandas as pd
+import numpy as np
+from sqlalchemy import create_engine
+from backend.functions import process_tournament_data
+from backend.classes import PokemonTeamClustering
+from backend.database import engine
 
+def load_tournament_files(data_dir):
+    """
+    Load all JSON tournament files from the specified directory.
+    """
+    tournaments = []
+    json_files = [f for f in os.listdir(data_dir) if f.endswith('.json')]
+    
+    if not json_files:
+        raise ValueError(f"No JSON files found in {data_dir}")
+    
+    print(f"Found {len(json_files)} tournament files")
+    
+    for filename in json_files:
+        tournament_name = os.path.splitext(filename)[0]
+        file_path = os.path.join(data_dir, filename)
+        
+        try:
+            with open(file_path, encoding='utf-8') as f:
+                tournament_data = json.load(f)
+                tournaments.append((tournament_data, tournament_name))
+                print(f"Successfully loaded {tournament_name} with {len(tournament_data)} entries")
+        except Exception as e:
+            print(f"Error loading {filename}: {str(e)}")
+            continue
+    
+    return tournaments
 
+def clean_combined_data(df):
+    """
+    Clean the combined dataset by handling missing values and ensuring data quality.
+    """
+    print("\nCleaning combined dataset...")
+    initial_rows = len(df)
+    print(f"Initial dataset shape: {df.shape}")
+    
+    # Fill NaN values with 0 for Pokemon and move columns
+    feature_cols = [col for col in df.columns 
+                   if not col.startswith(('Competition', 'Name', 'Nationality', 'Wins', 'Losses'))]
+    df[feature_cols] = df[feature_cols].fillna(0)
+    
+    # Ensure numeric columns are properly typed
+    df[feature_cols] = df[feature_cols].astype(float)
+    
+    # Drop any remaining rows with NaN values
+    df = df.dropna()
+    if initial_rows > len(df):
+        print(f"Dropped {initial_rows - len(df)} rows with NaN values")
+    
+    print(f"Final dataset shape: {df.shape}")
+    return df
+
+def remove_zero_vector_teams(df, clusterer):
+    """
+    Remove teams that become zero vectors after feature selection.
+    """
+    print("\nChecking for zero-vector teams...")
+    initial_rows = len(clusterer.df)
+    
+    # Calculate row sums
+    row_sums = clusterer.df.sum(axis=1)
+    
+    # Find non-zero rows
+    non_zero_mask = row_sums > 0
+    
+    # Filter both dataframes
+    clusterer.df = clusterer.df[non_zero_mask]
+    df = df[non_zero_mask]
+    
+    removed_count = initial_rows - len(clusterer.df)
+    if removed_count > 0:
+        print(f"Removed {removed_count} teams that had no features after selection")
+    print(f"Remaining teams: {len(clusterer.df)}")
+    
+    return df, clusterer
+
+def process_multiple_tournaments_pipeline(data_dir):
+    """
+    Unified pipeline to process multiple tournaments.
+    """
+    try:
+        print("Starting multi-tournament processing pipeline")
+        
+        # 1. Load all tournament files
+        tournaments = load_tournament_files(data_dir)
+        if not tournaments:
+            raise ValueError("No tournaments loaded successfully")
+        
+        # 2. Process and combine tournament data
+        combined_df = pd.DataFrame()
+        for tournament_data, tournament_name in tournaments:
+            print(f"\nProcessing tournament: {tournament_name}")
+            df = process_tournament_data(tournament_data, tournament_name)
+            combined_df = pd.concat([combined_df, df], ignore_index=True)
+        
+        print(f"\nCombined dataset contains {len(combined_df)} teams")
+        
+        # 3. Clean the combined data
+        combined_df = clean_combined_data(combined_df)
+        
+        # 4. Initialize clustering and apply feature selection
+        print("Initializing clustering...")
+        clusterer = PokemonTeamClustering(combined_df)
+        
+        print("Applying feature selection...")
+        clusterer.select_features(method='frequency', threshold=0.02)
+        clusterer.select_features(method='variance', threshold=0.01)
+        
+        # 5. Remove zero-vector teams after feature selection
+        combined_df, clusterer = remove_zero_vector_teams(combined_df, clusterer)
+        
+        # 6. Apply feature normalization
+        print("Applying feature normalization...")
+        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.5)
+        
+        # 7. Save processed data to database
+        print("Saving processed tournament data to database...")
+        combined_df.to_sql(
+            'tournament_teams', 
+            engine, 
+            if_exists='replace', 
+            index=False
+        )
+        
+        # 8. Perform clustering
+        print("Performing clustering...")
+        clusterer.cluster_teams()
+        
+        # 9. Save cluster features to database
+        print("Saving cluster features to database...")
+        cluster_features = clusterer.create_long_cluster_features()
+        cluster_features.to_sql(
+            'cluster_features', 
+            engine, 
+            if_exists='replace', 
+            index=False
+        )
+        
+        print("\nPipeline completed successfully!")
+        print(f"Processed {len(tournaments)} tournaments")
+        print(f"Total teams analyzed: {len(combined_df)}")
+        
+        return clusterer, combined_df
+        
+    except Exception as e:
+        print(f"Error in tournament processing pipeline: {e}")
+        raise
 
 def main():
-    parser = argparse.ArgumentParser(description='Pokemon Team Clustering Pipeline')
-    parser.add_argument('input_file', type=str, help='Path to input JSON file')
-    parser.add_argument('tournament_name', type=str, help='Tournament name')
-    
-    args = parser.parse_args()
-    
-    try:
-        # Load data
-        with open(args.input_file, encoding='utf-8') as f:
-            worlds_data = json.load(f)
-        
-        pokemon_list = []
-        
-        for player in worlds_data:
-            # Loop through each Pokemon in the player's decklist
-            for pokemon in player['decklist']:
-                pokemon_list.append(pokemon['name'])
-
-        pokemon_set = list(set(pokemon_list))
-
-        df = process_multiple_entries(worlds_data, pokemon_set, args.tournament_name)
-        print(f"Loaded {len(df)} teams from {args.input_file}. Pokemon count: {len(pokemon_set)}")
-        
-        # Initialize clusterer
-        clusterer = PokemonTeamClustering(df)
-
-
-        clusterer.select_features(method='frequency', threshold=0.03)
-
-        clusterer.select_features(method='variance', threshold=0.01)
-
-        # Weight Pokemon more heavily than moves
-        clusterer.normalize_features(pokemon_weight=1.0, move_weight=0.6)
-
-        optimal_clusters = clusterer.find_optimal_clusters(max_clusters=20)
-
-        best_n = optimal_clusters.loc[optimal_clusters['silhouette_score'].idxmax(), 'n_clusters']
-
-        clusterer.cluster_teams(n_clusters=best_n)
-
-
-        print(clusterer.identify_archetypes())
-        
-        print(clusterer.labels_)
-
-        enhanced_archetypes = analyze_cluster_performance(worlds_data, clusterer)
-
-        # This will now include win rates in your archetype data
-        for cluster_id, info in enhanced_archetypes.items():
-            print(f"\n{cluster_id}:")
-            print(f"Core Pokemon: {', '.join(info['core_pokemon'])}")
-            print(f"Win Rate: {info['win_rate']:.1%}")
-            print(f"Record: {info['total_wins']}-{info['total_losses']} ({info['total_games']} games)")
-            print(f"Usage Rate: {info['frequency']:.1%}")
-
-    except FileNotFoundError:
-        print(f"Error: Could not find file {args.input_file}")
-        return
-    except Exception as e:
-        print(f"Error loading data: {str(e)}")
-        return
+    process_multiple_tournaments_pipeline('data')
 
 if __name__ == "__main__":
     main()
