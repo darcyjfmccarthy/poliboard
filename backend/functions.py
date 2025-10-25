@@ -5,7 +5,7 @@ from collections import defaultdict
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
-def process_tournament_data(tournament_data, competition_name):
+def process_tournament_data(tournament_data):
     """
     Process tournament data into a DataFrame with one-hot encoded Pokemon.
     """
@@ -27,7 +27,8 @@ def process_tournament_data(tournament_data, competition_name):
             
         # Create base entry with metadata first
         processed_entry = {
-            'Competition': competition_name,
+            'Competition': entry['tournament'],
+            'Date': entry['date'],
             'Name': name,
             'Nationality': nationality,
             'Wins': entry['record']['wins'],

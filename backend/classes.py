@@ -16,9 +16,16 @@ class PokemonTeamClustering:
         Initialize with a dataframe where each row is a team and columns are binary indicators
         for Pokemon and moves.
         """
-        self.df = df[[col for col in df.columns[5:]]]
-        self.pokemon_cols = [col for col in df.columns[5:-2]]
-        self.move_cols = [col for col in df.columns[-2:]]
+        self.raw_df = df.copy()  # full version (metadata + features)
+        
+        # Identify columns
+        self.raw_pokemon_cols = [col for col in df.columns[6:-2]]  # all original Pokémon columns
+        self.raw_move_cols = [col for col in df.columns[-2:]]      # move columns
+        
+        # Feature subset (to be filtered later)
+        self.df = df[[col for col in df.columns[6:]]].copy()
+        self.pokemon_cols = self.raw_pokemon_cols.copy()
+        self.move_cols = self.raw_move_cols.copy()
     
     def select_features(self, method='variance', threshold=0.01):
         """
@@ -97,7 +104,6 @@ class PokemonTeamClustering:
         for n in range(2, max_clusters + 1):
             clustering = AgglomerativeClustering(
                 n_clusters=n,
-                affinity='cosine',
                 linkage='complete'
             )
             labels = clustering.fit_predict(self.df)
@@ -113,7 +119,6 @@ class PokemonTeamClustering:
         if method == 'hierarchical':
             clustering = AgglomerativeClustering(
                 n_clusters=n_clusters,
-                affinity='cosine',
                 linkage='complete'
             )
         elif method == 'dbscan':
@@ -193,32 +198,49 @@ class PokemonTeamClustering:
             'similar_teams': most_similar.tolist(),
             'similarity_scores': similarities[0][most_similar].tolist()
         }
-    
+        
     def identify_archetypes(self):
         """
-        Identify distinct archetypes based on cluster analysis
+        Identify distinct archetypes based on cluster analysis,
+        create descriptive names with key Pokémon, and save mapping for plotting.
         """
         cluster_analysis = self.analyze_clusters()
         archetypes = {}
         cluster_num = 0
+        team_to_archetype = {}
+
         for cluster_id, data in cluster_analysis.items():
-            # Skip small clusters
-            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 3):  # Less than 1% of total teams, or cluster is only 0-2 pokemon
+            # Skip small/weak clusters
+            if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 3):
                 continue
-            cluster_num += 1   
-            
-            # Look for known archetypes based on core Pokemon combinations
-            archetype_name = f"Cluster_{cluster_num}"  # Default name
+            cluster_num += 1
+
+            # Create descriptive name: Archetype N: Pokémon, Pokémon, Pokémon
+            core_pokemon_list = data['core_pokemon']
+            pokemon_str = ", ".join(core_pokemon_list)
+            archetype_name = f"Archetype {cluster_num}: {pokemon_str}"
+
             key_moves = [move.replace('move_', '') for move in data['common_moves'][:5]]
-            
+
             archetypes[archetype_name] = {
                 'core_pokemon': data['core_pokemon'],
                 'key_moves': key_moves,
                 'team_count': data['size'],
-                'frequency': data['size'] / len(self.df)
+                'frequency': data['size'] / len(self.df),
             }
-            
+
+            # Assign each team in this cluster to this archetype
+            mask = self.labels_ == cluster_id
+            for idx in np.where(mask)[0]:
+                team_to_archetype[idx] = archetype_name
+
+        # Save mapping as Series
+        self.final_archetypes_ = pd.Series(team_to_archetype)
+        self.final_archetypes_.index.name = "team_index"
+
         return archetypes
+
+
 
     def plot_cluster_heatmap(self, top_n_features=20):
         """
@@ -249,46 +271,95 @@ class PokemonTeamClustering:
     
     def plot_cluster_scatter(self, reduction_method='tsne'):
         """
-        Create a scatter plot of teams colored by cluster.
-        Uses dimension reduction to plot in 2D space.
-        
-        Parameters:
-        reduction_method: str
-            'tsne' or 'umap' for dimension reduction
-        
-        Returns:
-        matplotlib figure
+        Create an interactive scatter plot showing final archetypes with hover info including
+        player name, tournament, record, and Pokémon team. Point size scales softly with wins.
         """
-        import matplotlib.pyplot as plt
-        
-        # Get 2D coordinates using dimension reduction
+        import plotly.express as px
+        import numpy as np
+
+        # Reduce dimensions for plotting
         coords = self.dimension_reduction(method=reduction_method)
-        
-        # Create scatter plot
-        plt.figure(figsize=(12, 8))
-        
-        # Plot points, coloring by cluster
-        scatter = plt.scatter(coords[:, 0], coords[:, 1], 
-                            c=self.labels_,
-                            cmap='tab20',  # Color map with distinct colors
-                            alpha=0.6)     # Some transparency
-        
-        # Add legend
-        n_clusters = len(set(self.labels_)) - (1 if -1 in self.labels_ else 0)
-        plt.legend(handles=scatter.legend_elements()[0], 
-                labels=[f'Cluster {i}' for i in range(n_clusters)],
-                title="Clusters",
-                bbox_to_anchor=(1.05, 1), 
-                loc='upper left')
-        
-        plt.title(f'Team Clusters ({reduction_method.upper()} projection)')
-        plt.xlabel(f'{reduction_method.upper()} dimension 1')
-        plt.ylabel(f'{reduction_method.upper()} dimension 2')
-        
-        # Make layout work with legend
-        plt.tight_layout()
-        
-        return plt.gcf()
+        df_plot = pd.DataFrame(coords, columns=['x', 'y'])
+
+        if not hasattr(self, 'final_archetypes_'):
+            raise ValueError("Must run identify_archetypes() before plotting final archetypes.")
+
+        # Filter only teams with identified archetypes
+        df_plot['archetype'] = self.final_archetypes_
+        df_plot = df_plot.dropna(subset=['archetype'])
+
+        # Pull metadata from raw_df (not filtered)
+        df_plot['Name'] = self.raw_df.loc[df_plot.index, 'Name']
+        df_plot['Tournament'] = self.raw_df.loc[df_plot.index, 'Competition']  # or 'Tournament'
+        df_plot['Wins'] = self.raw_df.loc[df_plot.index, 'Wins']
+        df_plot['Losses'] = self.raw_df.loc[df_plot.index, 'Losses']
+
+        # Build hover text for Pokémon list using original (unfiltered) Pokémon columns
+        hover_texts = []
+        for i in df_plot.index:
+            team_row = self.raw_df.loc[i, self.raw_pokemon_cols]
+            team_pokemon = team_row[team_row == 1].index.tolist()
+            formatted = "<br>".join(
+                [", ".join(team_pokemon[j:j+3]) for j in range(0, len(team_pokemon), 3)]
+            )
+            hover_texts.append(formatted if formatted else "(No Pokémon detected)")
+
+        df_plot['team_pokemon'] = hover_texts
+
+        # Interactive scatter plot
+        fig = px.scatter(
+            df_plot,
+            x='x',
+            y='y',
+            color='archetype',
+            hover_name='Name',
+            size=np.log1p(df_plot['Wins'])/5,  # Soft scaling for wins
+            hover_data={
+                'Tournament': True,
+                'Wins': True,
+                'Losses': True,
+                'team_pokemon': True,
+                'x': False,
+                'y': False,
+            },
+            title=f"Pokémon Team Archetypes ({reduction_method.upper()} projection)",
+            category_orders={'archetype': sorted(df_plot['archetype'].unique())},
+            opacity=0.8,
+            color_discrete_sequence=px.colors.qualitative.Set3
+        )
+
+        # Hover box styling
+        fig.update_traces(
+            marker=dict(line=dict(width=0.5, color='DarkSlateGrey')),
+            hovertemplate=(
+                "<b>%{hovertext}</b><br><br>"
+                "🏆 <b>Tournament:</b> %{customdata[0]}<br>"
+                "⚔️ <b>Record:</b> %{customdata[1]}W - %{customdata[2]}L<br><br>"
+                "🐉 <b>Pokémon:</b><br>%{customdata[3]}<extra></extra>"
+            )
+        )
+
+        # Layout: wide figure + legend outside
+        fig.update_layout(
+            legend_title="Archetypes",
+            legend=dict(
+                orientation="v",
+                yanchor="top",
+                y=1,
+                xanchor="left",
+                x=1.02,
+                bgcolor="rgba(0,0,0,0)",
+                bordercolor="rgba(255,255,255,0.1)",
+                borderwidth=1
+            ),
+            width=1300,
+            height=750,
+            margin=dict(l=60, r=260, t=80, b=60),
+            template="plotly_dark",
+            hovermode="closest"
+        )
+
+        fig.show()
 
     def create_long_cluster_features(self):
         """
