@@ -202,35 +202,45 @@ class PokemonTeamClustering:
     def identify_archetypes(self):
         """
         Identify distinct archetypes based on cluster analysis,
+        order them by usage rate (most used = Archetype 1),
         create descriptive names with key Pokémon, and save mapping for plotting.
         """
         cluster_analysis = self.analyze_clusters()
-        archetypes = {}
-        cluster_num = 0
-        team_to_archetype = {}
+        archetype_data = []
 
+        # Collect valid clusters
         for cluster_id, data in cluster_analysis.items():
-            # Skip small/weak clusters
             if (data['size'] < len(self.df) * 0.01) or (len(data['core_pokemon']) < 3):
                 continue
-            cluster_num += 1
 
-            # Create descriptive name: Archetype N: Pokémon, Pokémon, Pokémon
-            core_pokemon_list = data['core_pokemon']
-            pokemon_str = ", ".join(core_pokemon_list)
-            archetype_name = f"Archetype {cluster_num}: {pokemon_str}"
-
-            key_moves = [move.replace('move_', '') for move in data['common_moves'][:5]]
-
-            archetypes[archetype_name] = {
+            archetype_data.append({
+                'cluster_id': cluster_id,
                 'core_pokemon': data['core_pokemon'],
-                'key_moves': key_moves,
+                'key_moves': [move.replace('move_', '') for move in data['common_moves'][:5]],
                 'team_count': data['size'],
                 'frequency': data['size'] / len(self.df),
+            })
+
+        # Sort clusters by frequency (descending)
+        archetype_data.sort(key=lambda x: x['frequency'], reverse=True)
+
+        archetypes = {}
+        team_to_archetype = {}
+
+        # Assign Archetype numbers based on rank
+        for i, entry in enumerate(archetype_data, start=1):
+            pokemon_str = ", ".join(entry['core_pokemon'])
+            archetype_name = f"Archetype {i}: {pokemon_str}"
+
+            archetypes[archetype_name] = {
+                'core_pokemon': entry['core_pokemon'],
+                'key_moves': entry['key_moves'],
+                'team_count': entry['team_count'],
+                'frequency': entry['frequency'],
             }
 
-            # Assign each team in this cluster to this archetype
-            mask = self.labels_ == cluster_id
+            # Assign teams to archetype
+            mask = self.labels_ == entry['cluster_id']
             for idx in np.where(mask)[0]:
                 team_to_archetype[idx] = archetype_name
 
@@ -360,6 +370,7 @@ class PokemonTeamClustering:
         )
 
         fig.show()
+        fig.write_html("pokemon_archetypes.html", include_plotlyjs="cdn")
 
     def create_long_cluster_features(self):
         """
